@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f339115a-410a-42d4-868e-2291b00f6483" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="HIS@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="HIS@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="HIS@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="informationssystem: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="HIS@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="informationssystem: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="bewerber: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - studien_information@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="1.8" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1TYe0ADMoUqaAhx2r8d1XlXPKrL" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="java.sql.Driver&#10;mysql" />
+    <property name="JPA.DatabaseSchemaImportDialog" value="48efb7fe-c545-4667-b6cf-1ddd9ddb718b" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="entities" />
+      <recent name="" />
+      <recent name="Entities" />
+      <recent name="imatrikulationProzess" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="test.servicetaskdelegation" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="test.servicetaskdelegation.BewerberErfassungTest" />
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="imatrikulationProzess" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\inteng\HochschulStudentenVerwaltung\META-INF" />
+      <recent name="D:\inteng\HochschulStudentenVerwaltung\src\main\java" />
+      <recent name="D:\inteng\HochschulStudentenVerwaltung\src\test" />
+      <recent name="D:\inteng\HochschulStudentenVerwaltung\src\main\resources" />
+      <recent name="D:\inteng\HochschulStudentenVerwaltung" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\inteng\HochschulStudentenVerwaltung" />
+      <recent name="D:\inteng\HochschulStudentenVerwaltung\src\main\resources\META-INF" />
+      <recent name="D:\inteng\HochschulStudentenVerwaltung\src" />
+      <recent name="D:\inteng\HochschulStudentenVerwaltung\target\Hochschul-Studenten-Verwaltung\WEB-INF" />
+      <recent name="D:\inteng\HochschulStudentenVerwaltung\" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn tomcat7:deploy-only" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.TestDatabaseAccess.test insert Studiengang for testing">
+    <configuration name="CheckUnterlagenTest.test check vollständig" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hochschul-Studenten-Verwaltung" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CheckUnterlagenTest" />
+      <option name="METHOD_NAME" value="test check vollständig" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImmatrikulationDAOTest.test insert Immatrikulation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hochschul-Studenten-Verwaltung" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ImmatrikulationDAOTest" />
+      <option name="METHOD_NAME" value="test insert Immatrikulation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDatabaseAccess.test Database get Studiengang is working" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hochschul-Studenten-Verwaltung" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDatabaseAccess" />
+      <option name="METHOD_NAME" value="test Database get Studiengang is working" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDatabaseAccess.test insert Bewerber is working" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hochschul-Studenten-Verwaltung" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDatabaseAccess" />
+      <option name="METHOD_NAME" value="test insert Bewerber is working" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDatabaseAccess.test insert Studiengang for testing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Hochschul-Studenten-Verwaltung" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDatabaseAccess" />
+      <option name="METHOD_NAME" value="test insert Studiengang for testing" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestDatabaseAccess.test insert Studiengang for testing" />
+        <item itemvalue="JUnit.CheckUnterlagenTest.test check vollständig" />
+        <item itemvalue="JUnit.ImmatrikulationDAOTest.test insert Immatrikulation" />
+        <item itemvalue="JUnit.TestDatabaseAccess.test insert Bewerber is working" />
+        <item itemvalue="JUnit.TestDatabaseAccess.test Database get Studiengang is working" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f339115a-410a-42d4-868e-2291b00f6483" name="Default Changelist" comment="" />
+      <created>1573641230070</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573641230070</updated>
+      <workItem from="1574242284200" duration="7380000" />
+      <workItem from="1574372789382" duration="945000" />
+      <workItem from="1574425995852" duration="7094000" />
+      <workItem from="1574434165104" duration="6133000" />
+      <workItem from="1574675488752" duration="24658000" />
+      <workItem from="1574767315020" duration="17684000" />
+      <workItem from="1574844296511" duration="8520000" />
+      <workItem from="1575442277964" duration="494000" />
+      <workItem from="1575443937265" duration="1509000" />
+      <workItem from="1575448806584" duration="1013000" />
+      <workItem from="1575454195386" duration="3295000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/groovy/TestDatabaseAccess.groovy</url>
+          <line>105</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
