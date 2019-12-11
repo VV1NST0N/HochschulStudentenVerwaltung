@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f339115a-410a-42d4-868e-2291b00f6483" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="f339115a-410a-42d4-868e-2291b00f6483" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/HochschulStudentenVerwaltung.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/18f00ded-40c3-4344-9fc7-87905b0ec2d3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/18f00ded-40c3-4344-9fc7-87905b0ec2d3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/48efb7fe-c545-4667-b6cf-1ddd9ddb718b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/48efb7fe-c545-4667-b6cf-1ddd9ddb718b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/forms/uploadUnterlagen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forms/uploadUnterlagen.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +65,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -66,9 +77,16 @@
     </option>
   </component>
   <component name="ProjectId" id="1TYe0ADMoUqaAhx2r8d1XlXPKrL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="java.sql.Driver&#10;mysql" />
     <property name="JPA.DatabaseSchemaImportDialog" value="48efb7fe-c545-4667-b6cf-1ddd9ddb718b" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -119,18 +137,6 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn tomcat7:deploy-only" />
-    </option>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
     </option>
   </component>
   <component name="RunManager" selected="JUnit.TestDatabaseAccess.test insert Studiengang for testing">
@@ -195,13 +201,15 @@
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand />
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -225,11 +233,18 @@
       <workItem from="1575443937265" duration="1509000" />
       <workItem from="1575448806584" duration="1013000" />
       <workItem from="1575454195386" duration="3295000" />
+      <workItem from="1576057561950" duration="1973000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="477" y="229" key="com.intellij.ide.util.TipDialog" timestamp="1576057564747">
+      <screen x="0" y="0" width="1536" height="804" />
+    </state>
+    <state x="477" y="229" key="com.intellij.ide.util.TipDialog/0.0.1536.804@0.0.1536.804" timestamp="1576057564747" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
