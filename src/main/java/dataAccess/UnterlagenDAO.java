@@ -1,6 +1,5 @@
 package dataAccess;
 
-import entities.BewerberEntity;
 import entities.BewerbungsunterlagenEntity;
 import helper.IdGenerator;
 
@@ -48,10 +47,22 @@ public class UnterlagenDAO {
         BewerbungsunterlagenEntity unterlagen = entityManager.find(BewerbungsunterlagenEntity.class, unterlagenId);
 
         entityManager.getTransaction().begin();
-        unterlagen.setKrankenversicherung(unterlagenBool.get("krankenversicherung"));
-        unterlagen.setHochschulreife(unterlagenBool.get("hochschulzeugnis"));
-        unterlagen.setImmatrikulationsantrag(unterlagenBool.get("immatrikulationsantrag"));
-        unterlagen.setBewerbungsschreiben(unterlagenBool.get("bewerbungsschreiben"));
+        unterlagen.setKrankenversicherung(unterlagenBool.get("krankenversicherungName"));
+        unterlagen.setHochschulreife(unterlagenBool.get("hochschulzeugnisName"));
+        unterlagen.setImmatrikulationsantrag(unterlagenBool.get("immatrikulationsantragName"));
+        unterlagen.setBewerbungsschreiben(unterlagenBool.get("bewerbungsschreibenName"));
+        entityManager.getTransaction().commit();
+    }
+
+    public void updateUnterlagenLoc(Integer unterlagenId, Map<String, String> unterlagenLocMap) {
+        EntityManager entityManager = ConnectionFac.init();
+        BewerbungsunterlagenEntity unterlagen = entityManager.find(BewerbungsunterlagenEntity.class, unterlagenId);
+
+        entityManager.getTransaction().begin();
+        unterlagen.setKrankenversicherungLocation(unterlagenLocMap.get("krankenversicherung"));
+        unterlagen.setHochschulreifeLocation(unterlagenLocMap.get("hochschulzeugnis"));
+        unterlagen.setImmatrikulationsantragLocation(unterlagenLocMap.get("immatrikulationsantrag"));
+        unterlagen.setBewerbungsschreibenLocation(unterlagenLocMap.get("bewerbungsschreiben"));
         entityManager.getTransaction().commit();
     }
 }

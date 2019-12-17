@@ -1,5 +1,3 @@
-import dataAccess.BewerberDAO
-
 import entities.StudiengangEntity
 import dataAccess.ConnectionFac
 import immatrikulation.servicetaskdelegation.BewerberErfassung
@@ -14,8 +12,10 @@ class TestDatabaseAccess extends Specification {
 
     def "test insert Studiengang for testing"(){
         given:
+        Class.forName("com.mysql.jdbc.Driver")
         EntityManager entityManager = ConnectionFac.init()
         when:
+
         StudiengangEntity studiengangEntity = new StudiengangEntity()
         studiengangEntity.setStudiengangId(666)
         studiengangEntity.setStudiengangName("Maschinenbau")
@@ -37,6 +37,15 @@ class TestDatabaseAccess extends Specification {
         Date date = new Date()
         when:
         Instant test =  date.toInstant()
+        then:
+        true
+    }
+
+    def "test dir"(){
+        given:
+        String path = System.getProperty("user.home")
+        when:
+        System.out.println(path)
         then:
         true
     }

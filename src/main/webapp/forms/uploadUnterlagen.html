@@ -1,7 +1,5 @@
-```HTML
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-<h2>UPLOAD Bewerbungsunterlagen</h2>
+<h2>Bewerbungsunterlagen hochladen</h2>
 <form role="form"
       name="variablesForm">
     <div class="row">
@@ -9,18 +7,42 @@
             <!-- Control zum Upload einer Datei -->
         </div>
     </div>
+    <h3> Unterlagen zur Immatrikulation (4 Dateinen) </h3>
     <div class="control-group">
-        <label class="control-label">PDF-Liste mit einer Spieleübersicht hochladen (max. 1 Datei, max. 2 MB) </label>
+        <label class="control-label">Krankenversicherung </label>
         <div class="controls">
-
             <input type="file"
-                   cam-variable-name="BEWERBUNGSUNTERLAGEN_DOC"
+                   cam-variable-name="KRANKENVERSICHERUNG_DOC"
                    cam-variable-type="File"
-                   cam-max-filesize="2000000" />
+                   cam-max-filesize="3000000"/>
         </div>
-
+        <div class="control-group">
+            <label class="control-label">Immatrikulationsantrag </label>
+            <div class="controls">
+                <input type="file"
+                       cam-variable-name="IMMATRIKULATIONSANTRAG_DOC"
+                       cam-variable-type="File"
+                       cam-max-filesize="3000000"/>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Bewerbungsschreiben </label>
+                <div class="controls">
+                    <input type="file"
+                           cam-variable-name="BEWERBUNGSSCHREIBEN_DOC"
+                           cam-variable-type="File"
+                           cam-max-filesize="3000000"/>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Hochschulzeugnis </label>
+                    <div class="controls">
+                        <input type="file"
+                               cam-variable-name="HOCHSCHULZEUGNIS_DOC"
+                               cam-variable-type="File"
+                               cam-max-filesize="3000000"/>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </div> <script cam-script type="text/form-script"> // custom JavaScript goes here </script>
+    <script cam-script type="text/form-script"> // custom JavaScript goes here </script>
 </form>
-
-        ```
