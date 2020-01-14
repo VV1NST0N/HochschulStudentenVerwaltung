@@ -23,6 +23,4 @@ public class ForwardNcToImmatrikulation implements JavaDelegate {
 
         variables.clear();
     }
-
-
 }

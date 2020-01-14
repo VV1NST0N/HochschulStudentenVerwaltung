@@ -32,11 +32,7 @@ public class BewerberErfassung implements JavaDelegate {
         bewerberEntity.setGeburtsdatum( date.toInstant().atZone( ZoneId.of("Europe/Berlin")).toLocalDate());
         bewerberEntity.setNationalitaet((String) delegateExecution.getVariable("nationalitaet"));
         bewerberEntity.setAbiturnote((Long) delegateExecution.getVariable("abiturnote"));
-        /*String information = (String) delegateExecution.getVariable("sonstigeInformationen");
-        if (information!= null){
-            bewerberEntity.setSonstigeInformationen(information);
-        }*/
-        //TODO studiengangname enum in camunda
+
         BewerberDAO bewerberDAO = new BewerberDAO();
         bewerberDAO.insertBewerber(bewerberEntity, (String) delegateExecution.getVariable("studiengangName"));
 

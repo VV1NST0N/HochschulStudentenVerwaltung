@@ -3,7 +3,7 @@ package immatrikulation.servicetaskdelegation;
 import dataAccess.StudiengangDAO;
 import entities.BewerberEntity;
 import entities.StudiengangEntity;
-import immatrikulation.tasks.StudiengangNcBerrechnung;
+import immatrikulation.tasks.CourseNcCalc;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
@@ -21,8 +21,8 @@ public class NcBerrechnen implements JavaDelegate {
         for (BewerberEntity bewerberEntity : bewerber) {
             noteBewerber.add( bewerberEntity.getAbiturnote());
         }
-        StudiengangNcBerrechnung studiengangNcBerrechnung = new StudiengangNcBerrechnung();
-        Long nc = studiengangNcBerrechnung.berrechneNC(noteBewerber, freiePlätze);
+        CourseNcCalc courseNcCalc = new CourseNcCalc();
+        Long nc = courseNcCalc.calculateNc(noteBewerber, freiePlätze);
         // TODO set NC in database
         delegateExecution.setVariable("numerusclausus", nc);
     }

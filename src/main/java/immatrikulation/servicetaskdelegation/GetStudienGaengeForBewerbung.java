@@ -6,6 +6,9 @@ import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 import org.camunda.bpm.engine.variable.Variables;
+import org.camunda.bpm.engine.variable.value.ObjectValue;
+import org.camunda.bpm.engine.variable.value.TypedValue;
+import serializationModels.CoursesList;
 import twitter4j.internal.org.json.JSONObject;
 
 import java.util.*;
@@ -18,13 +21,14 @@ public class GetStudienGaengeForBewerbung implements JavaDelegate {
 
         StudiengangDAO studiengangDAO = new StudiengangDAO();
         List<StudiengangEntity> studiengänge = studiengangDAO.getStudiengänge();
-        List<String> studienGangNamen = new ArrayList<String>();
+        CoursesList coursesList = new CoursesList();
+        coursesList.setStudiengangNamen(new ArrayList<String>());
         for (StudiengangEntity p : studiengänge) {
-
-           studienGangNamen.add(p.getStudiengangName());
+           coursesList.addCourse(p.getStudiengangName());
         }
         delegateExecution.setVariable("test", "Maschinenbau");
-
-        delegateExecution.setVariable("studiengangListe", studienGangNamen);
+        serializationModels.CoursesList courses = new serializationModels.CoursesList();
+        TypedValue studienValue = Variables.objectValue(coursesList.getStudiengangNamen()).serializationDataFormat(Variables.SerializationDataFormats.JSON).create();
+        delegateExecution.setVariable("studiengangListe", studienValue);
     }
 }
