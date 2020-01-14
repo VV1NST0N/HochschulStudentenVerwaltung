@@ -22,7 +22,7 @@ public class BewerberEntity {
     private StudiengangEntity studiengangByStudiengangId;
     private Collection<ImmatrikulationsverfahrenStatusEntity> immatrikulationsverfahrenStatusesByBewerberId;
     private String wohnort;
-    private Integer abiturnote;
+    private Long abiturnote;
 
     @Id
     @Column(name = "bewerber_id", nullable = false)
@@ -189,11 +189,11 @@ public class BewerberEntity {
 
     @Basic
     @Column(name = "abiturnote", nullable = false)
-    public Integer getAbiturnote() {
+    public Long getAbiturnote() {
         return abiturnote;
     }
 
-    public void setAbiturnote(Integer abiturnote) {
+    public void setAbiturnote(Long abiturnote) {
         this.abiturnote = abiturnote;
     }
 }

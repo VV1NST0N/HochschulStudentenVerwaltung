@@ -31,7 +31,7 @@ public class BewerberErfassung implements JavaDelegate {
         Date date = (Date) delegateExecution.getVariable("geburtsdatum");
         bewerberEntity.setGeburtsdatum( date.toInstant().atZone( ZoneId.of("Europe/Berlin")).toLocalDate());
         bewerberEntity.setNationalitaet((String) delegateExecution.getVariable("nationalitaet"));
-
+        bewerberEntity.setAbiturnote((Long) delegateExecution.getVariable("abiturnote"));
         /*String information = (String) delegateExecution.getVariable("sonstigeInformationen");
         if (information!= null){
             bewerberEntity.setSonstigeInformationen(information);

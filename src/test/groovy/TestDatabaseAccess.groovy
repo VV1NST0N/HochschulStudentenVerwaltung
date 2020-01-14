@@ -1,13 +1,16 @@
+import com.sun.javafx.sg.prism.NGImageView
+import dataAccess.StudiengangDAO
 import entities.StudiengangEntity
 import dataAccess.ConnectionFac
 import immatrikulation.servicetaskdelegation.BewerberErfassung
+import org.junit.Ignore
 import spock.lang.Specification
 
 import javax.persistence.EntityManager
 import javax.persistence.Query
 import java.time.Instant
 import java.time.LocalDate
-
+@Ignore
 class TestDatabaseAccess extends Specification {
 
     def "test insert Studiengang for testing"(){
@@ -17,10 +20,10 @@ class TestDatabaseAccess extends Specification {
         when:
 
         StudiengangEntity studiengangEntity = new StudiengangEntity()
-        studiengangEntity.setStudiengangId(666)
-        studiengangEntity.setStudiengangName("Maschinenbau")
-        studiengangEntity.setNumerusClaususNote(2)
-        studiengangEntity.setStudiengangFreiePlaetze(85)
+        studiengangEntity.setStudiengangId(111)
+        studiengangEntity.setStudiengangName("Mathematik")
+        studiengangEntity.setNumerusClaususNote(0)
+        studiengangEntity.setStudiengangFreiePlaetze(120)
         studiengangEntity.setVorraussetzungTest(true)
         studiengangEntity.setZulassungszeitraum(new LocalDate(2020,8,5))
         studiengangEntity.setStudiengangPlatzzahl(350)
@@ -74,6 +77,20 @@ class TestDatabaseAccess extends Specification {
         boolean state = dao.delete(123)
         then:
         state== true
+    }
+
+    def "test get Studiengänge"(){
+        given:
+        StudiengangDAO studiengangDAO = new StudiengangDAO()
+        List<StudiengangEntity> entities = new LinkedList<StudiengangEntity>()
+        when:
+        entities = studiengangDAO.getStudiengänge()
+        entities.each {
+            print("${it.getStudiengangName()} \n")
+        }
+        then:
+        true
+
     }
 
     /*def "test Database insert Student is working"(){

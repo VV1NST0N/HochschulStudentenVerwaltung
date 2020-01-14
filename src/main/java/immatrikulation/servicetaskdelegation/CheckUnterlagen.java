@@ -13,12 +13,8 @@ public class CheckUnterlagen implements JavaDelegate {
         UnterlagenDAO unterlagenDAO = new UnterlagenDAO();
         BewerbungsunterlagenEntity unterlagenEntity = unterlagenDAO.getUnterlagenById(unterlagenId);
         Boolean vollstaendig = checkVollständigkeit(unterlagenEntity);
-        Boolean digitaleDokumente = checkDigitaleDokumente(unterlagenEntity);
-        Boolean hochschulreife = checkHochschulreife(unterlagenEntity);
-        delegateExecution.setVariable("vollstaendig", vollstaendig);
-        delegateExecution.setVariable("digitaleDokumente", digitaleDokumente);
-        delegateExecution.setVariable("hochschulreife", hochschulreife);
 
+        delegateExecution.setVariable("vollstaendig", vollstaendig);
         delegateExecution.setVariable("hochschulzeugnis", false);
         delegateExecution.setVariable("krankenversicherung", false);
         delegateExecution.setVariable("immatrikulationsantrag", false);
@@ -26,23 +22,7 @@ public class CheckUnterlagen implements JavaDelegate {
 
     }
 
-    private Boolean checkHochschulreife(BewerbungsunterlagenEntity unterlagenEntity) {
-        if(unterlagenEntity.getHochschulreife().equals(true)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    private Boolean checkDigitaleDokumente(BewerbungsunterlagenEntity unterlagenEntity) {
-        if (unterlagenEntity.getBewerbungsschreiben().equals(true) && unterlagenEntity.getImmatrikulationsantrag().equals(true) && unterlagenEntity.getKrankenversicherung().equals(true)){
-            return true;
-        }else {
-            return false;
-        }
-    }
-
-    public Boolean checkVollständigkeit(BewerbungsunterlagenEntity unterlagenEntity) {
+    private Boolean checkVollständigkeit(BewerbungsunterlagenEntity unterlagenEntity) {
         if (unterlagenEntity.getBewerbungsschreiben().equals(true) && unterlagenEntity.getHochschulreife().equals(true) && unterlagenEntity.getImmatrikulationsantrag().equals(true) && unterlagenEntity.getKrankenversicherung().equals(true)){
             return true;
         }else {

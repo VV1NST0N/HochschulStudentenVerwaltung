@@ -4,6 +4,7 @@ import entities.StudiengangEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.util.Collection;
 import java.util.List;
 
 public class StudiengangDAO {
@@ -19,6 +20,14 @@ public class StudiengangDAO {
             }
         }
         return null;
+    }
+
+    public List<StudiengangEntity> getStudiengänge() {
+        EntityManager em = ConnectionFac.init();
+        Query query = em.createQuery("SELECT p FROM StudiengangEntity p ");
+        List<StudiengangEntity> resultList = query.getResultList();
+
+        return resultList;
     }
 
 

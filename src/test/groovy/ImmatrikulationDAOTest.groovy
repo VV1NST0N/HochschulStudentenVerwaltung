@@ -3,13 +3,14 @@ import entities.BewerberEntity
 import entities.BewerbungsunterlagenEntity
 import entities.ImmatrikulationsverfahrenStatusEntity
 import entities.ImmatrikulationsverfahrenStatusEntityPK
+import org.junit.Ignore
 import spock.lang.Specification
 
 import javax.persistence.EntityManager
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
-
+@Ignore
 class ImmatrikulationDAOTest extends Specification{
 
     def "test insert Immatrikulation"(){

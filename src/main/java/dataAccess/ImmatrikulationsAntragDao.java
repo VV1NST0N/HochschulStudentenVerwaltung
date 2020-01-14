@@ -22,6 +22,7 @@ public class ImmatrikulationsAntragDao {
         immatrikulationsverfahrenStatusEntity.setBewerbungsunterlagenByUnterlagenId(unterlagen);
         immatrikulationsverfahrenStatusEntity.setBewerberId(immatrikulationsverfahrenStatusEntity.getBewerberByBewerberId().getBewerberId());
         immatrikulationsverfahrenStatusEntity.setUnterlagenId(immatrikulationsverfahrenStatusEntity.getBewerbungsunterlagenByUnterlagenId().getUnterlagenId());
+
         return immatrikulationsverfahrenStatusEntity;
     }
 

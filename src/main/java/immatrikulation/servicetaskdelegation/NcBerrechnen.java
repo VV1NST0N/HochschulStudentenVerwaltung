@@ -17,12 +17,12 @@ public class NcBerrechnen implements JavaDelegate {
         StudiengangDAO studiengangDAO = new StudiengangDAO();
         StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang(studiengang);
         Collection<BewerberEntity> bewerber = studiengangEntity.getBewerbersByStudiengangId();
-        List<Integer> noteBewerber = new LinkedList<Integer>();
+        LinkedList<Long> noteBewerber = new LinkedList<Long>();
         for (BewerberEntity bewerberEntity : bewerber) {
             noteBewerber.add( bewerberEntity.getAbiturnote());
         }
         StudiengangNcBerrechnung studiengangNcBerrechnung = new StudiengangNcBerrechnung();
-        Integer nc = studiengangNcBerrechnung.berrechneNC(noteBewerber);
+        Long nc = studiengangNcBerrechnung.berrechneNC(noteBewerber, freiePlätze);
         // TODO set NC in database
         delegateExecution.setVariable("numerusclausus", nc);
     }
