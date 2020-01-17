@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "studiengang", schema = "informationssystem")
+@Table(name = "studiengang", schema = "informationssystem", catalog = "")
 public class StudiengangEntity {
     private Integer studiengangId;
     private String studiengangName;
@@ -19,11 +19,16 @@ public class StudiengangEntity {
     private Collection<BewerberEntity> bewerbersByStudiengangId;
     private Collection<StudentStudiengangEntity> studentStudiengangsByStudiengangId;
     private LocalDate zulassungszeitraum;
+    private Boolean ncNotwendig;
 
     @Id
     @Column(name = "studiengang_id", nullable = false)
     public Integer getStudiengangId() {
         return studiengangId;
+    }
+
+    public void setStudiengangId(int studiengangId) {
+        this.studiengangId = studiengangId;
     }
 
     public void setStudiengangId(Integer studiengangId) {
@@ -134,5 +139,15 @@ public class StudiengangEntity {
 
     public void setZulassungszeitraum(LocalDate zulassungszeitraum) {
         this.zulassungszeitraum = zulassungszeitraum;
+    }
+
+    @Basic
+    @Column(name = "nc_notwendig")
+    public Boolean getNcNotwendig() {
+        return ncNotwendig;
+    }
+
+    public void setNcNotwendig(Boolean ncNotwendig) {
+        this.ncNotwendig = ncNotwendig;
     }
 }

@@ -1175,7 +1175,8 @@
     </column>
     <column id="296" parent="282" name="abiturnote">
       <Position>9</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="297" parent="282" name="geburtsdatum">
@@ -1521,23 +1522,29 @@ studiengang_id</ColNames>
       <DataType>varchar(120)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="360" parent="287" name="zulassungszeitraum">
+    <column id="360" parent="287" name="nc_notwendig">
       <Position>8</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="361" parent="287" name="zulassungszeitraum">
+      <Position>9</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="361" parent="287" name="studiengang_id_UNIQUE">
+    <index id="362" parent="287" name="studiengang_id_UNIQUE">
       <ColNames>studiengang_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="362" parent="287" name="PRIMARY">
+    <key id="363" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>studiengang_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="363" parent="287" name="studiengang_id_UNIQUE">
+    <key id="364" parent="287" name="studiengang_id_UNIQUE">
       <ColNames>studiengang_id</ColNames>
       <UnderlyingIndexName>studiengang_id_UNIQUE</UnderlyingIndexName>
     </key>

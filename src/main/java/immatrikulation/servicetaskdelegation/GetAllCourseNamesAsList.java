@@ -15,7 +15,7 @@ import java.util.*;
 
 import static org.camunda.bpm.engine.variable.Variables.objectValue;
 
-public class GetStudienGaengeForBewerbung implements JavaDelegate {
+public class GetAllCourseNamesAsList implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
 
@@ -24,9 +24,8 @@ public class GetStudienGaengeForBewerbung implements JavaDelegate {
         CoursesList coursesList = new CoursesList();
         coursesList.setStudiengangNamen(new ArrayList<String>());
         for (StudiengangEntity p : studiengänge) {
-           coursesList.addCourse(p.getStudiengangName());
+            coursesList.addCourse(p.getStudiengangName());
         }
-        delegateExecution.setVariable("test", "Maschinenbau");
         serializationModels.CoursesList courses = new serializationModels.CoursesList();
         TypedValue studienValue = Variables.objectValue(coursesList.getStudiengangNamen()).serializationDataFormat(Variables.SerializationDataFormats.JSON).create();
         delegateExecution.setVariable("studiengangListe", studienValue);

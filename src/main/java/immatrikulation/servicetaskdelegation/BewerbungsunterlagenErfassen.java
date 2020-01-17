@@ -33,6 +33,7 @@ public class BewerbungsunterlagenErfassen implements JavaDelegate {
         String bewerbungsschreibenName = BASE_PATH + "_bewerbungsschreiben_" + unterlagenId + krankenversicherung_doc.getFilename();
         String immatrikulationsantragName = BASE_PATH + "_immatrikulationsantrag_" + unterlagenId + krankenversicherung_doc.getFilename();
         String hochschulzeugnisName = BASE_PATH + "_hochschulzeugnis_" + unterlagenId + krankenversicherung_doc.getFilename();
+        System.out.println("Zeugnis: "+hochschulzeugnisName);
         unterlagen.put("krankenversicherungName", krankenversicherungName);
         unterlagen.put("bewerbungsschreibenName", bewerbungsschreibenName);
         unterlagen.put("immatrikulationsantragName", immatrikulationsantragName);

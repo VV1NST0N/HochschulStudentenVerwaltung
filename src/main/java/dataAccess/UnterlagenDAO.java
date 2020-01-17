@@ -47,10 +47,10 @@ public class UnterlagenDAO {
         BewerbungsunterlagenEntity unterlagen = entityManager.find(BewerbungsunterlagenEntity.class, unterlagenId);
 
         entityManager.getTransaction().begin();
-        unterlagen.setKrankenversicherung(unterlagenBool.get("krankenversicherungName"));
-        unterlagen.setHochschulreife(unterlagenBool.get("hochschulzeugnisName"));
-        unterlagen.setImmatrikulationsantrag(unterlagenBool.get("immatrikulationsantragName"));
-        unterlagen.setBewerbungsschreiben(unterlagenBool.get("bewerbungsschreibenName"));
+        unterlagen.setKrankenversicherung(unterlagenBool.get("krankenversicherung"));
+        unterlagen.setHochschulreife(unterlagenBool.get("hochschulzeugnis"));
+        unterlagen.setImmatrikulationsantrag(unterlagenBool.get("immatrikulationsantrag"));
+        unterlagen.setBewerbungsschreiben(unterlagenBool.get("bewerbungsschreiben"));
         entityManager.getTransaction().commit();
     }
 

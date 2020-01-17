@@ -1,11 +1,13 @@
 package dataAccess;
 
+import entities.BewerbungsunterlagenEntity;
 import entities.StudiengangEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 public class StudiengangDAO {
 
@@ -28,6 +30,15 @@ public class StudiengangDAO {
         List<StudiengangEntity> resultList = query.getResultList();
 
         return resultList;
+    }
+
+
+    public void updateCourseNc(StudiengangEntity studiengangEntity, Boolean nc) {
+        EntityManager entityManager = ConnectionFac.init();
+
+        entityManager.getTransaction().begin();
+        studiengangEntity.setNcNotwendig(nc);
+        entityManager.getTransaction().commit();
     }
 
 

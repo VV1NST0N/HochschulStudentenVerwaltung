@@ -24,6 +24,10 @@ public class StudentEntity {
         return matNr;
     }
 
+    public void setMatNr(int matNr) {
+        this.matNr = matNr;
+    }
+
     public void setMatNr(Integer matNr) {
         this.matNr = matNr;
     }

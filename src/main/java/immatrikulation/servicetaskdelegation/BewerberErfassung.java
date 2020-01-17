@@ -40,9 +40,9 @@ public class BewerberErfassung implements JavaDelegate {
         BewerbungsunterlagenEntity unterlagen = unterlagenDAO.createInitialUnterlagen();
         unterlagenDAO.insertUnterlagen(unterlagen);
 
+
         ImmatrikulationsAntragDao immatrikulationsAntragDao = new ImmatrikulationsAntragDao();
-        ImmatrikulationsverfahrenStatusEntity immatrikulation = immatrikulationsAntragDao.createInitialImmat(bewerberEntity, unterlagen);
-        immatrikulationsAntragDao.insertImmatrikulation(immatrikulation);
+        immatrikulationsAntragDao.createInitialImmat(bewerberEntity, unterlagen);
 
         delegateExecution.setVariable("bewerberId", bewerberId);
         delegateExecution.setVariable("unterlagenId", unterlagen.getUnterlagenId());

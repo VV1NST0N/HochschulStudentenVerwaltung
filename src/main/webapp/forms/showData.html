@@ -14,8 +14,10 @@
 
     <div class="control-group">
         <label for="vornameid">Vorname:</label>
-        <p ng-show="vorname" id="vornameid"
-           ng-model="vorname"> <em>{{vornameScript}}</em></p>
+        <p ng-show="vornameScript" id="vornameid"
+           cam-variable-type="nachname"
+           cam-variable-type="String"
+           ng-model="vornameid"> <em>{{vornameScript}}</em></p>
         </p>
     </div>
     <div class="control-group">
@@ -32,10 +34,10 @@
     <script src="camunda-bpm-sdk-angular.js" type="text/javascript"></script>
 
     <script cam-script type="text/form-script"> // custom JavaScript goes here
-    camForm.on('variables-fetched', function() {
-  // work with the variable (bind it to the current AngularJS $scope)
-        $scope.vornameScript = camForm.variableManager.variableValue('vorname');
-        });
+   // camForm.on('variables-fetched', function() {
+   //work with the variable (bind it to the current AngularJS $scope)
+    //    $scope.vornameScript = camForm.variableManager.variableValue('vorname');
+     //   });
 
     </script>
 

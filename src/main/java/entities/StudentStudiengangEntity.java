@@ -20,6 +20,10 @@ public class StudentStudiengangEntity {
         return matNr;
     }
 
+    public void setMatNr(int matNr) {
+        this.matNr = matNr;
+    }
+
     public void setMatNr(Integer matNr) {
         this.matNr = matNr;
     }
@@ -28,6 +32,10 @@ public class StudentStudiengangEntity {
     @Column(name = "studiengang_id", nullable = false)
     public Integer getStudiengangId() {
         return studiengangId;
+    }
+
+    public void setStudiengangId(int studiengangId) {
+        this.studiengangId = studiengangId;
     }
 
     public void setStudiengangId(Integer studiengangId) {

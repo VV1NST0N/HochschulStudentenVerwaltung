@@ -1,6 +1,7 @@
 package ncBerechnung
 
-
+import dataAccess.BewerberDAO
+import entities.BewerberEntity
 import immatrikulation.tasks.CourseNcCalc
 import spock.lang.Specification
 
@@ -14,6 +15,11 @@ class NcBerechnung extends Specification{
         studiengangNcBerrechnung.calculateNc(list, 5)
         then:
         true
+    }
+
+    def "test get grades"(){
+        BewerberDAO bewerberDAO = new BewerberDAO();
+        List<Long> gradesList = bewerberDAO.getBewerberByStudiengang("Maschinenbau");
     }
 
 }

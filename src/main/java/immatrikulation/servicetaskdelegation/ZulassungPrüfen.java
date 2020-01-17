@@ -12,11 +12,8 @@ public class ZulassungPrüfen implements JavaDelegate {
         StudiengangDAO studiengangDAO = new StudiengangDAO();
         StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang(studiengangName);
         Boolean zulassung = (Boolean) studiengangEntity.getVorraussetzungTest();
+        Boolean nc = (Boolean) studiengangEntity.getNcNotwendig();
         delegateExecution.setVariable("zulassungstest", zulassung);
-        if(studiengangEntity.getNumerusClaususNote() != null && studiengangEntity.getNumerusClaususNote()>0){
-            delegateExecution.setVariable("nc", true);
-        }else{
-            delegateExecution.setVariable("nc", false);
-        }
+        delegateExecution.setVariable("nc", nc);
     }
 }
