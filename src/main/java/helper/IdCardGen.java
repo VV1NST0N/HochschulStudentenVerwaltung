@@ -5,10 +5,7 @@ import com.itextpdf.text.pdf.PdfDocument;
 import com.itextpdf.text.pdf.PdfWriter;
 
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
+import java.io.*;
 
 public class IdCardGen {
 
@@ -21,6 +18,7 @@ public class IdCardGen {
     public void convertToFile(String[] args) throws IOException, DocumentException {
 
         PdfDocument pdf = new PdfDocument();
+        InputStream inputStream = new FileInputStream(BASE_PATH+DEST);
 
         Rectangle rectangle = new Rectangle(100, 144,123,123);
 

@@ -27,15 +27,10 @@ public class NcBerrechnen implements JavaDelegate {
                 grades.add(bewerberEntity.getAbiturnote());
             }
             Long nc = courseNcCalc.calculateNc(grades,freiePlätze);
+            studiengangDAO.updateCourseNcNumber(studiengangEntity, nc);
             coursesNcMap.put(s, nc);
-
-
-
-
-
         }
         // TODO set NC in database
-        serializationModels.CoursesList courses = new serializationModels.CoursesList();
         TypedValue couresNcVal = Variables.objectValue(coursesNcMap).serializationDataFormat(Variables.SerializationDataFormats.JSON).create();
         delegateExecution.setVariable("ccsOfAllCourses", couresNcVal);
     }

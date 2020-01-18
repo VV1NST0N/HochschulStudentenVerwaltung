@@ -7,11 +7,11 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "studiengang", schema = "informationssystem", catalog = "")
+@Table(name = "studiengang", schema = "informationssystem")
 public class StudiengangEntity {
     private Integer studiengangId;
     private String studiengangName;
-    private Integer numerusClaususNote;
+    private Long numerusClaususNote;
     private Integer studiengangPlatzzahl;
     private Integer studiengangFreiePlaetze;
     private Boolean vorraussetzungTest;
@@ -47,11 +47,11 @@ public class StudiengangEntity {
 
     @Basic
     @Column(name = "numerus_clausus_note", nullable = true)
-    public Integer getNumerusClaususNote() {
+    public Long getNumerusClaususNote() {
         return numerusClaususNote;
     }
 
-    public void setNumerusClaususNote(Integer numerusClaususNote) {
+    public void setNumerusClaususNote(Long numerusClaususNote) {
         this.numerusClaususNote = numerusClaususNote;
     }
 

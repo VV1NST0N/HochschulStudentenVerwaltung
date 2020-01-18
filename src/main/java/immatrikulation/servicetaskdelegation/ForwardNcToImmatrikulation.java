@@ -10,16 +10,14 @@ public class ForwardNcToImmatrikulation implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
-        // TODO get from process later
-        //Integer numerusClausus = (Integer) execution.getVariable("nc");
-        Integer numerusClausus = 2;
 
         Map<String, Object> variables = new HashMap<String, Object>();
-        variables.put("nc", numerusClausus);
+        Map<String, Long> map = (Map<String, Long>) delegateExecution.getVariable("ccsOfAllCourses");
+        variables.put("nc", map);
 
         RuntimeService rtm = delegateExecution.getProcessEngineServices().getRuntimeService();
 
-        rtm.startProcessInstanceByMessage("NcSenden",variables);
+        rtm.startProcessInstanceByMessage("ncMap",variables);
 
         variables.clear();
     }

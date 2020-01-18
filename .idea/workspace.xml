@@ -2,40 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f339115a-410a-42d4-868e-2291b00f6483" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/helper/IdCardGen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/CheckAdmissionRequirementDelegate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/CheckNumerusClausus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/GetTimeOfAdmission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/prüfe-zulassung.bpmn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/forms/ChooseCourseForRegistration.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/TestIText.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/unitTests/TestPdf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/unitTests/unittestimma.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/camunda.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/logback-test.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/logging.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HochschulStudentenVerwaltung.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HochschulStudentenVerwaltung.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Leon.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/48efb7fe-c545-4667-b6cf-1ddd9ddb718b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/48efb7fe-c545-4667-b6cf-1ddd9ddb718b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/BewerberDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/BewerberDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/ImmatrikulationsAntragDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/ImmatrikulationsAntragDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/StudiengangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/StudiengangDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/UnterlagenDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/UnterlagenDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/StudentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/StudentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/StudentStudiengangEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/StudentStudiengangEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/ImmatrikulationsverfahrenStatusEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/ImmatrikulationsverfahrenStatusEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/ImmatrikulationsverfahrenStatusEntityPK.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entities/StudiengangEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/StudiengangEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/BewerberErfassung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/BewerberErfassung.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/BewerbungsunterlagenErfassen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/BewerbungsunterlagenErfassen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/CheckUnterlagen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/CheckUnterlagen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/FehlendeUnterlagenAnfordern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/FehlendeUnterlagenAnfordern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/GetStudienGaengeForBewerbung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/GetAllCourseNamesAsList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper/IdCardGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper/IdCardGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/CheckAdmissionRequirementDelegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/CheckAdmissionRequirementDelegate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/ForwardNcToImmatrikulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/ForwardNcToImmatrikulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/NcBerrechnen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/NcBerrechnen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/ZulassungPrüfen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/ZulassungPrüfen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/orm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/orm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/immatrikulation-prozess.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/immatrikulation-prozess.bpmn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/forms/showData.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forms/showData.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/groovy/ncBerechnung/NcBerechnung.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/ncBerechnung/NcBerechnung.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/ImmatrikulationDAOTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/ImmatrikulationDAOTest.groovy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,13 +51,6 @@
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="HIS@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="informationssystem: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="studiengang: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="MySQL - studien_information@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
     </expand>
@@ -94,6 +67,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\dev\HochschulStudentenVerwaltung\.idea" />
+      </set>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -288,7 +268,9 @@
       <workItem from="1579034720090" duration="114000" />
       <workItem from="1579078243739" duration="7630000" />
       <workItem from="1579259461417" duration="262000" />
-      <workItem from="1579275552371" duration="14429000" />
+      <workItem from="1579275552371" duration="14791000" />
+      <workItem from="1579301521019" duration="1994000" />
+      <workItem from="1579342383857" duration="3955000" />
     </task>
     <servers />
   </component>
@@ -299,11 +281,11 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1469" y="81" key="#Assign_Data_Sources" timestamp="1576588745293">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="361" y="63" key="#Assign_Data_Sources" timestamp="1579344299093">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
     <state x="-1469" y="81" key="#Assign_Data_Sources/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576588745293" />
-    <state x="361" y="63" key="#Assign_Data_Sources/0.0.1536.804@0.0.1536.804" timestamp="1576586011975" />
+    <state x="361" y="63" key="#Assign_Data_Sources/0.0.1536.804@0.0.1536.804" timestamp="1579344299093" />
     <state x="361" y="63" key="#Project_Structure" timestamp="1576510024978">
       <screen x="0" y="0" width="1536" height="804" />
     </state>
@@ -316,11 +298,11 @@
       <screen x="0" y="0" width="1536" height="804" />
     </state>
     <state x="361" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.804@0.0.1536.804" timestamp="1576577642333" />
-    <state x="-1202" y="144" key="#com.intellij.ide.util.MemberChooser" timestamp="1579286481621">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="574" y="111" key="#com.intellij.ide.util.MemberChooser" timestamp="1579344035980">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
     <state x="-1202" y="144" key="#com.intellij.ide.util.MemberChooser/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579286481621" />
-    <state x="574" y="111" key="#com.intellij.ide.util.MemberChooser/0.0.1536.804@0.0.1536.804" timestamp="1579078414050" />
+    <state x="574" y="111" key="#com.intellij.ide.util.MemberChooser/0.0.1536.804@0.0.1536.804" timestamp="1579344035980" />
     <state x="499" y="181" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1576586351560">
       <screen x="0" y="0" width="1536" height="804" />
     </state>
@@ -337,10 +319,11 @@
       <screen x="0" y="0" width="1536" height="804" />
     </state>
     <state x="392" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.804@0.0.1536.804" timestamp="1579032831558" />
-    <state x="-1230" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579289868259">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="552" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579343975507">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
     <state x="-1230" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579289868259" />
+    <state x="552" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.804@0.0.1536.804" timestamp="1579343975507" />
     <state x="-1230" y="269" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1578742038353">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -354,30 +337,30 @@
     </state>
     <state x="-1234" y="206" key="FileChooserDialogImpl/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579280153495" />
     <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.804@0.0.1536.804" timestamp="1578990914487" />
-    <state width="1877" height="378" key="GridCell.Tab.0.bottom" timestamp="1579291079336">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="197" key="GridCell.Tab.0.bottom" timestamp="1579346368435">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
-    <state width="1877" height="378" key="GridCell.Tab.0.bottom/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579291079336" />
+    <state width="1877" height="378" key="GridCell.Tab.0.bottom/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579291324436" />
     <state width="1493" height="256" key="GridCell.Tab.0.bottom/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1578831514888" />
-    <state width="1493" height="301" key="GridCell.Tab.0.bottom/0.0.1536.804@0.0.1536.804" timestamp="1579095416053" />
-    <state width="1877" height="378" key="GridCell.Tab.0.center" timestamp="1579291079336">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="197" key="GridCell.Tab.0.bottom/0.0.1536.804@0.0.1536.804" timestamp="1579346368435" />
+    <state width="1493" height="197" key="GridCell.Tab.0.center" timestamp="1579346368435">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
-    <state width="1877" height="378" key="GridCell.Tab.0.center/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579291079336" />
+    <state width="1877" height="378" key="GridCell.Tab.0.center/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579291324435" />
     <state width="1493" height="256" key="GridCell.Tab.0.center/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1578831514888" />
-    <state width="1493" height="301" key="GridCell.Tab.0.center/0.0.1536.804@0.0.1536.804" timestamp="1579095416053" />
-    <state width="1877" height="378" key="GridCell.Tab.0.left" timestamp="1579291079336">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="197" key="GridCell.Tab.0.center/0.0.1536.804@0.0.1536.804" timestamp="1579346368435" />
+    <state width="1493" height="197" key="GridCell.Tab.0.left" timestamp="1579346368435">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
-    <state width="1877" height="378" key="GridCell.Tab.0.left/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579291079336" />
+    <state width="1877" height="378" key="GridCell.Tab.0.left/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579291324435" />
     <state width="1493" height="256" key="GridCell.Tab.0.left/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1578831514888" />
-    <state width="1493" height="301" key="GridCell.Tab.0.left/0.0.1536.804@0.0.1536.804" timestamp="1579095416053" />
-    <state width="1877" height="378" key="GridCell.Tab.0.right" timestamp="1579291079336">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1493" height="197" key="GridCell.Tab.0.left/0.0.1536.804@0.0.1536.804" timestamp="1579346368435" />
+    <state width="1493" height="197" key="GridCell.Tab.0.right" timestamp="1579346368435">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
-    <state width="1877" height="378" key="GridCell.Tab.0.right/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579291079336" />
+    <state width="1877" height="378" key="GridCell.Tab.0.right/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579291324436" />
     <state width="1493" height="256" key="GridCell.Tab.0.right/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1578831514888" />
-    <state width="1493" height="301" key="GridCell.Tab.0.right/0.0.1536.804@0.0.1536.804" timestamp="1579095416053" />
+    <state width="1493" height="197" key="GridCell.Tab.0.right/0.0.1536.804@0.0.1536.804" timestamp="1579346368435" />
     <state width="1493" height="301" key="GridCell.Tab.1.bottom" timestamp="1579095416053">
       <screen x="0" y="0" width="1536" height="804" />
     </state>
@@ -403,21 +386,21 @@
     </state>
     <state x="-1571" y="61" key="SettingsEditor/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576588238225" />
     <state x="279" y="0" key="SettingsEditor/0.0.1536.804@0.0.1536.804" timestamp="1579081708401" />
-    <state x="477" y="229" key="com.intellij.ide.util.TipDialog" timestamp="1579275554557">
+    <state x="477" y="229" key="com.intellij.ide.util.TipDialog" timestamp="1579342389035">
       <screen x="0" y="0" width="1536" height="804" />
     </state>
     <state x="-1324" y="307" key="com.intellij.ide.util.TipDialog/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578239857038" />
     <state x="477" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1576871518933" />
-    <state x="477" y="229" key="com.intellij.ide.util.TipDialog/0.0.1536.804@0.0.1536.804" timestamp="1579275554557" />
+    <state x="477" y="229" key="com.intellij.ide.util.TipDialog/0.0.1536.804@0.0.1536.804" timestamp="1579342389035" />
     <state x="-1253" y="161" width="586" height="717" key="find.popup" timestamp="1578748442037">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1253" y="161" width="586" height="717" key="find.popup/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578748442037" />
-    <state x="-1080" y="77" width="840" height="876" key="run.anything.popup" timestamp="1579290549255">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="425" y="182" width="672" height="677" key="run.anything.popup" timestamp="1579344506579">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
     <state x="-1080" y="77" width="840" height="876" key="run.anything.popup/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579290549255" />
-    <state x="425" y="182" width="672" height="677" key="run.anything.popup/0.0.1536.804@0.0.1536.804" timestamp="1579085101144" />
+    <state x="425" y="182" width="672" height="677" key="run.anything.popup/0.0.1536.804@0.0.1536.804" timestamp="1579344506579" />
     <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1579288588504">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>

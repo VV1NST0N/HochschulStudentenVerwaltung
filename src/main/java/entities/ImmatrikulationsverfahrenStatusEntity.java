@@ -7,12 +7,12 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "immatrikulationsverfahren_status", schema = "informationssystem")
-@IdClass(ImmatrikulationsverfahrenStatusEntityPK.class)
 public class ImmatrikulationsverfahrenStatusEntity {
     private Boolean unterlagenVollstaendig;
     private Boolean zahlungStatus;
     private String statusInformationen;
     private Boolean zulassungStatus;
+    private Integer immatId;
     private Integer bewerberId;
     private Integer unterlagenId;
     private BewerberEntity bewerberByBewerberId;
@@ -115,6 +115,16 @@ public class ImmatrikulationsverfahrenStatusEntity {
     public void setBewerbungsunterlagenByUnterlagenId(BewerbungsunterlagenEntity bewerbungsunterlagenByUnterlagenId) {
         this.bewerbungsunterlagenByUnterlagenId = bewerbungsunterlagenByUnterlagenId;
     }
+    @Id
+    @Column(name = "immatrikulation_id", nullable = false)
+    public Integer getImmatId() {
+        return immatId;
+    }
+
+    public void setImmatId(Integer immatId) {
+        this.immatId = immatId;
+    }
+
 
     @Basic
     @Column(name = "bewerbungseingang", nullable = false)

@@ -41,5 +41,13 @@ public class StudiengangDAO {
         entityManager.getTransaction().commit();
     }
 
+    public void updateCourseNcNumber(StudiengangEntity studiengangEntity, Long nc) {
+        EntityManager entityManager = ConnectionFac.init();
+
+        entityManager.getTransaction().begin();
+        studiengangEntity.setNumerusClaususNote(nc);
+        entityManager.getTransaction().commit();
+    }
+
 
 }

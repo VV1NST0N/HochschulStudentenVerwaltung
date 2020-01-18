@@ -3,7 +3,7 @@ package dataAccess;
 import entities.BewerberEntity;
 import entities.BewerbungsunterlagenEntity;
 import entities.ImmatrikulationsverfahrenStatusEntity;
-import entities.ImmatrikulationsverfahrenStatusEntityPK;
+import helper.IdGenerator;
 
 import javax.persistence.EntityManager;
 import java.time.Instant;
@@ -21,22 +21,18 @@ public class ImmatrikulationsAntragDao {
         immatrikulationsverfahrenStatusEntity.setBewerbungseingang( localDate);
         immatrikulationsverfahrenStatusEntity.setBewerberByBewerberId(bewerber);
         immatrikulationsverfahrenStatusEntity.setBewerbungsunterlagenByUnterlagenId(unterlagen);
-        ImmatrikulationsverfahrenStatusEntityPK immatrikulationsverfahrenStatusEntityPK = new ImmatrikulationsverfahrenStatusEntityPK();
-        immatrikulationsverfahrenStatusEntityPK.setBewerberId(bewerber.getBewerberId());
-        immatrikulationsverfahrenStatusEntityPK.setUnterlagenId(unterlagen.getUnterlagenId());
+        immatrikulationsverfahrenStatusEntity.setImmatId(IdGenerator.createUniqueIds());
         immatrikulationsverfahrenStatusEntity.setBewerberId(immatrikulationsverfahrenStatusEntity.getBewerberByBewerberId().getBewerberId());
         immatrikulationsverfahrenStatusEntity.setUnterlagenId(immatrikulationsverfahrenStatusEntity.getBewerbungsunterlagenByUnterlagenId().getUnterlagenId());
 
-        insertImmatrikulation(immatrikulationsverfahrenStatusEntity, immatrikulationsverfahrenStatusEntityPK);
+        insertImmatrikulation(immatrikulationsverfahrenStatusEntity);
     }
 
-    public void insertImmatrikulation(ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity, ImmatrikulationsverfahrenStatusEntityPK immatrikulationsverfahrenStatusEntityPK){
+    public void insertImmatrikulation(ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity){
         EntityManager entityManager = ConnectionFac.init();
         entityManager.getTransaction().begin();
-        entityManager.persist(immatrikulationsverfahrenStatusEntityPK);
         entityManager.persist(immatrikulationsverfahrenStatusEntity);
         entityManager.getTransaction().commit();
-
     }
 
     public void  insertDocumentsComplete(ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity){

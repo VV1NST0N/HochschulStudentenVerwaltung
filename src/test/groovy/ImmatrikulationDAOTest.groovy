@@ -2,7 +2,7 @@ import dataAccess.ConnectionFac
 import entities.BewerberEntity
 import entities.BewerbungsunterlagenEntity
 import entities.ImmatrikulationsverfahrenStatusEntity
-import entities.ImmatrikulationsverfahrenStatusEntityPK
+
 import org.junit.Ignore
 import spock.lang.Specification
 
