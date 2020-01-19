@@ -6,8 +6,8 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "student", schema = "informationssystem", catalog = "")
-public class StudentEntity {
+@Table(name = "student", schema = "informationssystem")
+public class StudentEntity extends Person {
     private Integer matNr;
     private String vorname;
     private String nachname;

@@ -11,7 +11,7 @@ import java.util.Objects;
 public class StudiengangEntity {
     private Integer studiengangId;
     private String studiengangName;
-    private Long numerusClaususNote;
+    private Double numerusClaususNote;
     private Integer studiengangPlatzzahl;
     private Integer studiengangFreiePlaetze;
     private Boolean vorraussetzungTest;
@@ -47,11 +47,11 @@ public class StudiengangEntity {
 
     @Basic
     @Column(name = "numerus_clausus_note", nullable = true)
-    public Long getNumerusClaususNote() {
+    public Double getNumerusClaususNote() {
         return numerusClaususNote;
     }
 
-    public void setNumerusClaususNote(Long numerusClaususNote) {
+    public void setNumerusClaususNote(Double numerusClaususNote) {
         this.numerusClaususNote = numerusClaususNote;
     }
 

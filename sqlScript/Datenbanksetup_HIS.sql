@@ -24,11 +24,12 @@ DROP TABLE IF EXISTS `informationssystem`.`studiengang` ;
 CREATE TABLE IF NOT EXISTS `informationssystem`.`studiengang` (
   `studiengang_id` INT(11) NOT NULL AUTO_INCREMENT,
   `studiengang_name` VARCHAR(30) NOT NULL,
-  `numerus_clausus_note` INT(11) NULL DEFAULT 0,
+  `numerus_clausus_note` DOUBLE,
   `studiengang_platzzahl` INT(11) NOT NULL,
   `studiengang_freie_plaetze` INT(11) NOT NULL,
   `vorraussetzung_test` TINYINT(1) NOT NULL,
   `beschreibung_voraussetzung` VARCHAR(120),
+  `nc_notwendig` BOOLEAN NOT NULL,
   `zulassungszeitraum` DATE NOT NULL,
   PRIMARY KEY (`studiengang_id`),
   UNIQUE INDEX `studiengang_id_UNIQUE` (`studiengang_id` ASC) VISIBLE)
@@ -50,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `informationssystem`.`bewerber` (
   `nationalitaet` VARCHAR(30) NOT NULL,
   `wohnort` VARCHAR(30) NOT NULL,
   `adresse` VARCHAR(30) NOT NULL,
+   `abiturnote` double NOT NULL,
   `geburtsdatum` DATE NOT NULL,
   `studiengang_id` INT(11) NOT NULL,
   `mat_nr` INT(11) NULL DEFAULT NULL,
@@ -93,13 +95,14 @@ DROP TABLE IF EXISTS `informationssystem`.`immatrikulationsverfahren_status` ;
 
 CREATE TABLE IF NOT EXISTS `informationssystem`.`immatrikulationsverfahren_status` (
   `unterlagen_vollstaendig` TINYINT(1) NOT NULL,
+  `immatrikulation_id` INTEGER NOT NULL,
   `zahlung_status` TINYINT(1) NOT NULL,
   `zulassung_status` TINYINT(1) NOT NULL,
   `bewerbungseingang` DATE NOT NULL,
   `status_informationen` VARCHAR(100) NULL DEFAULT NULL,
   `bewerber_id` INT(11) NOT NULL,
   `unterlagen_id` INT(11) NOT NULL,
-  PRIMARY KEY (`bewerber_id`, `unterlagen_id`),
+  PRIMARY KEY (`immatrikulation_id`),
   INDEX `fk_user_detail_user` (`bewerber_id` ASC) VISIBLE,
   INDEX `fk_immatrikulationsverfahren_status_bewerbungsunterlagen1_idx` (`unterlagen_id` ASC) VISIBLE,
   CONSTRAINT `fk_user_detail_user`

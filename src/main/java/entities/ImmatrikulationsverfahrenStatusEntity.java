@@ -74,28 +74,7 @@ public class ImmatrikulationsverfahrenStatusEntity {
         this.zulassungStatus = zulassungStatus;
     }
 
-    @Id
-    @Column(name = "bewerber_id", nullable = false)
-    public Integer getBewerberId() {
-        return bewerberId;
-    }
-
-    public void setBewerberId(Integer bewerberId) {
-        this.bewerberId = bewerberId;
-    }
-
-    @Id
-    @Column(name = "unterlagen_id", nullable = false)
-    public Integer getUnterlagenId() {
-        return unterlagenId;
-    }
-
-    public void setUnterlagenId(Integer unterlagenId) {
-        this.unterlagenId = unterlagenId;
-    }
-
     @ManyToOne
-    @PrimaryKeyJoinColumn(name = "bewerber_id", referencedColumnName = "bewerber_id")
     @JoinColumn(name = "bewerber_id", referencedColumnName = "bewerber_id", nullable = false)
     public BewerberEntity getBewerberByBewerberId() {
         return bewerberByBewerberId;
@@ -106,7 +85,6 @@ public class ImmatrikulationsverfahrenStatusEntity {
     }
 
     @ManyToOne
-    @PrimaryKeyJoinColumn(name = "unterlagen_id", referencedColumnName = "unterlagen_id")
     @JoinColumn(name = "unterlagen_id", referencedColumnName = "unterlagen_id", nullable = false)
     public BewerbungsunterlagenEntity getBewerbungsunterlagenByUnterlagenId() {
         return bewerbungsunterlagenByUnterlagenId;

@@ -7,100 +7,148 @@
             <!-- Control zum Upload einer Datei -->
         </div>
     </div>
-    <h3> Bewerbungsdaten eingeben </h3>
+    <section>
+
     <div class="control-group">
-        <label class="control-label">Studiengang auswählen: </label>
+        <label class="control-label col-md-8" for="studiengangId">Studiengang auswählen: </label>
+        <div class="col-md-4">
         <select cam-variable-name="studiengangName"
                 cam-variable-type="String"
-                cam-choices="studiengangListe">
+                cam-choices="studiengangListe"
+                class="form-control"
+                id="studiengangId"
+                />
         </select>
     </div>
+    </div>
 
-    <div class="container">
-        <div class="control-box">
-            <label for="vornameid">Vorname:</label>
+    <div class="form-group">
+            <label class="control-label col-md-4" for="vornameid">Vorname:</label>
+            <div class="col-md-8">
             <input type="text" id="vornameid"
                    cam-variable-name="vorname"
-                   cam-variable-type="String">
+                   cam-variable-type="String"
+                   class="form-control"
+                   />
+        </div>
+    </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4" for="nachnameId">Nachname:</label>
+            <div class="col-md-8">
+                <input type="text" id="nachnameId"
+                       cam-variable-name="nachname"
+                       cam-variable-type="String"
+                       class="form-control"
+                       />
+            </div>
         </div>
 
-    <div class="control-group">
-        <label for="nachnameId">Nachname:</label>
-        <input type="text" id="nachnameId"
-               cam-variable-name="nachname"
-               cam-variable-type="String">
-    </div>
 
 
-    <div class="control-group">
-        <label for="emailid">E-Mail:</label>
-        <input type="text" id="emailid"
-               cam-variable-name="email"
-               cam-variable-type="String">
-    </div>
+        <div class="form-group">
+            <label class="control-label col-md-4" for="emailid">E-Mail:</label>
+            <div class="col-md-8">
+                <input type="text" id="emailid"
+                       cam-variable-name="email"
+                       cam-variable-type="String"
+                       class="form-control"
+                       />
+            </div>
+        </div>
 
 
-    <div class="control-group">
-        <label for="geburtsortid">Geburtsort:</label>
-        <input type="text" id="geburtsortid"
-               cam-variable-name="geburtsort"
-               cam-variable-type="String">
-    </div>
+        <div class="form-group">
+            <label class="control-label col-md-4" for="geburtsortid">Geburtsort:</label>
+            <div class="col-md-8">
+                <input type="text" id="geburtsortid"
+                       cam-variable-name="geburtsort"
+                       cam-variable-type="String"
+                       class="form-control"
+                       />
+            </div>
+        </div>
 
 
-    <div class="control-group">
-        <label for="nationalitaetid">Nationalität:</label>
-        <input type="text" id="nationalitaetid"
-               cam-variable-name="nationalitaet"
-               cam-variable-type="String">
-    </div>
+        <div class="form-group">
+            <label class="control-label col-md-4" for="nationalitaetid">Nationalität:</label>
+            <div class="col-md-8">
+                <input type="text" id="nationalitaetid"
+                       cam-variable-name="nationalitaet"
+                       cam-variable-type="String"
+                       class="form-control"
+                       />
+            </div>
+        </div>
 
 
-
-    <div class="control-group">
-        <label for="adresseid">Adresse:</label>
-        <input type="text" id="adresseid"
-               cam-variable-name="adresse"
-               cam-variable-type="String">
-    </div>
-
-
-    <div class="control-group">
-        <label for="geburtsdatumid">Geburtsdatum:</label>
-        <input type="text" id="geburtsdatumid"
-               cam-variable-name="geburtsdatum"
-               cam-variable-type="String">
-    </div>
+        <div class="form-group">
+            <label class="control-label col-md-4" for="adresseid">Adresse:</label>
+            <div class="col-md-8">
+                <input type="text" id="adresseid"
+                       cam-variable-name="adresse"
+                       cam-variable-type="String"
+                       class="form-control"
+                       />
+            </div>
+        </div>
 
 
-    <div class="control-group">
-        <label for="wohnortid">Wohnort:</label>
-        <input type="text" id="wohnortid"
-               cam-variable-name="wohnort"
-               cam-variable-type="String">
-    </div>
+        <div class="form-group">
+            <label class="control-label col-md-4" for="geburtsdatumid">Geburtsdatum:</label>
+            <div class="col-md-8">
+                <input type="text" id="geburtsdatumid"
+                       cam-variable-name="geburtsdatum"
+                       cam-variable-type="String"
+                       class="form-control"
+                       />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4" for="wohnortid">Wohnort:</label>
+            <div class="col-md-8">
+                <input type="text" id="wohnortid"
+                       cam-variable-name="wohnort"
+                       cam-variable-type="String"
+                       class="form-control"
+                       />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4"
+                   for="abiturnote">Note des Hochschulabschluss: </label>
+            <div class="col-md-8">
+                <input cam-variable-name="abiturnote"
+                       cam-variable-type="Double"
+                       id="abiturnote"
+                       name="amount"
+                       type="text"
+                       class="form-control"
+                       />
+                <div class="help">
+                    (z.B. &quot;2.3&quot;)
+                </div>
+            </div>
+
+                <div class="form-group">
+                    <label  class="control-label col-md-4" for="sonstigeInformationenid">Sonstige Informationen:</label>
+                    <div class="col-md-8">
+                    <textarea type="text" id="sonstigeInformationenid"
+                           cam-variable-name="sonstigeInformationen"
+                           cam-variable-type="String"
+                           class="form-control"
+                    />
+                </div>
+                </div>
 
 
-    <div class="control-group">
-        <label for="abiturnoteid">Abiturnote:</label>
-        <input type="text" id="abiturnoteid"
-               cam-variable-name="abiturnote"
-               cam-variable-type="Long">
-    </div>
+        </div>
+    </section>
+
+            <script cam-script type="text/form-script">
 
 
-    <div class="control-group">
-        <label for="sonstigeInformationenid">Sonstige Informationen:</label>
-        <input type="text" id="sonstigeInformationenid"
-               cam-variable-name="sonstigeInformationen"
-               cam-variable-type="String">
-    </div>
-
-    </div>
-
-
-    <script cam-script type="text/form-script">
-
-
-    </script>
+            </script>
 </form>

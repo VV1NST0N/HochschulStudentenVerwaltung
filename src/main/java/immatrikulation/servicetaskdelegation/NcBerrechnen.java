@@ -15,18 +15,18 @@ public class NcBerrechnen implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         Integer freiePlätze = (Integer) delegateExecution.getVariable("freiePlaetze");
-        List<String> coursesList = (List<String>) delegateExecution.getVariable("studiengangListe");
-        Map<String, Long> coursesNcMap = new LinkedHashMap<>();
+        Map<String, Map<String,Integer>> coursesWithNC = (Map<String, Map<String, Integer>>) delegateExecution.getVariable("kurseMitNc");
+        Map<String, Double> coursesNcMap = new HashMap<>();
         CourseNcCalc courseNcCalc = new CourseNcCalc();
-        for (String s: coursesList) {
+        for ( String s : coursesWithNC.keySet()) {
             StudiengangDAO studiengangDAO = new StudiengangDAO();
             StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang(s);
             Collection<BewerberEntity> bewerber = studiengangEntity.getBewerbersByStudiengangId();
-            LinkedList<Long> grades = new LinkedList<>();
+            LinkedList<Double> grades = new LinkedList<>();
             for (BewerberEntity bewerberEntity : bewerber) {
                 grades.add(bewerberEntity.getAbiturnote());
             }
-            Long nc = courseNcCalc.calculateNc(grades,freiePlätze);
+            Double nc = courseNcCalc.calculateNc(grades,freiePlätze);
             studiengangDAO.updateCourseNcNumber(studiengangEntity, nc);
             coursesNcMap.put(s, nc);
         }

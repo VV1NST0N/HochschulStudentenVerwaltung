@@ -3,14 +3,18 @@ package dataAccess;
 import entities.BewerberEntity;
 import entities.BewerbungsunterlagenEntity;
 import entities.ImmatrikulationsverfahrenStatusEntity;
+import entities.StudiengangEntity;
 import helper.IdGenerator;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.LinkedList;
+import java.util.List;
 
-public class ImmatrikulationsAntragDao {
+public class ImmatrikulationsAntragDao extends Dao<ImmatrikulationsverfahrenStatusEntity>{
 
     public void createInitialImmat(BewerberEntity bewerber, BewerbungsunterlagenEntity unterlagen){
         ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity = new ImmatrikulationsverfahrenStatusEntity();
@@ -22,8 +26,6 @@ public class ImmatrikulationsAntragDao {
         immatrikulationsverfahrenStatusEntity.setBewerberByBewerberId(bewerber);
         immatrikulationsverfahrenStatusEntity.setBewerbungsunterlagenByUnterlagenId(unterlagen);
         immatrikulationsverfahrenStatusEntity.setImmatId(IdGenerator.createUniqueIds());
-        immatrikulationsverfahrenStatusEntity.setBewerberId(immatrikulationsverfahrenStatusEntity.getBewerberByBewerberId().getBewerberId());
-        immatrikulationsverfahrenStatusEntity.setUnterlagenId(immatrikulationsverfahrenStatusEntity.getBewerbungsunterlagenByUnterlagenId().getUnterlagenId());
 
         insertImmatrikulation(immatrikulationsverfahrenStatusEntity);
     }
@@ -35,13 +37,35 @@ public class ImmatrikulationsAntragDao {
         entityManager.getTransaction().commit();
     }
 
-    public void  insertDocumentsComplete(ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity){
+    public ImmatrikulationsverfahrenStatusEntity getImmatByBewerber(Integer bewerberId, Integer unterlagenId){
+        EntityManager em = ConnectionFac.init();
+        Query query = em.createQuery("SELECT p FROM ImmatrikulationsverfahrenStatusEntity p WHERE p.bewerberByBewerberId.bewerberId = :name AND p.bewerbungsunterlagenByUnterlagenId.unterlagenId = :unterlagen");
+        query.setParameter("name", bewerberId);
+        query.setParameter("unterlagen", unterlagenId);
+
+        List<ImmatrikulationsverfahrenStatusEntity> resultList = query.getResultList();
+        for (ImmatrikulationsverfahrenStatusEntity p : resultList) {
+            if(p.getBewerberByBewerberId().getBewerberId().equals(bewerberId) ){
+                return p;
+            }
+        }
+        return null;
+
+    }
+
+    public void updateImmat(ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity){
         EntityManager entityManager = ConnectionFac.init();
-
-
         entityManager.getTransaction().begin();
         entityManager.persist(immatrikulationsverfahrenStatusEntity);
         entityManager.getTransaction().commit();
 
+    }
+
+    @Override
+    public ImmatrikulationsverfahrenStatusEntity getEntryById(Integer id) {
+            EntityManager entityManager = ConnectionFac.init();
+            ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity = entityManager.find(ImmatrikulationsverfahrenStatusEntity.class, id);
+
+            return immatrikulationsverfahrenStatusEntity;
     }
 }
