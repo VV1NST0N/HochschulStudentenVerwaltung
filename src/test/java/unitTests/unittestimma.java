@@ -202,7 +202,7 @@ public class unittestimma {
 		String s = "test";
 
 
-		variables.put("KRANKENVERSICHERUNG_DOC", new File("test"));
+		variables.put("KRANKENVERSICHERUNG_DOC", file);
 
 
 

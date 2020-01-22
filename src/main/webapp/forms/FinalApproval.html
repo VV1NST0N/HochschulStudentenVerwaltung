@@ -108,63 +108,64 @@
             <input cam-variable-name="abiturnote"
                    cam-variable-type="Double"
                    type="text"
-                   name="wohnort"
+                   name="abiturnote"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Status der Zulassung: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="zulassungErteilt"
+                   type="String"
+                   name="zulassung"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Bewerbungseingang: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="bewerbungsEingang"
+                   type="String"
+                   name="bewerbungseingang"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Status der Zahlung: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="zahlungErolgt"
+                   type="String"
+                   name="zahlungErolgt"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Status der Vollständigkeit: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="vollstaendigeUnterlagen"
+                   type="String"
+                   name="vollstaendigeUnterlagen"
                    readonly="true"
                    class="form-control" />
         </div>
     </div>
 
     <label for="korrektheit">
-       Korrektheit der Daten:
+        Zulassung erteilen:
     </label>
-    <input id="korrektheit" class="form-control" name="korrektheit" cam-variable-type="Boolean"
-           cam-variable-name="korrektheitDaten" type="checkbox">
+    <input id="korrektheit" class="form-control" name="zulassungsErteilung" cam-variable-type="Boolean"
+           cam-variable-name="pruefungErfolgreich" type="checkbox">
 
-    <div class="col-xs-12">
-        <div class="form-group">
-            <label for="hochschulzeugnis">
-                Nachweis der Hochschulreife
-            </label>
-            <input id="hochschulzeugnis" class="form-control" name="hochschulzeugnis" cam-variable-type="Boolean"
-                   cam-variable-name="hochschulzeugnis" type="checkbox">
-            <div class="form-control-static col-md-10">
-                <a cam-file-download="HOCHSCHULZEUGNIS_DOC"></a>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="krankenversicherung">
-                Krankenversicherungsnachweis
-            </label>
-            <input id="krankenversicherung" class="form-control" name="krankenversicherung" cam-variable-type="Boolean"
-                   cam-variable-name="krankenversicherung" type="checkbox">
-            <div class="form-control-static col-md-10">
-                <a cam-file-download="KRANKENVERSICHERUNG_DOC"></a>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="immatrikulationsantrag">
-                Immatrikulationsantrag
-            </label>
-            <input id="immatrikulationsantrag" class="form-control" name="immatrikulationsantrag" cam-variable-type="Boolean"
-                   cam-variable-name="immatrikulationsantrag" type="checkbox">
-            <div class="form-control-static col-md-10">
-                <a cam-file-download="IMMATRIKULATIONSANTRAG_DOC"></a>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="bewerbungsschreiben">
-                Bewerbungsschreiben
-            </label>
-            <input id="bewerbungsschreiben" class="form-control" name="bewerbungsschreiben" cam-variable-type="Boolean"
-                   cam-variable-name="bewerbungsschreiben" type="checkbox">
-            <div class="form-control-static col-md-10">
-                <a cam-file-download="BEWERBUNGSSCHREIBEN_DOC"></a>
-            </div>
-        </div>
-    </div>
     <script cam-script type="text/form-script">
           // custom JavaScript goes here
 
     </script>
 </form>
-      

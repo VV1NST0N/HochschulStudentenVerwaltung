@@ -1,4 +1,4 @@
-package immatrikulation.servicetaskdelegation;
+package immatrikulation.servicetaskdelegation.applicantRegistration;
 
 import dataAccess.UnterlagenDAO;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class FehlendeUnterlagenAnfordern implements JavaDelegate {
+public class RequestRequiredDocuments implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         String BASE_PATH = System.getProperty("user.home") + "\\Documents\\Bewerbungsunterlagen\\";

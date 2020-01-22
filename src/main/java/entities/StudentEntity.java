@@ -2,17 +2,18 @@ package entities;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "student", schema = "informationssystem")
+@Table(name = "student", schema = "informationssystem", catalog = "")
 public class StudentEntity extends Person {
     private Integer matNr;
     private String vorname;
     private String nachname;
     private String adresse;
-    private Date geburtsdatum;
+    private LocalDate geburtsdatum;
     private String geburtsort;
     private String email;
     private Collection<StudentStudiengangEntity> studentStudiengangsByMatNr;
@@ -64,11 +65,11 @@ public class StudentEntity extends Person {
 
     @Basic
     @Column(name = "geburtsdatum", nullable = false)
-    public Date getGeburtsdatum() {
+    public LocalDate getGeburtsdatum() {
         return geburtsdatum;
     }
 
-    public void setGeburtsdatum(Date geburtsdatum) {
+    public void setGeburtsdatum(LocalDate geburtsdatum) {
         this.geburtsdatum = geburtsdatum;
     }
 
@@ -111,7 +112,8 @@ public class StudentEntity extends Person {
         return Objects.hash(matNr, vorname, nachname, adresse, geburtsdatum, geburtsort, email);
     }
 
-    @OneToMany(mappedBy = "studentByMatNr")
+
+    @OneToMany(mappedBy = "studentEntities")
     public Collection<StudentStudiengangEntity> getStudentStudiengangsByMatNr() {
         return studentStudiengangsByMatNr;
     }

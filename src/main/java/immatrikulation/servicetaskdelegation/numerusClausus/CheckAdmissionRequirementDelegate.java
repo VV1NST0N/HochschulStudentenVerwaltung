@@ -1,5 +1,5 @@
 
-package immatrikulation.servicetaskdelegation;
+package immatrikulation.servicetaskdelegation.numerusClausus;
 
 import dataAccess.StudiengangDAO;
 import entities.StudiengangEntity;

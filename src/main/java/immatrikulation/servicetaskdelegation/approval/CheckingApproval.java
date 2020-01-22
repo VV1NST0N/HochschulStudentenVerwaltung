@@ -1,11 +1,11 @@
-package immatrikulation.servicetaskdelegation;
+package immatrikulation.servicetaskdelegation.approval;
 
 import dataAccess.ImmatrikulationsAntragDao;
 import entities.ImmatrikulationsverfahrenStatusEntity;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-public class CheckingZulassung implements JavaDelegate {
+public class CheckingApproval implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
        Integer bewerberId = (Integer) delegateExecution.getVariable("bewerberId");
@@ -16,7 +16,7 @@ public class CheckingZulassung implements JavaDelegate {
 
         if (immat.getUnterlagenVollstaendig() == true){
             immat.setZulassungStatus(true);
-            immatrikulationsAntragDao.updateImmat(immat);
+            immatrikulationsAntragDao.updateEntity(immat);
         }
     }
 }

@@ -1,6 +1,7 @@
 package dataAccess;
 
 import entities.BewerbungsunterlagenEntity;
+import entities.StudiengangEntity;
 import helper.IdGenerator;
 
 import javax.persistence.EntityManager;
@@ -8,7 +9,7 @@ import javax.persistence.Query;
 import java.util.List;
 import java.util.Map;
 
-public class UnterlagenDAO {
+public class UnterlagenDAO extends Dao<BewerbungsunterlagenEntity>{
 
     public BewerbungsunterlagenEntity createInitialUnterlagen(){
         BewerbungsunterlagenEntity bewerbungsunterlagenEntity = new BewerbungsunterlagenEntity();
@@ -64,5 +65,13 @@ public class UnterlagenDAO {
         unterlagen.setImmatrikulationsantragLocation(unterlagenLocMap.get("immatrikulationsantrag"));
         unterlagen.setBewerbungsschreibenLocation(unterlagenLocMap.get("bewerbungsschreiben"));
         entityManager.getTransaction().commit();
+    }
+
+    @Override
+    public BewerbungsunterlagenEntity getEntryById(Integer id) {
+        EntityManager entityManager = ConnectionFac.init();
+        BewerbungsunterlagenEntity bewerbungsunterlagenEntity = entityManager.find(BewerbungsunterlagenEntity.class, id);
+
+        return bewerbungsunterlagenEntity;
     }
 }

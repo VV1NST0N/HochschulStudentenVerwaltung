@@ -1,4 +1,4 @@
-package immatrikulation.tasks;
+package immatrikulation.servicetaskdelegation.numerusClausus;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -18,7 +18,9 @@ public class CourseNcCalc {
         if (db != null) {
             if ( bewerberNoten.size()> freiePlätze){
                 bewerberNoten.removeFirst();
-                cutListByLastElement(bewerberNoten, freiePlätze);
+                if(bewerberNoten.size()> freiePlätze){
+                    cutListByLastElement(bewerberNoten, freiePlätze);
+                }
             }
             return bewerberNoten;
         }

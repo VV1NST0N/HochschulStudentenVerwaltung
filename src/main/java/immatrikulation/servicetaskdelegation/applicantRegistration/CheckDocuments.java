@@ -1,4 +1,4 @@
-package immatrikulation.servicetaskdelegation;
+package immatrikulation.servicetaskdelegation.applicantRegistration;
 
 import dataAccess.ImmatrikulationsAntragDao;
 import dataAccess.UnterlagenDAO;
@@ -7,7 +7,7 @@ import entities.ImmatrikulationsverfahrenStatusEntity;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-public class CheckUnterlagen implements JavaDelegate {
+public class CheckDocuments implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
@@ -26,7 +26,7 @@ public class CheckUnterlagen implements JavaDelegate {
         if (unterlagenEntity.getBewerbungsschreiben().equals(true) && unterlagenEntity.getHochschulreife().equals(true) && unterlagenEntity.getImmatrikulationsantrag().equals(true) && unterlagenEntity.getKrankenversicherung().equals(true)){
             ImmatrikulationsAntragDao immatrikulationsverfahrenDao = new ImmatrikulationsAntragDao();
             immatrikulationsverfahrenStatusEntity.setUnterlagenVollstaendig(true);
-            immatrikulationsverfahrenDao.updateImmat(immatrikulationsverfahrenStatusEntity);
+            immatrikulationsverfahrenDao.updateEntity(immatrikulationsverfahrenStatusEntity);
             return true;
         }else {
             return false;

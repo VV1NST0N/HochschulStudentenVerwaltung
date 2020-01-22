@@ -1,15 +1,13 @@
-package immatrikulation.servicetaskdelegation;
+package immatrikulation.servicetaskdelegation.approval;
 
 import dataAccess.StudiengangDAO;
 import entities.StudiengangEntity;
-import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-import java.util.List;
 import java.util.Map;
 
-public class ZulassungPrüfen implements JavaDelegate {
+public class CheckRegistrationRequirements implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         Map<String, Double> ncCourses = (Map<String, Double>) delegateExecution.getVariable("ccsOfAllCourses");

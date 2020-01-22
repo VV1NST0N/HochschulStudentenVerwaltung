@@ -9,29 +9,43 @@
     </div>
     <section>
 
-    <div class="control-group">
-        <label class="control-label col-md-8" for="studiengangId">Studiengang auswählen: </label>
-        <div class="col-md-4">
-        <select cam-variable-name="studiengangName"
-                cam-variable-type="String"
-                cam-choices="studiengangListe"
-                class="form-control"
-                id="studiengangId"
+        <div class="control-group">
+            <label class="control-label col-md-8" for="studiengangId">Studiengang auswählen: </label>
+            <div class="col-md-4">
+                <select cam-variable-name="studiengangName"
+                        cam-variable-type="String"
+                        cam-choices="studiengangListe"
+                        class="form-control"
+                        id="studiengangId"
                 />
-        </select>
-    </div>
-    </div>
+                </select>
+            </div>
+        </div>
 
-    <div class="form-group">
+        <div class="form-group">
+            <label class="control-label col-md-4" for="anredeId">Anrede: </label>
+            <div class="col-md-8">
+                <select type="text" id="anredeId"
+                        cam-variable-name="gender"
+                        cam-variable-type="String"
+                        class="form-control">
+                    <option>Frau</option>
+                    <option>Herr</option>
+                    <option>Divers</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label class="control-label col-md-4" for="vornameid">Vorname:</label>
             <div class="col-md-8">
-            <input type="text" id="vornameid"
-                   cam-variable-name="vorname"
-                   cam-variable-type="String"
-                   class="form-control"
-                   />
+                <input type="text" id="vornameid"
+                       cam-variable-name="vorname"
+                       cam-variable-type="String"
+                       class="form-control"
+                       required/>
+            </div>
         </div>
-    </div>
 
         <div class="form-group">
             <label class="control-label col-md-4" for="nachnameId">Nachname:</label>
@@ -40,10 +54,9 @@
                        cam-variable-name="nachname"
                        cam-variable-type="String"
                        class="form-control"
-                       />
+                       required/>
             </div>
         </div>
-
 
 
         <div class="form-group">
@@ -53,7 +66,7 @@
                        cam-variable-name="email"
                        cam-variable-type="String"
                        class="form-control"
-                       />
+                       required/>
             </div>
         </div>
 
@@ -65,7 +78,18 @@
                        cam-variable-name="geburtsort"
                        cam-variable-type="String"
                        class="form-control"
-                       />
+                       required/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4" for="geburtsdatumid">Geburtsdatum:</label>
+            <div class="col-md-8">
+                <input type="text" id="geburtsdatumid"
+                       cam-variable-name="geburtsdatum"
+                       cam-variable-type="String"
+                       class="form-control"
+                       required/>
             </div>
         </div>
 
@@ -77,42 +101,31 @@
                        cam-variable-name="nationalitaet"
                        cam-variable-type="String"
                        class="form-control"
-                       />
+                       required/>
             </div>
         </div>
 
 
         <div class="form-group">
-            <label class="control-label col-md-4" for="adresseid">Adresse:</label>
+            <label class="control-label col-md-4" for="adresseid">Straße und Hausnummer:</label>
             <div class="col-md-8">
                 <input type="text" id="adresseid"
                        cam-variable-name="adresse"
                        cam-variable-type="String"
                        class="form-control"
-                       />
+                       required/>
             </div>
         </div>
 
 
         <div class="form-group">
-            <label class="control-label col-md-4" for="geburtsdatumid">Geburtsdatum:</label>
-            <div class="col-md-8">
-                <input type="text" id="geburtsdatumid"
-                       cam-variable-name="geburtsdatum"
-                       cam-variable-type="String"
-                       class="form-control"
-                       />
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-4" for="wohnortid">Wohnort:</label>
+            <label class="control-label col-md-4" for="wohnortid">Wohnort und PLZ:</label>
             <div class="col-md-8">
                 <input type="text" id="wohnortid"
                        cam-variable-name="wohnort"
                        cam-variable-type="String"
                        class="form-control"
-                       />
+                       required/>
             </div>
         </div>
 
@@ -126,29 +139,33 @@
                        name="amount"
                        type="text"
                        class="form-control"
-                       />
+                       required/>
                 <div class="help">
                     (z.B. &quot;2.3&quot;)
                 </div>
             </div>
 
-                <div class="form-group">
-                    <label  class="control-label col-md-4" for="sonstigeInformationenid">Sonstige Informationen:</label>
-                    <div class="col-md-8">
+            <p ng-show="invoiceForm.abiturnote.$error.camVariableType">
+                Note: Input must be a 'Double'.
+            </p>
+
+            <div class="form-group">
+                <label class="control-label col-md-4" for="sonstigeInformationenid">Sonstige Informationen:</label>
+                <div class="col-md-8">
                     <textarea type="text" id="sonstigeInformationenid"
-                           cam-variable-name="sonstigeInformationen"
-                           cam-variable-type="String"
-                           class="form-control"
+                              cam-variable-name="sonstigeInformationen"
+                              cam-variable-type="String"
+                              class="form-control"
                     />
                 </div>
-                </div>
+            </div>
 
 
         </div>
     </section>
 
-            <script cam-script type="text/form-script">
+    <script cam-script type="text/form-script">
 
 
-            </script>
+    </script>
 </form>

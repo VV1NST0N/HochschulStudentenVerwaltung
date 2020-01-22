@@ -122,7 +122,10 @@ public class StudiengangEntity {
         this.bewerbersByStudiengangId = bewerbersByStudiengangId;
     }
 
-    @OneToMany(mappedBy = "studiengangByStudiengangId")
+
+
+
+    @OneToMany(mappedBy = "studiengangEntities")
     public Collection<StudentStudiengangEntity> getStudentStudiengangsByStudiengangId() {
         return studentStudiengangsByStudiengangId;
     }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BewerberDAO extends Dao<StudiengangEntity> {
+public class BewerberDAO extends Dao<BewerberEntity> {
 
     public void  insertBewerber(BewerberEntity bewerberEntity, String studiengangName){
        EntityManager entityManager = ConnectionFac.init();
@@ -39,10 +39,31 @@ public class BewerberDAO extends Dao<StudiengangEntity> {
     }
 
     @Override
-    public StudiengangEntity getEntryById(Integer id) {
+    public BewerberEntity getEntryById(Integer id) {
         EntityManager entityManager = ConnectionFac.init();
-        StudiengangEntity studiengangEntity = entityManager.find(StudiengangEntity.class, id);
+        BewerberEntity bewerberEntity = entityManager.find(BewerberEntity.class, id);
 
-        return studiengangEntity;
+        return bewerberEntity;
+    }
+
+    @Override
+    public void updateEntity(BewerberEntity entity) {
+        EntityManager entityManager = ConnectionFac.init();
+        entityManager.getTransaction().begin();
+        entityManager.merge(entity);
+        entityManager.getTransaction().commit();
+    }
+
+    public List<Integer> getBewerberIds() {
+
+        EntityManager em = ConnectionFac.init();
+        Query query = em.createQuery("SELECT c FROM BewerberEntity c");
+        List<BewerberEntity> resultList = query.getResultList();
+        List<Integer> bewerberIds = new ArrayList<>();
+        for (BewerberEntity b: resultList) {
+            bewerberIds.add(b.getBewerberId());
+        }
+
+        return bewerberIds;
     }
 }

@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-public class StudiengangDAO {
+public class StudiengangDAO extends Dao<StudiengangEntity>{
 
     public StudiengangEntity getStudiengang(String studiengangName) {
         EntityManager em = ConnectionFac.init();
@@ -49,5 +49,12 @@ public class StudiengangDAO {
         entityManager.getTransaction().commit();
     }
 
+    @Override
+    public StudiengangEntity getEntryById(Integer id) {
+        EntityManager entityManager = ConnectionFac.init();
+        StudiengangEntity studiengangEntity = entityManager.find(StudiengangEntity.class, id);
+
+        return studiengangEntity;
+    }
 
 }

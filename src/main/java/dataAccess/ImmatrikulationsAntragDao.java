@@ -11,6 +11,7 @@ import javax.persistence.Query;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -53,19 +54,19 @@ public class ImmatrikulationsAntragDao extends Dao<ImmatrikulationsverfahrenStat
 
     }
 
-    public void updateImmat(ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity){
-        EntityManager entityManager = ConnectionFac.init();
-        entityManager.getTransaction().begin();
-        entityManager.persist(immatrikulationsverfahrenStatusEntity);
-        entityManager.getTransaction().commit();
 
-    }
 
     @Override
     public ImmatrikulationsverfahrenStatusEntity getEntryById(Integer id) {
             EntityManager entityManager = ConnectionFac.init();
-            ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity = entityManager.find(ImmatrikulationsverfahrenStatusEntity.class, id);
+            return entityManager.find(ImmatrikulationsverfahrenStatusEntity.class, id);
+    }
 
-            return immatrikulationsverfahrenStatusEntity;
+    public List<ImmatrikulationsverfahrenStatusEntity> getImmats() {
+
+        EntityManager em = ConnectionFac.init();
+        Query query = em.createQuery("SELECT c FROM ImmatrikulationsverfahrenStatusEntity c");
+        List<ImmatrikulationsverfahrenStatusEntity> resultList = query.getResultList();
+        return resultList;
     }
 }

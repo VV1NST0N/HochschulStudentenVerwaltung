@@ -1,9 +1,8 @@
-package immatrikulation.servicetaskdelegation;
+package immatrikulation.servicetaskdelegation.numerusClausus;
 
 import dataAccess.StudiengangDAO;
 import entities.BewerberEntity;
 import entities.StudiengangEntity;
-import immatrikulation.tasks.CourseNcCalc;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.bpm.engine.variable.Variables;
@@ -11,7 +10,7 @@ import org.camunda.bpm.engine.variable.value.TypedValue;
 
 import java.util.*;
 
-public class NcBerrechnen implements JavaDelegate {
+public class NcCalculation implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         Integer freiePlätze = (Integer) delegateExecution.getVariable("freiePlaetze");

@@ -1,14 +1,15 @@
 import entities.BewerbungsunterlagenEntity
-import immatrikulation.servicetaskdelegation.CheckUnterlagen
+import immatrikulation.servicetaskdelegation.applicantRegistration.CheckDocuments
 import org.junit.Ignore
 import spock.lang.Specification
+
 @Ignore
-class CheckUnterlagenTest extends Specification {
+class CheckDocumentsTest extends Specification {
 
         def "test check vollständig"(){
         given:
         BewerbungsunterlagenEntity bewerbungsunterlagenEntity = new BewerbungsunterlagenEntity()
-            CheckUnterlagen checkUnterlagen = new CheckUnterlagen()
+        CheckDocuments checkUnterlagen = new CheckDocuments()
             bewerbungsunterlagenEntity.setUnterlagenId(123)
             bewerbungsunterlagenEntity.setKrankenversicherung(true)
             bewerbungsunterlagenEntity.setImmatrikulationsantrag(true)

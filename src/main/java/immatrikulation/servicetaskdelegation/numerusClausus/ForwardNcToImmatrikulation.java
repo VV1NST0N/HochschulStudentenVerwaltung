@@ -1,13 +1,11 @@
-package immatrikulation.servicetaskdelegation;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+package immatrikulation.servicetaskdelegation.numerusClausus;
 
 import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.engine.runtime.MessageCorrelationResult;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
+
+import java.util.HashMap;
+import java.util.Map;
 public class ForwardNcToImmatrikulation implements JavaDelegate {
 
     @Override
@@ -23,9 +21,8 @@ public class ForwardNcToImmatrikulation implements JavaDelegate {
 
         RuntimeService rtm = delegateExecution.getProcessEngineServices().getRuntimeService();
 
-        //TODO send different Maps for different admission time ranges
-        List<MessageCorrelationResult> results = rtm
-                .createMessageCorrelation("studiengaengeNc")
+        //TODO send different Maps for different approval time ranges
+        rtm.createMessageCorrelation("studiengaengeNc")
                 .correlateAllWithResult();
 
 

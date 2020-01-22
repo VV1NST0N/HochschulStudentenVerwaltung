@@ -8,7 +8,7 @@
     <bpmn:endEvent id="EndEvent_16tjh0y">
       <bpmn:incoming>SequenceFlow_1plupx9</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sendTask id="studiengaengeNc" name="NC senden" camunda:asyncAfter="true" camunda:exclusive="false" camunda:class="immatrikulation.servicetaskdelegation.ForwardNcToImmatrikulation">
+    <bpmn:sendTask id="studiengaengeNc" name="NC senden" camunda:asyncAfter="true" camunda:exclusive="false" camunda:class="immatrikulation.servicetaskdelegation.numerusClausus.ForwardNcToImmatrikulation">
       <bpmn:incoming>SequenceFlow_03o8at1</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1plupx9</bpmn:outgoing>
     </bpmn:sendTask>
@@ -26,12 +26,12 @@
       <bpmn:outgoing>SequenceFlow_04crgxw</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_04crgxw" sourceRef="Task_1tcv6gk" targetRef="Task_18dxyb2" />
-    <bpmn:serviceTask id="Task_18dxyb2" name="Pruefe Studiengaenge auf Nc" camunda:class="immatrikulation.servicetaskdelegation.CheckAdmissionRequirementDelegate">
+    <bpmn:serviceTask id="Task_18dxyb2" name="Pruefe Studiengaenge auf Nc" camunda:class="immatrikulation.servicetaskdelegation.numerusClausus.CheckAdmissionRequirementDelegate">
       <bpmn:incoming>SequenceFlow_04crgxw</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_011uesy</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_011uesy" sourceRef="Task_18dxyb2" targetRef="Task_1ar2h0l" />
-    <bpmn:serviceTask id="Task_1ar2h0l" name="NC berrechnen" camunda:class="immatrikulation.servicetaskdelegation.NcBerrechnen">
+    <bpmn:serviceTask id="Task_1ar2h0l" name="NC berrechnen" camunda:class="immatrikulation.servicetaskdelegation.numerusClausus.NcCalculation">
       <bpmn:incoming>SequenceFlow_011uesy</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_03o8at1</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -71,7 +71,7 @@
         <di:waypoint x="290" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="IntermediateCatchEvent_0q0ii85_di" bpmnElement="IntermediateThrowEvent_1gl0ty1">
-        <dc:Bounds x="482" y="99" width="36" height="36" />
+        <dc:Bounds x="462" y="99" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_0cy0ioh_di" bpmnElement="Task_1tcv6gk">
         <dc:Bounds x="590" y="77" width="100" height="80" />
@@ -91,12 +91,12 @@
         <dc:Bounds x="1010" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_0y0vbjg_di" bpmnElement="SequenceFlow_0y0vbjg">
-        <di:waypoint x="518" y="117" />
+        <di:waypoint x="498" y="117" />
         <di:waypoint x="590" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_11clai3_di" bpmnElement="SequenceFlow_11clai3">
         <di:waypoint x="390" y="117" />
-        <di:waypoint x="482" y="117" />
+        <di:waypoint x="462" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="UserTask_0km25j6_di" bpmnElement="Task_0ljnxpo">
         <dc:Bounds x="290" y="77" width="100" height="80" />

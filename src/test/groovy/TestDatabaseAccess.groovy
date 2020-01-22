@@ -1,8 +1,7 @@
-import com.sun.javafx.sg.prism.NGImageView
 import dataAccess.StudiengangDAO
 import entities.StudiengangEntity
 import dataAccess.ConnectionFac
-import immatrikulation.servicetaskdelegation.BewerberErfassung
+import immatrikulation.servicetaskdelegation.BewerberErfassung.BewerberErfassung
 import org.junit.Ignore
 import spock.lang.Specification
 

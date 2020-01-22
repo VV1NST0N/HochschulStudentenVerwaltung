@@ -46,12 +46,12 @@ CREATE TABLE IF NOT EXISTS `informationssystem`.`bewerber` (
   `bewerber_id` INT(11) NOT NULL,
   `nachname` VARCHAR(30) NOT NULL,
   `vorname` VARCHAR(30) NOT NULL,
-  `email` VARCHAR(30) NULL DEFAULT NULL,
-  `geburtsort` VARCHAR(30) NOT NULL,
-  `nationalitaet` VARCHAR(30) NOT NULL,
-  `wohnort` VARCHAR(30) NOT NULL,
-  `adresse` VARCHAR(30) NOT NULL,
-   `abiturnote` double NOT NULL,
+  `email` VARCHAR(50) NULL DEFAULT NULL,
+  `geburtsort` VARCHAR(50) NOT NULL,
+  `nationalitaet` VARCHAR(50) NOT NULL,
+  `wohnort` VARCHAR(80) NOT NULL,
+  `adresse` VARCHAR(80) NOT NULL,
+   `abiturnote` DOUBLE NOT NULL,
   `geburtsdatum` DATE NOT NULL,
   `studiengang_id` INT(11) NOT NULL,
   `mat_nr` INT(11) NULL DEFAULT NULL,
@@ -95,7 +95,7 @@ DROP TABLE IF EXISTS `informationssystem`.`immatrikulationsverfahren_status` ;
 
 CREATE TABLE IF NOT EXISTS `informationssystem`.`immatrikulationsverfahren_status` (
   `unterlagen_vollstaendig` TINYINT(1) NOT NULL,
-  `immatrikulation_id` INTEGER NOT NULL,
+  `immatrikulation_id` INT(11) NOT NULL,
   `zahlung_status` TINYINT(1) NOT NULL,
   `zulassung_status` TINYINT(1) NOT NULL,
   `bewerbungseingang` DATE NOT NULL,
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `informationssystem`.`immatrikulationsverfahren_statu
   CONSTRAINT `fk_immatrikulationsverfahren_status_bewerbungsunterlagen1`
     FOREIGN KEY (`unterlagen_id`)
     REFERENCES `informationssystem`.`bewerbungsunterlagen` (`unterlagen_id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -125,15 +125,29 @@ DROP TABLE IF EXISTS `informationssystem`.`student` ;
 
 CREATE TABLE IF NOT EXISTS `informationssystem`.`student` (
   `mat_nr` INT(11) NOT NULL,
-  `vorname` VARCHAR(30) NOT NULL,
-  `nachname` VARCHAR(30) NOT NULL,
-  `adresse` VARCHAR(40) NOT NULL,
+  `vorname` VARCHAR(80) NOT NULL,
+  `nachname` VARCHAR(80) NOT NULL,
+  `adresse` VARCHAR(80) NOT NULL,
   `geburtsdatum` DATE NOT NULL,
-  `geburtsort` VARCHAR(30) NOT NULL,
-  `wohnort` VARCHAR(30) NOT NULL,
-  `email` VARCHAR(30) NOT NULL,
+  `geburtsort` VARCHAR(80) NOT NULL,
+  `wohnort` VARCHAR(80) NOT NULL,
+  `email` VARCHAR(80) NOT NULL,
   PRIMARY KEY (`mat_nr`),
   UNIQUE INDEX `mat_nr_UNIQUE` (`mat_nr` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `informationssystem`.`student`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `informationssystem`.`zahlungsstatusFremdsystem` ;
+
+CREATE TABLE IF NOT EXISTS `informationssystem`.`zahlungsstatusFremdsystem` (
+  `bewerber_id` INT(11) NOT NULL,
+  `unterlagen_id` INT(20) NOT NULL,
+  `zahlungsstatus` BOOLEAN NOT NULL,
+  PRIMARY KEY (`bewerber_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -144,11 +158,12 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `informationssystem`.`student_studiengang` ;
 
 CREATE TABLE IF NOT EXISTS `informationssystem`.`student_studiengang` (
+	`student_studiengang_id` INT(11) NOT NULL,
   `mat_nr` INT(11) NOT NULL,
   `studiengang_id` INT(11) NOT NULL,
   `aktives_studium` TINYINT(1) NOT NULL,
   `semeser` INT NOT NULL,
-  PRIMARY KEY (`mat_nr`, `studiengang_id`),
+  PRIMARY KEY (`student_studiengang_id`),
   INDEX `studiengang_id` (`studiengang_id` ASC) VISIBLE,
   UNIQUE INDEX `mat_nr_UNIQUE` (`mat_nr` ASC) VISIBLE,
   UNIQUE INDEX `studiengang_id_UNIQUE` (`studiengang_id` ASC) VISIBLE,

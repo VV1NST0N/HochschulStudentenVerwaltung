@@ -4,46 +4,28 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "student_studiengang", schema = "informationssystem", catalog = "")
-@IdClass(StudentStudiengangEntityPK.class)
+@Table(name = "student_studiengang", schema = "informationssystem")
 public class StudentStudiengangEntity {
-    private Integer matNr;
-    private Integer studiengangId;
+    private int studentStudiengangId;
+
+    private StudentEntity studentEntities;
+    private StudiengangEntity studiengangEntities;
     private Boolean aktivesStudium;
-    private StudentEntity studentByMatNr;
-    private StudiengangEntity studiengangByStudiengangId;
-    private Integer semeser;
+    private int semeser;
 
     @Id
-    @Column(name = "mat_nr", nullable = false)
-    public Integer getMatNr() {
-        return matNr;
+    @Column(name = "student_studiengang_id")
+    public int getStudentStudiengangId() {
+        return studentStudiengangId;
     }
 
-    public void setMatNr(int matNr) {
-        this.matNr = matNr;
+    public void setStudentStudiengangId(int studentStudiengangId) {
+        this.studentStudiengangId = studentStudiengangId;
     }
 
-    public void setMatNr(Integer matNr) {
-        this.matNr = matNr;
-    }
-
-    @Id
-    @Column(name = "studiengang_id", nullable = false)
-    public Integer getStudiengangId() {
-        return studiengangId;
-    }
-
-    public void setStudiengangId(int studiengangId) {
-        this.studiengangId = studiengangId;
-    }
-
-    public void setStudiengangId(Integer studiengangId) {
-        this.studiengangId = studiengangId;
-    }
 
     @Basic
-    @Column(name = "aktives_studium", nullable = false)
+    @Column(name = "aktives_studium")
     public Boolean getAktivesStudium() {
         return aktivesStudium;
     }
@@ -52,50 +34,50 @@ public class StudentStudiengangEntity {
         this.aktivesStudium = aktivesStudium;
     }
 
+    @Basic
+    @Column(name = "semeser")
+    public int getSemeser() {
+        return semeser;
+    }
+
+    public void setSemeser(int semeser) {
+        this.semeser = semeser;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         StudentStudiengangEntity that = (StudentStudiengangEntity) o;
-        return Objects.equals(matNr, that.matNr) &&
-                Objects.equals(studiengangId, that.studiengangId) &&
-                Objects.equals(aktivesStudium, that.aktivesStudium);
+        return studentStudiengangId == that.studentStudiengangId &&
+                aktivesStudium == that.aktivesStudium &&
+                semeser == that.semeser;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(matNr, studiengangId, aktivesStudium);
+        return Objects.hash(studentStudiengangId, aktivesStudium, semeser);
     }
 
-    @ManyToOne
-    @PrimaryKeyJoinColumn(name = "mat_nr", referencedColumnName = "mat_nr")
-    @JoinColumn(name = "mat_nr", referencedColumnName = "mat_nr", nullable = false)
-    public StudentEntity getStudentByMatNr() {
-        return studentByMatNr;
-    }
 
-    public void setStudentByMatNr(StudentEntity studentByMatNr) {
-        this.studentByMatNr = studentByMatNr;
-    }
-
-    @ManyToOne
-    @PrimaryKeyJoinColumn(name = "studiengang_id", referencedColumnName = "studiengang_id")
+    @ManyToOne(optional = false)
     @JoinColumn(name = "studiengang_id", referencedColumnName = "studiengang_id", nullable = false)
-    public StudiengangEntity getStudiengangByStudiengangId() {
-        return studiengangByStudiengangId;
+    public StudiengangEntity getStudiengangEntities() {
+        return studiengangEntities;
     }
 
-    public void setStudiengangByStudiengangId(StudiengangEntity studiengangByStudiengangId) {
-        this.studiengangByStudiengangId = studiengangByStudiengangId;
+    public void setStudiengangEntities(StudiengangEntity studiengangEntities) {
+        this.studiengangEntities = studiengangEntities;
     }
 
-    @Basic
-    @Column(name = "semeser", nullable = false)
-    public Integer getSemeser() {
-        return semeser;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "mat_nr", referencedColumnName = "mat_nr", nullable = false)
+    public StudentEntity getStudentEntities() {
+        return studentEntities;
     }
 
-    public void setSemeser(Integer semeser) {
-        this.semeser = semeser;
+    public void setStudentEntities(StudentEntity studentEntities) {
+        this.studentEntities = studentEntities;
     }
 }

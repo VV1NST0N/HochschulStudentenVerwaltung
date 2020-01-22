@@ -1,4 +1,4 @@
-package immatrikulation.servicetaskdelegation;
+package immatrikulation.servicetaskdelegation.applicantRegistration;
 
 import dataAccess.UnterlagenDAO;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
@@ -6,11 +6,10 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.bpm.engine.variable.value.FileValue;
 
 import java.io.*;
-import java.nio.file.Files;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class BewerbungsunterlagenErfassen implements JavaDelegate {
+public class RegistrateApplicantDocuments implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         //TODO implement File Upload

@@ -1,8 +1,7 @@
 package ncBerechnung
 
 import dataAccess.BewerberDAO
-import entities.BewerberEntity
-import immatrikulation.tasks.CourseNcCalc
+import immatrikulation.servicetaskdelegation.numerusClausus.CourseNcCalc
 import spock.lang.Specification
 
 class NcBerechnung extends Specification{
