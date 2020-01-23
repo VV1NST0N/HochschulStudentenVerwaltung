@@ -1,9 +1,12 @@
 package dataAccess;
 
+import dataAccess.Exception.CustomBewerberException;
 import entities.BewerberEntity;
+import entities.StudentEntity;
 import entities.StudiengangEntity;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -65,5 +68,33 @@ public class BewerberDAO extends Dao<BewerberEntity> {
         }
 
         return bewerberIds;
+    }
+
+    public BewerberEntity getApplicantIfAlreadyExistent(String vorname, String nachname, LocalDate geburtsdatum, String wohnort) throws CustomBewerberException {
+        EntityManager em = ConnectionFac.init();
+        Query query = em.createQuery("SELECT c FROM BewerberEntity c");
+        List<BewerberEntity> resultList = query.getResultList();
+
+        if (resultList.size() == 1) {
+            return resultList.get(0);
+        }else if(resultList.size() > 1){
+            throw new CustomBewerberException();
+        }else {
+            return null;
+        }
+
+    }
+
+    public StudentEntity createStudentByBewerber(Integer bewerberId, StudentEntity studentEntity) {
+        BewerberEntity bewerberEntity = getEntryById(bewerberId);
+        studentEntity.setMatNr(bewerberEntity.getMatNr());
+        studentEntity.setAdresse(bewerberEntity.getAdresse());
+        studentEntity.setEmail(bewerberEntity.getEmail());
+        studentEntity.setGeburtsdatum(bewerberEntity.getGeburtsdatum());
+        studentEntity.setGeburtsort(bewerberEntity.getGeburtsort());
+        studentEntity.setNachname(bewerberEntity.getNachname());
+        studentEntity.setVorname(bewerberEntity.getVorname());
+        studentEntity.setWohnort(bewerberEntity.getWohnort());
+        return studentEntity;
     }
 }

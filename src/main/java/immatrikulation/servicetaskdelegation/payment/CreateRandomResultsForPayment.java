@@ -1,4 +1,4 @@
-package immatrikulation.servicetaskdelegation.zahlung;
+package immatrikulation.servicetaskdelegation.payment;
 
 import dataAccess.ImmatrikulationsAntragDao;
 import entities.ImmatrikulationsverfahrenStatusEntity;
@@ -8,7 +8,7 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 import java.util.List;
 import java.util.Random;
 
-public class CreateRandomResultsForZahlung implements JavaDelegate {
+public class CreateRandomResultsForPayment implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         ImmatrikulationsAntragDao immatrikulationsAntragDao = new ImmatrikulationsAntragDao();

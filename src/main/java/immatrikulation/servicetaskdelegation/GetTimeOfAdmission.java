@@ -22,9 +22,10 @@ public class GetTimeOfAdmission implements JavaDelegate {
     public void execute(DelegateExecution delegateExecution) throws Exception {
         StudiengangDAO studiengangDAO = new StudiengangDAO();
         StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang("Mathematik");
-        ManagementService managementService = delegateExecution.getProcessEngineServices().getManagementService();
 
         String admissionDate = studiengangEntity.getZulassungszeitraum().toString() + "T00:00:00";
+        String paymendDate = studiengangEntity.getZahlungszeitraum().toString() + "T00:00:00";
         delegateExecution.setVariable("zulassungszeitraum", admissionDate);
+        delegateExecution.setVariable("zahlungsZeitraum", paymendDate);
     }
 }

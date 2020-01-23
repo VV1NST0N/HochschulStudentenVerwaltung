@@ -1545,39 +1545,51 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="365" parent="287" name="studiengang_id_UNIQUE">
+    <column id="365" parent="287" name="semesterbeginn">
+      <Position>10</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="366" parent="287" name="zahlungszeitraum">
+      <Position>11</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="367" parent="287" name="studiengang_id_UNIQUE">
       <ColNames>studiengang_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="366" parent="287" name="PRIMARY">
+    <key id="368" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>studiengang_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="367" parent="287" name="studiengang_id_UNIQUE">
+    <key id="369" parent="287" name="studiengang_id_UNIQUE">
       <ColNames>studiengang_id</ColNames>
       <UnderlyingIndexName>studiengang_id_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="368" parent="288" name="bewerber_id">
+    <column id="370" parent="288" name="bewerber_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="369" parent="288" name="unterlagen_id">
+    <column id="371" parent="288" name="unterlagen_id">
       <Position>2</Position>
       <DataType>int(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="370" parent="288" name="zahlungsstatus">
+    <column id="372" parent="288" name="zahlungsstatus">
       <Position>3</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="371" parent="288" name="PRIMARY">
+    <key id="373" parent="288" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>bewerber_id</ColNames>
       <Primary>1</Primary>

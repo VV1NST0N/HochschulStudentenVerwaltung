@@ -1,7 +1,6 @@
 package dataAccess;
 
 import entities.StudentStudiengangEntity;
-import entities.ZahlungsstatusfremdsystemEntity;
 
 import javax.persistence.EntityManager;
 

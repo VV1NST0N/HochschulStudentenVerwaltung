@@ -1,5 +1,5 @@
 import entities.BewerbungsunterlagenEntity
-import immatrikulation.servicetaskdelegation.applicantRegistration.CheckDocuments
+import immatrikulation.servicetaskdelegation.approval.CheckDocuments
 import org.junit.Ignore
 import spock.lang.Specification
 

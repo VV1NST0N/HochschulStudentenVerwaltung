@@ -20,8 +20,7 @@ public class ForwardNcToImmatrikulation implements JavaDelegate {
         }
 
         RuntimeService rtm = delegateExecution.getProcessEngineServices().getRuntimeService();
-
-        //TODO send different Maps for different approval time ranges
+        
         rtm.createMessageCorrelation("studiengaengeNc")
                 .correlateAllWithResult();
 

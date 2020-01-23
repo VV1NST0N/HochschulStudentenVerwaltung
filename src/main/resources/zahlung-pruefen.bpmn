@@ -21,7 +21,7 @@
       <bpmn:incoming>SequenceFlow_1331voc</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1331voc" sourceRef="Task_0erwmme" targetRef="EndEvent_1y5smv6" />
-    <bpmn:serviceTask id="Task_17vfqtq" name="Zahlungsstatus" camunda:class="immatrikulation.servicetaskdelegation.zahlung.CreateRandomResultsForZahlung">
+    <bpmn:serviceTask id="Task_17vfqtq" name="Zahlungsstatus" camunda:class="immatrikulation.servicetaskdelegation.payment.CreateRandomResultsForPayment">
       <bpmn:incoming>SequenceFlow_0reihs2</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_04oeaju</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -31,11 +31,11 @@
     </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_01idna6" sourceRef="Task_1yux0sl" targetRef="Task_0pcvjvi" />
     <bpmn:sequenceFlow id="SequenceFlow_0qdyhoh" sourceRef="Task_0pcvjvi" targetRef="Task_0erwmme" />
-    <bpmn:serviceTask id="Task_0pcvjvi" name="Persist Change" camunda:class="immatrikulation.servicetaskdelegation.zahlung.ChangeZahlungByBewerber">
+    <bpmn:serviceTask id="Task_0pcvjvi" name="Persist Change" camunda:class="immatrikulation.servicetaskdelegation.payment.ChangePaymentByApplicant">
       <bpmn:incoming>SequenceFlow_01idna6</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0qdyhoh</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sendTask id="Task_0erwmme" name="Send Event an Prozessinstanzen" camunda:asyncAfter="true" camunda:exclusive="false" camunda:class="immatrikulation.servicetaskdelegation.zahlung.SendUpdateOnZahlung">
+    <bpmn:sendTask id="Task_0erwmme" name="Send Event an Prozessinstanzen" camunda:asyncAfter="true" camunda:exclusive="false" camunda:class="immatrikulation.servicetaskdelegation.payment.SendUpdateOnPayment">
       <bpmn:incoming>SequenceFlow_0qdyhoh</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1331voc</bpmn:outgoing>
     </bpmn:sendTask>

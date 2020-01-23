@@ -4,15 +4,15 @@ import entities.ImmatrikulationsverfahrenStatusEntity;
 
 import javax.persistence.EntityManager;
 
-public class Dao<T> implements DaoTemplate {
+public class Dao<T> {
 
     public void updateEntity(T entity){
-
         EntityManager entityManager = ConnectionFac.init();
         entityManager.getTransaction().begin();
         entityManager.merge(entity);
         entityManager.getTransaction().commit();
     }
+
 
     public  void insertEntity(T entity){
         EntityManager entityManager = ConnectionFac.init();
@@ -20,6 +20,7 @@ public class Dao<T> implements DaoTemplate {
         entityManager.persist(entity);
         entityManager.getTransaction().commit();
     }
+
 
     public void deleteEntry(T entity){
         EntityManager entityManager = ConnectionFac.init();
@@ -31,7 +32,6 @@ public class Dao<T> implements DaoTemplate {
         entityManager.getTransaction().commit();
     }
 
-    @Override
     public T getEntryById(Integer id) {
         return null;
     }

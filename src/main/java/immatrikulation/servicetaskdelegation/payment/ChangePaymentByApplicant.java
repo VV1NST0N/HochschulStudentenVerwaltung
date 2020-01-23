@@ -1,13 +1,11 @@
-package immatrikulation.servicetaskdelegation.zahlung;
+package immatrikulation.servicetaskdelegation.payment;
 
-import dataAccess.FremdSystemDao;
 import dataAccess.ImmatrikulationsAntragDao;
 import entities.ImmatrikulationsverfahrenStatusEntity;
-import entities.ZahlungsstatusfremdsystemEntity;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-public class ChangeZahlungByBewerber implements JavaDelegate {
+public class ChangePaymentByApplicant implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         Integer bewerberId = (Integer) delegateExecution.getVariable("bewerberId");

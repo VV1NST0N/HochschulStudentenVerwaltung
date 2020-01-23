@@ -1,0 +1,57 @@
+<form class="form-horizontal">
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Studiengang: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="studiengangName"
+                   type="String"
+                   name="studiengangName"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Vorname: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="vorname"
+                   type="String"
+                   name="vorname"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Nachname: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="nachname"
+                   type="String"
+                   name="nachname"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">E-Mail: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="email"
+                   type="String"
+                   name="email"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <label for="korrektheit">
+        Zulassungsergebnis:
+    </label>
+    <input id="korrektheit" class="form-control" name="zulassungsErteilung" cam-variable-type="Boolean"
+           cam-variable-name="zulassung" type="checkbox">
+
+    <script cam-script type="text/form-script">
+          // custom JavaScript goes here
+
+    </script>
+</form>

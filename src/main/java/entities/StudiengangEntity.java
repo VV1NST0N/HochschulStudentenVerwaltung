@@ -20,6 +20,8 @@ public class StudiengangEntity {
     private Collection<StudentStudiengangEntity> studentStudiengangsByStudiengangId;
     private LocalDate zulassungszeitraum;
     private Boolean ncNotwendig;
+    private Date semesterbeginn;
+    private Date zahlungszeitraum;
 
     @Id
     @Column(name = "studiengang_id", nullable = false)
@@ -122,9 +124,6 @@ public class StudiengangEntity {
         this.bewerbersByStudiengangId = bewerbersByStudiengangId;
     }
 
-
-
-
     @OneToMany(mappedBy = "studiengangEntities")
     public Collection<StudentStudiengangEntity> getStudentStudiengangsByStudiengangId() {
         return studentStudiengangsByStudiengangId;
@@ -152,5 +151,25 @@ public class StudiengangEntity {
 
     public void setNcNotwendig(Boolean ncNotwendig) {
         this.ncNotwendig = ncNotwendig;
+    }
+
+    @Basic
+    @Column(name = "semesterbeginn")
+    public Date getSemesterbeginn() {
+        return semesterbeginn;
+    }
+
+    public void setSemesterbeginn(Date semesterbeginn) {
+        this.semesterbeginn = semesterbeginn;
+    }
+
+    @Basic
+    @Column(name = "zahlungszeitraum")
+    public Date getZahlungszeitraum() {
+        return zahlungszeitraum;
+    }
+
+    public void setZahlungszeitraum(Date zahlungszeitraum) {
+        this.zahlungszeitraum = zahlungszeitraum;
     }
 }

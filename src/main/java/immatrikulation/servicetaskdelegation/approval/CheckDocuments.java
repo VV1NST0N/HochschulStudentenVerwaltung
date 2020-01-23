@@ -1,4 +1,4 @@
-package immatrikulation.servicetaskdelegation.applicantRegistration;
+package immatrikulation.servicetaskdelegation.approval;
 
 import dataAccess.ImmatrikulationsAntragDao;
 import dataAccess.UnterlagenDAO;
@@ -18,7 +18,7 @@ public class CheckDocuments implements JavaDelegate {
         ImmatrikulationsAntragDao immatrikulationsAntragDao = new ImmatrikulationsAntragDao();
         ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity = immatrikulationsAntragDao.getImmatByBewerber(bewerberId, unterlagenId);
         Boolean vollstaendig = checkVollständigkeit(unterlagenEntity, immatrikulationsverfahrenStatusEntity );
-        
+        System.out.println("Boolean vollsätndig:" + vollstaendig);
         delegateExecution.setVariable("vollstaendig", vollstaendig);
     }
 

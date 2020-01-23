@@ -1,4 +1,4 @@
-package immatrikulation.servicetaskdelegation.zahlung;
+package immatrikulation.servicetaskdelegation.payment;
 
 import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SendUpdateOnZahlung implements JavaDelegate {
+public class SendUpdateOnPayment implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
         Map<String, Object> variables = new HashMap<String, Object>();

@@ -21,15 +21,6 @@ public class UnterlagenDAO extends Dao<BewerbungsunterlagenEntity>{
         return bewerbungsunterlagenEntity;
     }
 
-    public void  insertUnterlagen(BewerbungsunterlagenEntity bewerbungsunterlagenEntity){
-        EntityManager entityManager = ConnectionFac.init();
-
-        entityManager.getTransaction().begin();
-        entityManager.persist(bewerbungsunterlagenEntity);
-        entityManager.getTransaction().commit();
-
-    }
-
     public BewerbungsunterlagenEntity getUnterlagenById(Integer unterlagenId){
             EntityManager em = ConnectionFac.init();
             Query query = em.createQuery("SELECT p FROM BewerbungsunterlagenEntity p WHERE p.unterlagenId = :name");
