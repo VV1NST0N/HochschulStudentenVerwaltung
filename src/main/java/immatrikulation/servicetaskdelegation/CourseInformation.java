@@ -5,10 +5,10 @@ import entities.StudiengangEntity;
 import helper.DateConverter;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+
 import java.util.Date;
 
 public class CourseInformation implements JavaDelegate {
-
 
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {

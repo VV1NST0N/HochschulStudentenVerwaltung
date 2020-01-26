@@ -1,6 +1,6 @@
 package unitTests;
 
-import jdk.nashorn.internal.parser.JSONParser;
+
 import org.apache.ibatis.logging.LogFactory;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.TaskService;
@@ -31,21 +31,16 @@ import java.util.Map;
 
 
 
-
-
-
-import org.junit.Test;
-
 public class unittestimma {
 
 	//init
-	
+
 	@ClassRule
 	@Rule
 	public static ProcessEngineRule rule = TestCoverageProcessEngineRuleBuilder.create().build();
 
 	static {
-		LogFactory.useSlf4jLogging(); // MyBatis
+		LogFactory.useSlf4jLogging();
 	}
 
 	@Before
@@ -55,82 +50,23 @@ public class unittestimma {
 
 	// JUnit-Test für den gesamten Prozess
 	@Test
-	@Deployment(resources = "immatrikulation-prozess.bpmn") // hier die Prozessmodelle aufführen die getest werden sollen
-	public void testProzess() throws ParseException {
-	
-		ProcessInstance pi = processEngine().getRuntimeService().startProcessInstanceByKey("Process_05xnfw5");
-		
-		System.out.println("Prozessinstanz mit der Id "+ pi.getId()+ " gestartet");
-
-		
-		
-		// Usertask
-		
-		
-		TaskService taskService = processEngine().getTaskService();
-
-	
-		String processistanceId = pi.getId();
-	    List<Task> Taskliste = taskService.createTaskQuery().processInstanceId(processistanceId).taskDefinitionKey("Task_03y0lbe").list();
-			
-
-		Task meinTask = Taskliste.get(0);
-		
-		
-		System.out.println("Definition-Key des User-Tasks: "+meinTask.getTaskDefinitionKey());
-
-		
-		System.out.println("Ich bin der Task mit dem Namen: " + meinTask.getName());
-
-		Date datum = new SimpleDateFormat("dd/mm/yyyy").parse("12/12/1732");
-		
-		//mapen
-		Map<String, Object> variables = new HashMap<String, Object>();
-		
-		variables.put("vorname", "pjotr");
-		variables.put("nachname", "boris");
-		variables.put("email", "elite@hans");
-		variables.put("geburtsort", "Dubai");
-		variables.put("nationalitaet", "deutsch");
-		variables.put("adresse", "Kaiserstrasse");
-		variables.put("geburtsdatum", datum);
-		variables.put("sonstigeInformationen", "sachen");
-		variables.put("studiengangName", "Maschinenbau");
-		variables.put("wohnort", "Friedberg");
-		variables.put("abiturnote", (long) 2);
-		
-		
-
-		// Task "completen" und Prozessvariablen aus Map übergeben
-		taskService.complete(meinTask.getId(), variables);
-		
-
-		
-		
-	}
-	
-
-	//Service Task
-	
-	@Test
 	@Deployment(resources = "immatrikulation-prozess.bpmn")
-	public void testTeilanfang() throws ParseException {
-		
+	public void Start() throws ParseException {
 
-		// Prozessinstanz starten vor der Aktivität mit dem Key (=Id des Elements im
-		// Prozessmodell)
-		ProcessInstance pi = processEngine().getRuntimeService().createProcessInstanceByKey("Process_05xnfw5")
-				.startBeforeActivity("Task_03y0lbe").execute();
-			
+		ProcessInstance pi = processEngine().getRuntimeService().startProcessInstanceByKey("Process_05xnfw5");
+
 		System.out.println("Prozessinstanz mit der Id "+ pi.getId()+ " gestartet");
 
-		//////
+
+/////////////////////////////////////////////////////////////////////////////////////
+		//User Task Bewerber Bewerber eintragen
+
 
 		TaskService taskService = processEngine().getTaskService();
 
 
 		String processistanceId = pi.getId();
-		List<Task> Taskliste = taskService.createTaskQuery().processInstanceId(processistanceId).taskDefinitionKey("Task_03y0lbe").list();
+		List<Task> Taskliste = taskService.createTaskQuery().processInstanceId(processistanceId).taskDefinitionKey("Task_1axupvt").list();
 
 
 		Task meinTask = Taskliste.get(0);
@@ -141,48 +77,108 @@ public class unittestimma {
 
 		System.out.println("Ich bin der Task mit dem Namen: " + meinTask.getName());
 
-		Date datum = new SimpleDateFormat("dd/mm/yyyy").parse("12/12/1732");
+		Date datum = new SimpleDateFormat("dd/mm/yyyy").parse("12/12/1799");
 
 		//mapen
 		Map<String, Object> variables = new HashMap<String, Object>();
 
-		variables.put("vorname", "pjotr");
+		variables.put("asignee", "test");
+
+		variables.put("vorname", "pjoter");
 		variables.put("nachname", "boris");
 		variables.put("email", "elite@hans");
-		variables.put("geburtsort", "Dubai");
+		variables.put("geburtsort", "dubai");
 		variables.put("nationalitaet", "deutsch");
 		variables.put("adresse", "Kaiserstrasse");
 		variables.put("geburtsdatum", datum);
 		variables.put("sonstigeInformationen", "sachen");
 		variables.put("studiengangName", "Maschinenbau");
 		variables.put("wohnort", "Friedberg");
-		variables.put("abiturnote", (long) 2);
+
+
+		variables.put("abiturnote", (double) 2.1);
 
 
 
 		// Task "completen" und Prozessvariablen aus Map übergeben
 		taskService.complete(meinTask.getId(), variables);
 
-		
-	}
+
+		/////////////////////////////////////////////////////////////////
+		//User Task prüfe Eintrag und bestätige
+
+		TaskService beer = processEngine().getTaskService();
 
 
-	//Nach bewerber im System eintragen + gateway
-	
-	@Test
-	@Deployment(resources = { "immatrikulation-prozess.bpmn" })
-	public void testteilvorplus() {
-	
-	
-	
+		String processistanceId1 = pi.getId();
+		List<Task> beerliste = beer.createTaskQuery().processInstanceId(processistanceId1).taskDefinitionKey("UserTask_02xyejm").list();
+
+
+		Task beTask = beerliste.get(0);
+
+
+		System.out.println("Definition-Key des User-Tasks: "+beTask.getTaskDefinitionKey());
+
+
+		System.out.println("Ich bin der Task mit dem Namen: " + beTask.getName());
+
+
+
+
+		//mapen
+		Map<String, Object> variabl = new HashMap<String, Object>();
+		Boolean beerfasst = new Boolean (true);
+
+
+		variabl.put("bewerberErfasst", beerfasst);
+
+
+
+
+
+
+		// Task "completen" und Prozessvariablen aus Map übergeben
+		taskService.complete(beTask.getId(), variabl);
+
+
+
+
+	}}
+
+	/*@Test
+	@Deployment(resources = "immatrikulation-prozess.bpmn")
+	public void testTeilvorplus() throws ParseException {
+
+
+		FileValue KRANKENVERSICHERUNG_DOC = new FileValueImpl(ValueType.FILE,"KRANKENVERSICHERUNG_DOC");
+		FileValue HOCHSCHULZEUGNIS_DOC = new FileValueImpl(ValueType.FILE,"HOCHSCHULZEUGNIS_DOCC");
+		Boolean richt = new Boolean (true);
+		Boolean vollstaendig = new Boolean (false);
+
 		ProcessInstance pi = processEngine().getRuntimeService().createProcessInstanceByKey("Process_05xnfw5")
-		  .startBeforeActivity("Task_0x65e39").execute();
+				.startBeforeActivity("ExclusiveGateway_0yi3wg5")
+					.setVariable("bewerberId", 886312122)
+					.setVariable("unterlagenId", 1255812974)
+					.setVariable("studiengangName", "Maschinenbau")
+					.setVariable("HOCHSCHULZEUGNIS_DOC", HOCHSCHULZEUGNIS_DOC)
+					.setVariable("KRANKENVERSICHERUNG_DOC", KRANKENVERSICHERUNG_DOC)
 
-		TaskService taskService = processEngine().getTaskService();
+					.setVariable("korrektheitDaten", richt)
+					.setVariable("vollstaendig" , vollstaendig)
+
+
+				.execute();
+
+		System.out.println("Prozessinstanz mit der Id "+ pi.getId()+ " gestartet");
+
+		////////////////////////////////////////////////////////////////////
+		// User Task Bewerbung prüfen
+
+TaskService taskService = processEngine().getTaskService();
 
 
 		String processistanceId = pi.getId();
-		List<Task> Taskliste = taskService.createTaskQuery().processInstanceId(processistanceId).taskDefinitionKey("Task_0x65e39").list();
+	    List<Task> Taskliste = taskService.createTaskQuery().processInstanceId(processistanceId).taskDefinitionKey("bewerbungPruefen").list();
 
 
 		Task meinTask = Taskliste.get(0);
@@ -197,23 +193,75 @@ public class unittestimma {
 
 		//mapen
 		Map<String, Object> variables = new HashMap<String, Object>();
-		FileValue file = new FileValueImpl(ValueType.FILE,"test.pdf");
-
-		String s = "test";
 
 
-		variables.put("KRANKENVERSICHERUNG_DOC", file);
+		Boolean hochschulzeugnis = new Boolean (true);
+		Boolean krankenversicherung = new Boolean (true);
+		Boolean immatrikulationsantrag = new Boolean (false);
+		Boolean bewerbungsschreiben = new Boolean (false);
 
+
+		variables.put("hochschulzeugnis" , hochschulzeugnis);
+		variables.put("krankenversicherung", krankenversicherung);
+		  variables.put("immatrikulationsantrag", immatrikulationsantrag);
+		  variables.put("bewerbungsschreiben", bewerbungsschreiben);
 
 
 
 		// Task "completen" und Prozessvariablen aus Map übergeben
 		taskService.complete(meinTask.getId(), variables);
 
-	}
-		
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+		//Nachreichen
 
 
-	
-	
-}
+
+		TaskService nachr = processEngine().getTaskService();
+
+
+		String processistanceId1 = pi.getId();
+	    List<Task> nachrliste = nachr.createTaskQuery().processInstanceId(processistanceId1).taskDefinitionKey("Task_0e3uq91").list();
+
+
+		Task nachrTask = nachrliste.get(0);
+
+
+		System.out.println("Definition-Key des User-Tasks: "+nachrTask.getTaskDefinitionKey());
+
+
+		System.out.println("Ich bin der Task mit dem Namen: " + nachrTask.getName());
+
+
+
+
+		//mapen
+		Map<String, Object> variabl = new HashMap<String, Object>();
+
+
+		Boolean bewerbungsschreibenn = new Boolean (true);
+
+
+		FileValue BEWERBUNGSSCHREIBEN_DOC = new FileValueImpl(ValueType.FILE,"BEWERBUNGSSCHREIBEN_DOC");
+
+
+
+
+
+
+		variabl.put("bewerbungsschreiben", bewerbungsschreibenn);
+
+
+		variabl.put("BEWERBUNGSSCHREIBEN_DOC", BEWERBUNGSSCHREIBEN_DOC);
+
+
+
+
+
+		// Task "completen" und Prozessvariablen aus Map übergeben
+		taskService.complete(nachrTask.getId(), variabl); }}
+*/
+
+
+
+

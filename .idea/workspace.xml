@@ -5,61 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f339115a-410a-42d4-868e-2291b00f6483" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/AssignListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/GetCoursesAndAssign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/applicantRegistration/DeleteApplicant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/twitter/SendImmatReminder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/twitter/SendPaymentReminder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/twitter/SendToTwitter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/forms/uploadPersonalausweis.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/48efb7fe-c545-4667-b6cf-1ddd9ddb718b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/48efb7fe-c545-4667-b6cf-1ddd9ddb718b.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.adoc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/sendMail/SendAcceptancePaymentReminder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlScript/Datenbanksetup_HIS.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sqlScript/Datenbanksetup_HIS.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlScript/queries.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sqlScript/queries.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/StudiengängeScript.groovy" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/BewerberDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/BewerberDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/Exception/CustomBewerberException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/ConnectionFac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/ConnectionFac.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/ImmatrikulationsAntragDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/ImmatrikulationsAntragDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/StudentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/StudentStudiengangDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/StudentStudiengangDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/StudiengangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/StudiengangDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dataAccess/UnterlagenDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/UnterlagenDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/BewerbungsunterlagenEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/BewerbungsunterlagenEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/StudentStudiengangEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/StudentStudiengangEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/StudiengangEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/StudiengangEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helper/IdCardGen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/AssignListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/AssignListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/CourseInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/CourseInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/GetAllCourseNamesAsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/GetAllCourseNamesAsList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/GetTimeOfAdmission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/GetTimeOfAdmission.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/applicantRegistration/ApplicantRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/applicantRegistration/ApplicantRegistration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/applicantRegistration/CheckApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/applicantRegistration/CheckApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/applicantRegistration/RegistrateApplicantDocuments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/applicantRegistration/RegistrateApplicantDocuments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/applicantRegistration/RequestRequiredDocuments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/applicantRegistration/RequestRequiredDocuments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/approval/CheckDocuments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/approval/CheckDocuments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/approval/CheckPayments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/approval/CheckPayments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/approval/CheckRegistrationRequirements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/approval/CheckRegistrationRequirements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/approval/FinalApprovalLoadInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/approval/FinalApprovalLoadInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/numerusClausus/CheckAdmissionRequirementDelegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/numerusClausus/CheckAdmissionRequirementDelegate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/numerusClausus/CheckNumerusClausus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/numerusClausus/CheckNumerusClausus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/numerusClausus/CourseNcCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/numerusClausus/CourseNcCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/numerusClausus/CourseNcCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/processingTasks/calcNc/CourseNcCalc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/numerusClausus/ForwardNcToImmatrikulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/numerusClausus/ForwardNcToImmatrikulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/numerusClausus/NcCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/numerusClausus/NcCalculation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/payment/ChangePaymentByApplicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/payment/ChangePaymentByApplicant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/payment/CreateRandomResultsForPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/payment/CreateRandomResultsForPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/sendMail/SendAcceptanceMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/sendMail/SendAcceptanceMail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/sendMail/SendDeclineMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/sendMail/SendDeclineMail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/sendMail/SendMailTemplateClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/processingTasks/sendTasks/SendMailTemplateClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/sendMail/SendPaymentReminderMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/sendMail/SendPaymentReminderMail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/studentCreation/CreateStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/studentCreation/CreateStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/sendMail/SendReminderEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/sendMail/SendReminderEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/studentCreation/GenerateMatNr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/studentCreation/GenerateMatNr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/twitter/SendImmatReminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/twitter/SendImmatReminder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/twitter/SendPaymentReminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/twitter/SendPaymentReminder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/immatrikulation/servicetaskdelegation/twitter/SendToTwitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/processingTasks/sendTasks/SendToTwitter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/immatrikulation-prozess.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/immatrikulation-prozess.bpmn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/numerus-clausus-prozess.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/numerus-clausus-prozess.bpmn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/zahlung-pruefen.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/zahlung-pruefen.bpmn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/forms/FinalApproval.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forms/FinalApproval.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/forms/bewerberErfassen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forms/bewerberErfassen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/forms/checkUnterlagen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forms/checkUnterlagen.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/forms/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forms/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/forms/uploadUnterlagen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forms/uploadUnterlagen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/forms/zulassungBestaetigen.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/forms/zulassungBestaetigen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/groovy/TestDatabaseAccess.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/TestDatabaseAccess.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/groovy/TestIText.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/TestIText.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/TestPdf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/TestPdf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/CheckDocumentsTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/ImmatrikulationDAOTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/TestDatabaseAccess.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/TestIText.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/ncBerechnung/NcBerechnung.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/testGetBewerberIds.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/TestPdf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/unittestimma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/unittestimma.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,10 +150,6 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="dataAccess.Exception" />
-      <recent name="dataAccess" />
-    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="entities" />
       <recent name="" />
@@ -171,6 +158,13 @@
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="test.servicetaskdelegation" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\HochschulStudentenVerwaltung\src\main\webapp\forms\image" />
+      <recent name="C:\dev\HochschulStudentenVerwaltung\src\main\resources\logo" />
+      <recent name="D:\inteng\HochschulStudentenVerwaltung" />
+      <recent name="D:\inteng\HochschulStudentenVerwaltung\src\main\resources\META-INF" />
+      <recent name="D:\inteng\HochschulStudentenVerwaltung\src" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="test.servicetaskdelegation.BewerberErfassungTest" />
@@ -184,25 +178,22 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="immatrikulation.servicetaskdelegation.sendMail" />
       <recent name="immatrikulation.servicetaskdelegation" />
       <recent name="immatrikulation.servicetaskdelegation.applicantRegistration" />
       <recent name="immatrikulation.servicetaskdelegation.twitter" />
       <recent name="immatrikulation.servicetaskdelegation.approval" />
-      <recent name="immatrikulation.servicetaskdelegation.sendMail" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\HochschulStudentenVerwaltung\src\main\java\dataAccess" />
       <recent name="C:\dev\HochschulStudentenVerwaltung\src\main\webapp\forms" />
       <recent name="C:\dev\HochschulStudentenVerwaltung\src\main\resources" />
       <recent name="C:\dev\HochschulStudentenVerwaltung\src\test\java\unitTests" />
       <recent name="C:\dev\HochschulStudentenVerwaltung\src\test\resources" />
-      <recent name="D:\inteng\HochschulStudentenVerwaltung\META-INF" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\dev\HochschulStudentenVerwaltung\src\main\webapp\forms\image" />
-      <recent name="C:\dev\HochschulStudentenVerwaltung\src\main\resources\logo" />
-      <recent name="D:\inteng\HochschulStudentenVerwaltung" />
-      <recent name="D:\inteng\HochschulStudentenVerwaltung\src\main\resources\META-INF" />
-      <recent name="D:\inteng\HochschulStudentenVerwaltung\src" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="dataAccess.Exception" />
+      <recent name="dataAccess" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -210,14 +201,39 @@
       <command value="mvn tomcat7:deploy-only" />
       <command value="mvn deploy-hochschule" />
       <command value="mvn deploy deploy-hochschule" />
-      <command value="mvn tomcat7:redeploy" />
       <command value="mvn tomcat7:deploy" />
       <command value="mvn tomcat7:undeploy" />
+      <command value="mvn tomcat7:redeploy" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestDatabaseAccess.test Twitter is working">
-    <configuration name="TestPdf" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="unitTests.TestPdf" />
+  <component name="RunManager" selected="JUnit.unittestimma.Start">
+    <configuration name="CheckDocumentsTest.test check vollständig" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HochschulStudentenVerwaltung" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CheckDocumentsTest" />
+      <option name="METHOD_NAME" value="test check vollständig" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NcBerechnung.test Nc Berrechnung" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HochschulStudentenVerwaltung" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ncBerechnung.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ncBerechnung" />
+      <option name="MAIN_CLASS_NAME" value="ncBerechnung.NcBerechnung" />
+      <option name="METHOD_NAME" value="test Nc Berrechnung" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="unittestimma.Start" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HochschulStudentenVerwaltung" />
       <extension name="coverage">
         <pattern>
@@ -225,49 +241,32 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestDatabaseAccess.test Database delete Student is working" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HochschulStudentenVerwaltung" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestDatabaseAccess" />
-      <option name="METHOD_NAME" value="test Database delete Student is working" />
+      <option name="PACKAGE_NAME" value="unitTests" />
+      <option name="MAIN_CLASS_NAME" value="unitTests.unittestimma" />
+      <option name="METHOD_NAME" value="Start" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDatabaseAccess.test Twitter is working" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="unittestimma.testProzess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HochschulStudentenVerwaltung" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestDatabaseAccess" />
-      <option name="METHOD_NAME" value="test Twitter is working" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unitTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unitTests" />
+      <option name="MAIN_CLASS_NAME" value="unitTests.unittestimma" />
+      <option name="METHOD_NAME" value="testProzess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDatabaseAccess.test get Studiengänge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HochschulStudentenVerwaltung" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestDatabaseAccess" />
-      <option name="METHOD_NAME" value="test get Studiengänge" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testGetBewerberIds.test get Bewerber Ids" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HochschulStudentenVerwaltung" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testGetBewerberIds" />
-      <option name="METHOD_NAME" value="test get Bewerber Ids" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="Process_05xnfw5.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Hochschul-Studenten-Verwaltung/target/process-test-coverage/unitTests.unittestimma/Process_05xnfw5.html" useBuiltInWebServerPort="true">
+      <method v="2" />
     </configuration>
     <configuration name="deploy-hochschule" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -324,21 +323,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.TestPdf" />
-      <item itemvalue="JUnit.testGetBewerberIds.test get Bewerber Ids" />
-      <item itemvalue="JUnit.TestDatabaseAccess.test get Studiengänge" />
-      <item itemvalue="JUnit.TestDatabaseAccess.test Database delete Student is working" />
-      <item itemvalue="JUnit.TestDatabaseAccess.test Twitter is working" />
       <item itemvalue="Maven.redeploy-hochschule" />
       <item itemvalue="Maven.deploy-hochschule" />
+      <item itemvalue="JUnit.NcBerechnung.test Nc Berrechnung" />
+      <item itemvalue="JUnit.CheckDocumentsTest.test check vollständig" />
+      <item itemvalue="JUnit.unittestimma.testProzess" />
+      <item itemvalue="JavaScript Debug.Process_05xnfw5.html" />
+      <item itemvalue="JUnit.unittestimma.Start" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestDatabaseAccess.test Twitter is working" />
-        <item itemvalue="JUnit.TestDatabaseAccess.test get Studiengänge" />
-        <item itemvalue="JUnit.TestDatabaseAccess.test Database delete Student is working" />
-        <item itemvalue="Application.TestPdf" />
-        <item itemvalue="JUnit.testGetBewerberIds.test get Bewerber Ids" />
+        <item itemvalue="JUnit.unittestimma.Start" />
+        <item itemvalue="JavaScript Debug.Process_05xnfw5.html" />
+        <item itemvalue="JUnit.unittestimma.testProzess" />
+        <item itemvalue="JUnit.CheckDocumentsTest.test check vollständig" />
+        <item itemvalue="JUnit.NcBerechnung.test Nc Berrechnung" />
       </list>
     </recent_temporary>
   </component>
@@ -403,7 +402,7 @@
       <workItem from="1579857468383" duration="26656000" />
       <workItem from="1579892123401" duration="933000" />
       <workItem from="1579940723787" duration="31823000" />
-      <workItem from="1580027276958" duration="18111000" />
+      <workItem from="1580027276958" duration="32898000" />
     </task>
     <servers />
   </component>
@@ -442,6 +441,10 @@
     <state x="-1469" y="81" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579435092366" />
     <state x="361" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1579544758225" />
     <state x="361" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.804@0.0.1536.804" timestamp="1579983179712" />
+    <state x="-1213" y="329" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580075543366">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1213" y="329" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580075543366" />
     <state x="574" y="111" key="#com.intellij.ide.util.MemberChooser" timestamp="1579986402922">
       <screen x="0" y="0" width="1536" height="804" />
     </state>
@@ -472,12 +475,12 @@
       <screen x="0" y="0" width="1536" height="804" />
     </state>
     <state x="392" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.804@0.0.1536.804" timestamp="1579682903769" />
-    <state x="552" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579982465092">
+    <state x="552" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580079590863">
       <screen x="0" y="0" width="1536" height="804" />
     </state>
     <state x="-1230" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579969545785" />
     <state x="552" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1579802008153" />
-    <state x="552" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.804@0.0.1536.804" timestamp="1579982465092" />
+    <state x="552" y="208" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.804@0.0.1536.804" timestamp="1580079590863" />
     <state x="-1230" y="269" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1578742038353">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -490,36 +493,36 @@
       <screen x="0" y="0" width="1536" height="804" />
     </state>
     <state x="509" y="268" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.804@0.0.1536.804" timestamp="1579364829275" />
-    <state x="-1234" y="206" width="570" height="484" key="FileChooserDialogImpl" timestamp="1580057328874">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="549" y="159" width="570" height="484" key="FileChooserDialogImpl" timestamp="1580079915650">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
-    <state x="-1234" y="206" key="FileChooserDialogImpl/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580057328874" />
+    <state x="-1234" y="206" key="FileChooserDialogImpl/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580076628983" />
     <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1579549266378" />
-    <state x="549" y="159" width="570" height="484" key="FileChooserDialogImpl/0.0.1536.804@0.0.1536.804" timestamp="1579891931306" />
-    <state width="1877" height="171" key="GridCell.Tab.0.bottom" timestamp="1580055010403">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="549" y="159" width="570" height="484" key="FileChooserDialogImpl/0.0.1536.804@0.0.1536.804" timestamp="1580079915650" />
+    <state width="1493" height="343" key="GridCell.Tab.0.bottom" timestamp="1580079850473">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.bottom/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580055010403" />
-    <state width="1493" height="247" key="GridCell.Tab.0.bottom/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1579873984373" />
-    <state width="1493" height="171" key="GridCell.Tab.0.bottom/0.0.1536.804@0.0.1536.804" timestamp="1580039505233" />
-    <state width="1877" height="171" key="GridCell.Tab.0.center" timestamp="1580055010402">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="450" key="GridCell.Tab.0.bottom/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580076678114" />
+    <state width="1493" height="171" key="GridCell.Tab.0.bottom/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1580070042417" />
+    <state width="1493" height="343" key="GridCell.Tab.0.bottom/0.0.1536.804@0.0.1536.804" timestamp="1580079850473" />
+    <state width="1493" height="343" key="GridCell.Tab.0.center" timestamp="1580079850472">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.center/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580055010402" />
-    <state width="1493" height="247" key="GridCell.Tab.0.center/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1579873984373" />
-    <state width="1493" height="171" key="GridCell.Tab.0.center/0.0.1536.804@0.0.1536.804" timestamp="1580039505233" />
-    <state width="1877" height="171" key="GridCell.Tab.0.left" timestamp="1580055010402">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="450" key="GridCell.Tab.0.center/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580076678114" />
+    <state width="1493" height="171" key="GridCell.Tab.0.center/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1580070042417" />
+    <state width="1493" height="343" key="GridCell.Tab.0.center/0.0.1536.804@0.0.1536.804" timestamp="1580079850472" />
+    <state width="1493" height="343" key="GridCell.Tab.0.left" timestamp="1580079850471">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.left/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580055010402" />
-    <state width="1493" height="247" key="GridCell.Tab.0.left/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1579873984373" />
-    <state width="1493" height="171" key="GridCell.Tab.0.left/0.0.1536.804@0.0.1536.804" timestamp="1580039505229" />
-    <state width="1877" height="171" key="GridCell.Tab.0.right" timestamp="1580055010403">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="450" key="GridCell.Tab.0.left/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580076678099" />
+    <state width="1493" height="171" key="GridCell.Tab.0.left/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1580070042416" />
+    <state width="1493" height="343" key="GridCell.Tab.0.left/0.0.1536.804@0.0.1536.804" timestamp="1580079850471" />
+    <state width="1493" height="343" key="GridCell.Tab.0.right" timestamp="1580079850472">
+      <screen x="0" y="0" width="1536" height="804" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.right/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580055010403" />
-    <state width="1493" height="247" key="GridCell.Tab.0.right/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1579873984373" />
-    <state width="1493" height="171" key="GridCell.Tab.0.right/0.0.1536.804@0.0.1536.804" timestamp="1580039505233" />
+    <state width="1877" height="450" key="GridCell.Tab.0.right/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580076678114" />
+    <state width="1493" height="171" key="GridCell.Tab.0.right/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1580070042417" />
+    <state width="1493" height="343" key="GridCell.Tab.0.right/0.0.1536.804@0.0.1536.804" timestamp="1580079850472" />
     <state width="1877" height="411" key="GridCell.Tab.1.bottom" timestamp="1579549658191">
       <screen x="0" y="0" width="1536" height="804" />
     </state>
@@ -563,10 +566,10 @@
       <screen x="0" y="0" width="1536" height="804" />
     </state>
     <state x="580" y="321" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.804@0.0.1536.804" timestamp="1579460822340" />
-    <state x="534" y="87" width="958" height="717" key="find.popup" timestamp="1579987427286">
-      <screen x="0" y="0" width="1536" height="804" />
+    <state x="-1168" y="159" width="638" height="717" key="find.popup" timestamp="1580075466691">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1168" y="159" width="623" height="717" key="find.popup/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579971731731" />
+    <state x="-1168" y="159" width="638" height="717" key="find.popup/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580075466691" />
     <state x="534" y="87" width="958" height="717" key="find.popup/0.0.1536.804@0.0.1536.804" timestamp="1579987427286" />
     <state x="-1578" y="146" key="new project wizard" timestamp="1579970658014">
       <screen x="-1920" y="0" width="1920" height="1040" />
@@ -576,10 +579,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1252" y="154" key="refactoring.ChangeSignatureDialog/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579869078860" />
-    <state x="519" y="126" width="672" height="677" key="run.anything.popup" timestamp="1580032752973">
-      <screen x="0" y="0" width="1536" height="804" />
+    <state x="-1080" y="77" width="840" height="876" key="run.anything.popup" timestamp="1580073206525">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1080" y="77" width="840" height="876" key="run.anything.popup/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579962024327" />
+    <state x="-1080" y="77" width="840" height="876" key="run.anything.popup/0.0.1536.804/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1580073206525" />
     <state x="519" y="126" width="672" height="677" key="run.anything.popup/0.0.1536.804/-1920.0.1920.1040@0.0.1536.804" timestamp="1579785731930" />
     <state x="519" y="126" width="672" height="677" key="run.anything.popup/0.0.1536.804@0.0.1536.804" timestamp="1580032752973" />
     <state x="498" y="174" width="670" height="525" key="search.everywhere.popup" timestamp="1579986495459">

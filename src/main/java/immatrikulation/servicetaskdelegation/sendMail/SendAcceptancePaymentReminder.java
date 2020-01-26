@@ -8,20 +8,21 @@ import processingTasks.sendTasks.SendMailTemplateClass;
 
 import java.time.LocalDate;
 
-public class SendReminderEmail implements JavaDelegate {
+public class SendAcceptancePaymentReminder implements JavaDelegate {
+
 
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
+
         String studiengang = (String) delegateExecution.getVariable("studiengangName");
         String nachname = (String) delegateExecution.getVariable("nachname");
         String gender = (String) delegateExecution.getVariable("gender");
         StudiengangDAO studiengangDAO = new StudiengangDAO();
         StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang(studiengang);
         LocalDate date = studiengangEntity.getZulassungszeitraum();
-
-        String mailBody = "\nUns liegen wichtige Dokumente noch nicht vor. \nBitte reichen Sie diese bis zum: " + date + " nach, sodass wir Ihre Bewerbung schnellstmöglich abschließen können.";
+        String mailBody = "\nSie haben die Zulassungsvoraussetzungen für den Studiengang " + studiengang + " erfüllt. Bitte denken Sie daran die Studiengebühren zu überweisen.";
 
         SendMailTemplateClass sendMailTemplateClass = new SendMailTemplateClass();
-        sendMailTemplateClass.doSendMail(gender, nachname, mailBody);
+        sendMailTemplateClass.doSendMail(gender, nachname,mailBody);
     }
 }

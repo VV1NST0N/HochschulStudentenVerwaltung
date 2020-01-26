@@ -21,47 +21,46 @@ public class FinalApprovalLoadInformation implements JavaDelegate {
         Integer matNr = (Integer) delegateExecution.getVariable("matNr");
         StudentDao studentDao = new StudentDao();
         StudentEntity studentEntity = null;
-        if (matNr!= null){
+        if (matNr != null) {
             studentEntity = studentDao.getEntryById(matNr);
         }
-        ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity = immatrikulationsAntragDao.getImmatByBewerber(bewerberId,unterlagenId);
+        ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity = immatrikulationsAntragDao.getImmatByBewerber(bewerberId, unterlagenId);
 
-
-        if (immatrikulationsverfahrenStatusEntity.getUnterlagenVollstaendig()){
+        if (immatrikulationsverfahrenStatusEntity.getUnterlagenVollstaendig()) {
             delegateExecution.setVariable("vollstaendigeUnterlagen", "Unterlagen sind vollständig.");
-        }else {
+        } else {
             delegateExecution.setVariable("vollstaendigeUnterlagen", "Unterlagen sind vollständig.");
         }
-        if (immatrikulationsverfahrenStatusEntity.getZahlungStatus()){
+        if (immatrikulationsverfahrenStatusEntity.getZahlungStatus()) {
             delegateExecution.setVariable("zahlungErolgt", "Student hat die Studiengebühren bezahlt.");
-        }else {
+        } else {
             delegateExecution.setVariable("zahlungErolgt", "Student hat die Studiengebühren nicht bezahlt.");
         }
-        if (immatrikulationsverfahrenStatusEntity.getZulassungStatus()){
+        if (immatrikulationsverfahrenStatusEntity.getZulassungStatus()) {
             delegateExecution.setVariable("zulassungErteilt", "Student erfüllt die Anforderungen zur Zulassung.");
-        }else{
+        } else {
             delegateExecution.setVariable("zulassungErteilt", "Student erfüllt die Anforderungen zur Zulassung nicht.");
         }
         delegateExecution.setVariable("bewerbungsEingang", "Bewerber hat seine Anmeldung am " + immatrikulationsverfahrenStatusEntity.getBewerbungseingang().toString() + " abgeschickt.");
         String bereitsImmatString = "";
-        if(studentEntity != null){
+        if (studentEntity != null) {
             bereitsImmatString += "Der Bewerber ist bereits als Student eingetragen.\n";
             StudentStudiengangDao studentStudiengangDao = new StudentStudiengangDao();
             List<StudentStudiengangEntity> studentStudiengangEntities = studentStudiengangDao.searchForStudentInDatabase(matNr);
-            if(studentStudiengangEntities!= null){
-                if (studentStudiengangEntities.size() > 0){
-                    for (StudentStudiengangEntity studentStudiengangEntity: studentStudiengangEntities) {
-                        bereitsImmatString+= "Studiengang: " + studentStudiengangEntity.getStudiengangEntities().getStudiengangName();
-                        if (studentStudiengangEntity.getAktivesStudium()){
-                            bereitsImmatString+="\nEs handelt sich um ein aktives Studium.";
-                        }else{
-                            bereitsImmatString+="\nEs handelt sich um kein aktives Studium.";
+            if (studentStudiengangEntities != null) {
+                if (studentStudiengangEntities.size() > 0) {
+                    for (StudentStudiengangEntity studentStudiengangEntity : studentStudiengangEntities) {
+                        bereitsImmatString += "Studiengang: " + studentStudiengangEntity.getStudiengangEntities().getStudiengangName();
+                        if (studentStudiengangEntity.getAktivesStudium()) {
+                            bereitsImmatString += "\nEs handelt sich um ein aktives Studium.";
+                        } else {
+                            bereitsImmatString += "\nEs handelt sich um kein aktives Studium.";
                         }
                     }
                 }
             }
-        }else {
-            bereitsImmatString+="Der Bewerber ist noch nicht als Student erfasst in unserem System erfasst.";
+        } else {
+            bereitsImmatString += "Der Bewerber ist noch nicht als Student erfasst in unserem System erfasst.";
         }
         delegateExecution.setVariable("aktivesStudium", bereitsImmatString);
 

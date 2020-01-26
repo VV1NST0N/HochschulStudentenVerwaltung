@@ -19,6 +19,7 @@ public class RegistrateApplicantDocuments implements JavaDelegate {
         FileValue bewerbungsschreiben_doc = delegateExecution.getVariableTyped("BEWERBUNGSSCHREIBEN_DOC");
         FileValue hochschulzeugnis_doc = delegateExecution.getVariableTyped("HOCHSCHULZEUGNIS_DOC");
         FileValue personalausweis_doc = delegateExecution.getVariableTyped("PERSONALAUSWEIS_DOC");
+
         InputStream krankenversicherung = krankenversicherung_doc.getValue();
         InputStream bewerbungsschreiben = bewerbungsschreiben_doc.getValue();
         InputStream immatrikulationsantrag = immatrikulationsantrag_doc.getValue();
@@ -40,7 +41,5 @@ public class RegistrateApplicantDocuments implements JavaDelegate {
         bewerbungsunterlagenEntity.setHochschulreifeLocation(hochschulBytes);
         bewerbungsunterlagenEntity.setPersonalausweisLocation(persoBytes);
         unterlagenDAO.updateEntity(bewerbungsunterlagenEntity);
-        System.out.println("Test nach Unterlagen");
-
     }
 }

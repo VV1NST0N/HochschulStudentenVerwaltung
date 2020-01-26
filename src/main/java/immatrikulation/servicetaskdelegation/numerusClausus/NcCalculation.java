@@ -5,17 +5,18 @@ import entities.BewerberEntity;
 import entities.StudiengangEntity;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.engine.variable.value.TypedValue;
+import processingTasks.calcNc.CourseNcCalc;
 
 import java.util.*;
 
 public class NcCalculation implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
-        Map<String,Integer> coursesWithNC = (Map<String, Integer>) delegateExecution.getVariable("kurseMitNc");
+        Map<String, Integer> coursesWithNC = (Map<String, Integer>) delegateExecution.getVariable("kurseMitNc");
         CourseNcCalc courseNcCalc = new CourseNcCalc();
-        for ( String s : coursesWithNC.keySet()) {
+
+        //An dieser Stelle werden alle Bewerbernoten für Studiengänge mit NC gesammelt und in einer Liste persistiert
+        for (String s : coursesWithNC.keySet()) {
             StudiengangDAO studiengangDAO = new StudiengangDAO();
             StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang(s);
             Integer freiePlätze = studiengangEntity.getStudiengangFreiePlaetze();
@@ -24,7 +25,7 @@ public class NcCalculation implements JavaDelegate {
             for (BewerberEntity bewerberEntity : bewerber) {
                 grades.add(bewerberEntity.getAbiturnote());
             }
-            Double nc = courseNcCalc.calculateNc(grades,freiePlätze);
+            Double nc = courseNcCalc.calculateNc(grades, freiePlätze);
             grades.clear();
             studiengangEntity.setNumerusClaususNote(nc);
             studiengangDAO.updateEntity(studiengangEntity);

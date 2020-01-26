@@ -1,4 +1,4 @@
-package immatrikulation.servicetaskdelegation.twitter;
+package processingTasks.sendTasks;
 
 import twitter4j.Twitter;
 import twitter4j.TwitterException;

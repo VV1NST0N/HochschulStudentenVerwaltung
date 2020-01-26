@@ -1,11 +1,12 @@
 package dataAccess;
 
 import entities.StudiengangEntity;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.List;
 
-public class StudiengangDAO extends Dao<StudiengangEntity>{
+public class StudiengangDAO extends Dao<StudiengangEntity> {
 
     public StudiengangEntity getStudiengang(String studiengangName) {
         EntityManager em = ConnectionFac.init();
@@ -13,7 +14,7 @@ public class StudiengangDAO extends Dao<StudiengangEntity>{
         query.setParameter("name", studiengangName);
         List<StudiengangEntity> resultList = query.getResultList();
         for (StudiengangEntity p : resultList) {
-            if(p.getStudiengangName().equals(studiengangName) ){
+            if (p.getStudiengangName().equals(studiengangName)) {
                 return p;
             }
         }
@@ -28,7 +29,6 @@ public class StudiengangDAO extends Dao<StudiengangEntity>{
         return resultList;
     }
 
-
     @Override
     public StudiengangEntity getEntryById(Integer id) {
         EntityManager entityManager = ConnectionFac.init();
@@ -36,5 +36,4 @@ public class StudiengangDAO extends Dao<StudiengangEntity>{
 
         return studiengangEntity;
     }
-
 }

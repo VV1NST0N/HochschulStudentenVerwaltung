@@ -16,9 +16,9 @@ public class CheckNumerusClausus implements JavaDelegate {
         StudiengangDAO studiengangDAO = new StudiengangDAO();
         StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang(course);
 
-        if (abiturNote <= studiengangEntity.getNumerusClaususNote()){
+        if (abiturNote <= studiengangEntity.getNumerusClaususNote()) {
             delegateExecution.setVariable("ncErfüllt", true);
-        }else{
+        } else {
             delegateExecution.setVariable("ncErfüllt", false);
         }
 

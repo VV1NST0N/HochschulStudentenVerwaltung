@@ -25,7 +25,7 @@ public class RequestRequiredDocuments implements JavaDelegate {
         InputStream hochschulzeugnis = hochschulzeugnis_doc.getValue();
         InputStream personalausweis = personalausweis_doc.getValue();
 
-        for (String s: unterlagen.keySet()) {
+        for (String s : unterlagen.keySet()) {
             System.out.println(s);
             System.out.println(unterlagen.get(s));
         }
@@ -45,7 +45,6 @@ public class RequestRequiredDocuments implements JavaDelegate {
         delegateExecution.setVariable("korrektheitDaten", false);
 
     }
-
 
     private void updateUnterlagen(Integer unterlagenId, Map<String, byte[]> unterlagen) {
         UnterlagenDAO unterlagenDAO = new UnterlagenDAO();

@@ -1,0 +1,46 @@
+= Projektübersicht
+
+https://github.com/VV1NST0N/HochschulStudentenVerwaltung
+
+== Was macht welches Package?
+
+=== dataAccess
+
+* Dao-Klassen
+** Regeln Datenbankzugriffe
+
+* Entities
+** Stellen Datenbanktabellen in Java dar
+
+=== Business-Logik
+
+* Helper
+** Allgemeine Helferklassen, die oft gebraucht werden
+
+* Processing Tasks
+** Bestimmte Tasks, die Aufgaben erledigen und nicht direkt mit Camunda kommunizieren
+*** Beispiel SendMailTask sendet die Mails über SMTP, sodass die Logik von den Camunda-Klassen gekapselt ist
+
+==== Servicetaskdelegation
+
+** alle Servicetaks
+** Kommunikation mit Camunda
+** Nc Berechnung
+** Zahlungsprüfung
+** Twitter-Nachrichten
+** E-Mail-Nachrichten
+** Bewerbererfassung
+** Studentenerfassung
+*** nach erfolgreichem Prozessdurchlauf
+
+=== HTML-Forms
+
+* Fast alle eingesetzten Formulare sind Embedded, weil sie entweder Output an den Nutzer liefern oder komplexere Datentypen beinhalten
+
+== Grobe Anleitung
+
+* Eine Genauere Beschreibung befindet sich in der Dokumentation
+* *1* Um das Programm zum Laufen zu bringen müssen neben den gängigen Arbeitsschritten nur die Skripte Datenbanksetup und Queries ausgeführt werden.
+** Anweisungen auf dem SQL-Skript Queries befolgen und erst Studiengänge dann Bewerber einfügen.
+* *2* Damit ein Nutzer der Gruppe Student einen Prozess starten kann, muss der die Rechte erhalten einen Prozess ausführen zu dürfen und Prozessdefinitionen sehen zu können.
+** Die Rechte sind im vollständigen DatenbankDump enthalten

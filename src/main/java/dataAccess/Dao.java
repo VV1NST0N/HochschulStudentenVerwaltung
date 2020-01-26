@@ -6,23 +6,21 @@ import javax.persistence.EntityManager;
 
 public class Dao<T> {
 
-    public void updateEntity(T entity){
+    public void updateEntity(T entity) {
         EntityManager entityManager = ConnectionFac.init();
         entityManager.getTransaction().begin();
         entityManager.merge(entity);
         entityManager.getTransaction().commit();
     }
 
-
-    public  void insertEntity(T entity){
+    public void insertEntity(T entity) {
         EntityManager entityManager = ConnectionFac.init();
         entityManager.getTransaction().begin();
         entityManager.persist(entity);
         entityManager.getTransaction().commit();
     }
 
-
-    public void deleteEntry(T entity){
+    public void deleteEntry(T entity) {
         EntityManager entityManager = ConnectionFac.init();
         if (!entityManager.contains(entity)) {
             entity = entityManager.merge(entity);

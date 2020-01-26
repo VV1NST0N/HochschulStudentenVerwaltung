@@ -15,15 +15,15 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ImmatrikulationsAntragDao extends Dao<ImmatrikulationsverfahrenStatusEntity>{
+public class ImmatrikulationsAntragDao extends Dao<ImmatrikulationsverfahrenStatusEntity> {
 
-    public void createInitialImmat(BewerberEntity bewerber, BewerbungsunterlagenEntity unterlagen){
+    public void createInitialImmat(BewerberEntity bewerber, BewerbungsunterlagenEntity unterlagen) {
         ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity = new ImmatrikulationsverfahrenStatusEntity();
         immatrikulationsverfahrenStatusEntity.setUnterlagenVollstaendig(false);
         immatrikulationsverfahrenStatusEntity.setZahlungStatus(false);
         immatrikulationsverfahrenStatusEntity.setZulassungStatus(false);
         LocalDate localDate = Instant.now().atZone(ZoneId.of("Europe/Berlin")).toLocalDate();
-        immatrikulationsverfahrenStatusEntity.setBewerbungseingang( localDate);
+        immatrikulationsverfahrenStatusEntity.setBewerbungseingang(localDate);
         immatrikulationsverfahrenStatusEntity.setBewerberByBewerberId(bewerber);
         immatrikulationsverfahrenStatusEntity.setBewerbungsunterlagenByUnterlagenId(unterlagen);
         immatrikulationsverfahrenStatusEntity.setImmatId(IdGenerator.createUniqueIds());
@@ -31,14 +31,14 @@ public class ImmatrikulationsAntragDao extends Dao<ImmatrikulationsverfahrenStat
         insertImmatrikulation(immatrikulationsverfahrenStatusEntity);
     }
 
-    public void insertImmatrikulation(ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity){
+    public void insertImmatrikulation(ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity) {
         EntityManager entityManager = ConnectionFac.init();
         entityManager.getTransaction().begin();
         entityManager.persist(immatrikulationsverfahrenStatusEntity);
         entityManager.getTransaction().commit();
     }
 
-    public ImmatrikulationsverfahrenStatusEntity getImmatByBewerber(Integer bewerberId, Integer unterlagenId){
+    public ImmatrikulationsverfahrenStatusEntity getImmatByBewerber(Integer bewerberId, Integer unterlagenId) {
         EntityManager em = ConnectionFac.init();
         Query query = em.createQuery("SELECT p FROM ImmatrikulationsverfahrenStatusEntity p WHERE p.bewerberByBewerberId.bewerberId = :name AND p.bewerbungsunterlagenByUnterlagenId.unterlagenId = :unterlagen");
         query.setParameter("name", bewerberId);
@@ -46,7 +46,7 @@ public class ImmatrikulationsAntragDao extends Dao<ImmatrikulationsverfahrenStat
 
         List<ImmatrikulationsverfahrenStatusEntity> resultList = query.getResultList();
         for (ImmatrikulationsverfahrenStatusEntity p : resultList) {
-            if(p.getBewerberByBewerberId().getBewerberId().equals(bewerberId) ){
+            if (p.getBewerberByBewerberId().getBewerberId().equals(bewerberId)) {
                 return p;
             }
         }
@@ -54,12 +54,10 @@ public class ImmatrikulationsAntragDao extends Dao<ImmatrikulationsverfahrenStat
 
     }
 
-
-
     @Override
     public ImmatrikulationsverfahrenStatusEntity getEntryById(Integer id) {
-            EntityManager entityManager = ConnectionFac.init();
-            return entityManager.find(ImmatrikulationsverfahrenStatusEntity.class, id);
+        EntityManager entityManager = ConnectionFac.init();
+        return entityManager.find(ImmatrikulationsverfahrenStatusEntity.class, id);
     }
 
     public List<ImmatrikulationsverfahrenStatusEntity> getImmats() {

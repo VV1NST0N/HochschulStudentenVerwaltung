@@ -2,6 +2,7 @@ package dataAccess;
 
 import entities.BewerberEntity;
 import entities.StudentEntity;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.time.LocalDate;
@@ -11,8 +12,8 @@ import java.util.List;
 
 public class BewerberDAO extends Dao<BewerberEntity> {
 
-    public void  insertBewerber(BewerberEntity bewerberEntity, String studiengangName){
-       EntityManager entityManager = ConnectionFac.init();
+    public void insertBewerber(BewerberEntity bewerberEntity, String studiengangName) {
+        EntityManager entityManager = ConnectionFac.init();
         StudiengangDAO studiengangDAO = new StudiengangDAO();
         bewerberEntity.setStudiengangByStudiengangId(studiengangDAO.getStudiengang(studiengangName));
         bewerberEntity.setStudiengangId(bewerberEntity.getStudiengangByStudiengangId().getStudiengangId());
@@ -23,8 +24,6 @@ public class BewerberDAO extends Dao<BewerberEntity> {
 
     }
 
-
-
     public List<Double> getBewerberByStudiengang(String studiengangName) {
         EntityManager em = ConnectionFac.init();
         Query query = em.createQuery("SELECT p FROM BewerberEntity p WHERE p.studiengangByStudiengangId = :name");
@@ -32,7 +31,7 @@ public class BewerberDAO extends Dao<BewerberEntity> {
         List<BewerberEntity> resultList = query.getResultList();
         List<Double> gradesList = new LinkedList<Double>();
         for (BewerberEntity p : resultList) {
-            if(p.getStudiengangByStudiengangId().equals(studiengangName) ){
+            if (p.getStudiengangByStudiengangId().equals(studiengangName)) {
                 gradesList.add(p.getAbiturnote());
             }
         }
@@ -61,7 +60,7 @@ public class BewerberDAO extends Dao<BewerberEntity> {
         Query query = em.createQuery("SELECT c FROM BewerberEntity c");
         List<BewerberEntity> resultList = query.getResultList();
         List<Integer> bewerberIds = new ArrayList<>();
-        for (BewerberEntity b: resultList) {
+        for (BewerberEntity b : resultList) {
             bewerberIds.add(b.getBewerberId());
         }
 
@@ -79,12 +78,11 @@ public class BewerberDAO extends Dao<BewerberEntity> {
 
         if (resultList.size() == 1) {
             return resultList.get(0);
-        }else if(resultList.size() > 1){
+        } else if (resultList.size() > 1) {
             throw new Exception();
-        }else {
+        } else {
             return null;
         }
-
     }
 
     public StudentEntity createStudentByBewerber(Integer bewerberId, StudentEntity studentEntity) {

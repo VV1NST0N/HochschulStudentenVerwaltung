@@ -22,6 +22,7 @@ public class CheckDocuments implements JavaDelegate {
         delegateExecution.setVariable("vollstaendig", vollstaendig);
     }
 
+    //Wenn alle Dokumente als vollständig makiert wurden wird das Ergebnis in der Datenbank notiert
     private Boolean checkVollständigkeit(BewerbungsunterlagenEntity unterlagenEntity, ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity) {
         if (unterlagenEntity.getBewerbungsschreiben().equals(true) && unterlagenEntity.getHochschulreife().equals(true) && unterlagenEntity.getImmatrikulationsantrag().equals(true) && unterlagenEntity.getKrankenversicherung().equals(true) && unterlagenEntity.getPersonalausweis().equals(true)){
             ImmatrikulationsAntragDao immatrikulationsverfahrenDao = new ImmatrikulationsAntragDao();

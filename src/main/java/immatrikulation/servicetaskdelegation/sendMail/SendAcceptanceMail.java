@@ -2,10 +2,9 @@ package immatrikulation.servicetaskdelegation.sendMail;
 
 import dataAccess.StudiengangDAO;
 import entities.StudiengangEntity;
-import org.apache.commons.mail.Email;
-import org.apache.commons.mail.SimpleEmail;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import processingTasks.sendTasks.SendMailTemplateClass;
 
 import java.time.LocalDate;
 

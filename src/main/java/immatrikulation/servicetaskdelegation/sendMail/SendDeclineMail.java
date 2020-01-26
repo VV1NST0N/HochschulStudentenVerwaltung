@@ -4,6 +4,7 @@ import dataAccess.ImmatrikulationsAntragDao;
 import entities.ImmatrikulationsverfahrenStatusEntity;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import processingTasks.sendTasks.SendMailTemplateClass;
 
 public class SendDeclineMail implements JavaDelegate {
 

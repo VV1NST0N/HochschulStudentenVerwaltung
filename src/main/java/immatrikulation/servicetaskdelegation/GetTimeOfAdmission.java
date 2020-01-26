@@ -25,7 +25,7 @@ public class GetTimeOfAdmission implements JavaDelegate {
 
         String admissionDate = studiengangEntity.getZulassungszeitraum().toString() + "T00:00:00";
         String paymendDate = studiengangEntity.getZahlungszeitraum().minusDays(14).toString() + "T00:00:00";
-        String admissionDatePrior = studiengangEntity.getZulassungszeitraum().minusDays(20).toString() +  "T00:00:00";
+        String admissionDatePrior = studiengangEntity.getZulassungszeitraum().minusDays(20).toString() + "T00:00:00";
         delegateExecution.setVariable("zulassungszeitraum", admissionDate);
         delegateExecution.setVariable("zulassungszeitraumVorher", admissionDatePrior);
         delegateExecution.setVariable("zahlungsZeitraum", paymendDate);

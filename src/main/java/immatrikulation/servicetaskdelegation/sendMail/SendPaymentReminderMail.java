@@ -4,6 +4,7 @@ import dataAccess.StudiengangDAO;
 import entities.StudiengangEntity;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import processingTasks.sendTasks.SendMailTemplateClass;
 
 import java.time.LocalDate;
 
@@ -19,6 +20,6 @@ public class SendPaymentReminderMail implements JavaDelegate {
         String mailBody = "\nBitte denken Sie daran bis zum " + date.toString() + " Ihre Studiengebühren zu überweisen.";
 
         SendMailTemplateClass sendMailTemplateClass = new SendMailTemplateClass();
-        sendMailTemplateClass.doSendMail(gender, nachname,mailBody);
+        sendMailTemplateClass.doSendMail(gender, nachname, mailBody);
     }
 }

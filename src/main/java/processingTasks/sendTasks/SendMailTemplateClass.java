@@ -1,4 +1,4 @@
-package immatrikulation.servicetaskdelegation.sendMail;
+package processingTasks.sendTasks;
 
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;

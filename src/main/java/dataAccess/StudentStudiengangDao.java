@@ -2,6 +2,7 @@ package dataAccess;
 
 import entities.StudentEntity;
 import entities.StudentStudiengangEntity;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.time.LocalDate;
@@ -16,9 +17,8 @@ public class StudentStudiengangDao extends Dao<StudentStudiengangEntity> {
         return studentStudiengangEntity;
     }
 
-    public List<StudentStudiengangEntity> searchForStudentInDatabase(Integer matNr){
+    public List<StudentStudiengangEntity> searchForStudentInDatabase(Integer matNr) {
         EntityManager entityManager = ConnectionFac.init();
-
 
         Query query = entityManager.createQuery("SELECT p FROM StudentStudiengangEntity p WHERE p.studentEntities.matNr = :matNr");
         query.setParameter("matNr", matNr);

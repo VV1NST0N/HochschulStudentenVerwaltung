@@ -4,6 +4,8 @@ import dataAccess.StudiengangDAO;
 import entities.StudiengangEntity;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import processingTasks.sendTasks.SendToTwitter;
+
 import java.time.LocalDate;
 
 
