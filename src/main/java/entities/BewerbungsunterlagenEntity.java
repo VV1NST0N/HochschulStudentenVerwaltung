@@ -5,18 +5,20 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "bewerbungsunterlagen", schema = "informationssystem")
+@Table(name = "bewerbungsunterlagen", schema = "informationssystem", catalog = "")
 public class BewerbungsunterlagenEntity {
     private Integer unterlagenId;
     private Boolean hochschulreife;
     private Boolean krankenversicherung;
     private Boolean immatrikulationsantrag;
     private Boolean bewerbungsschreiben;
-    private String hochschulreifeLocation;
-    private String krankenversicherungLocation;
-    private String immatrikulationsantragLocation;
-    private String bewerbungsschreibenLocation;
+    private byte[] hochschulreifeLocation;
+    private byte[] krankenversicherungLocation;
+    private byte[] immatrikulationsantragLocation;
+    private byte[] bewerbungsschreibenLocation;
     private Collection<ImmatrikulationsverfahrenStatusEntity> immatrikulationsverfahrenStatusesByUnterlagenId;
+    private Boolean personalausweis;
+    private byte[] personalausweisLocation;
 
     @Id
     @Column(name = "unterlagen_id", nullable = false)
@@ -85,47 +87,52 @@ public class BewerbungsunterlagenEntity {
         return Objects.hash(unterlagenId, hochschulreife, krankenversicherung, immatrikulationsantrag, bewerbungsschreiben);
     }
 
-
-
     @Basic
-    @Column(name = "hochschulreifeLocation", nullable = true, length = 80)
-    public String getHochschulreifeLocation() {
-        return hochschulreifeLocation;
+    @Column(name = "hochschulreifeLocation", nullable = true, length = 300000)
+    @Lob
+    public byte[] getHochschulreifeLocation() {
+                    return hochschulreifeLocation;
     }
 
-    public void setHochschulreifeLocation(String hochschulreifeLocation) {
+    public void setHochschulreifeLocation(byte[] hochschulreifeLocation) {
         this.hochschulreifeLocation = hochschulreifeLocation;
     }
 
     @Basic
-    @Column(name = "krankenversicherungLocation", nullable = true, length = 80)
-    public String getKrankenversicherungLocation() {
+    @Column(name = "krankenversicherungLocation", nullable = true, length = 300000)
+    @Lob
+    public byte[] getKrankenversicherungLocation() {
         return krankenversicherungLocation;
     }
 
-    public void setKrankenversicherungLocation(String krankenversicherungLocation) {
+    public void setKrankenversicherungLocation(byte[] krankenversicherungLocation) {
         this.krankenversicherungLocation = krankenversicherungLocation;
     }
 
+
     @Basic
-    @Column(name = "immatrikulationsantragLocation", nullable = true, length = 80)
-    public String getImmatrikulationsantragLocation() {
+    @Column(name = "immatrikulationsantragLocation", nullable = true, length = 300000)
+    @Lob
+    public byte[] getImmatrikulationsantragLocation() {
         return immatrikulationsantragLocation;
     }
 
-    public void setImmatrikulationsantragLocation(String immatrikulationsantragLocation) {
+    public void setImmatrikulationsantragLocation(byte[] immatrikulationsantragLocation) {
         this.immatrikulationsantragLocation = immatrikulationsantragLocation;
     }
 
+
     @Basic
-    @Column(name = "bewerbungsschreibenLocation", nullable = true, length = 80)
-    public String getBewerbungsschreibenLocation() {
+    @Column(name = "bewerbungsschreibenLocation", nullable = true, length = 300000)
+    @Lob
+    public byte[] getBewerbungsschreibenLocation() {
         return bewerbungsschreibenLocation;
     }
 
-    public void setBewerbungsschreibenLocation(String bewerbungsschreibenLocation) {
+    public void setBewerbungsschreibenLocation(byte[] bewerbungsschreibenLocation) {
         this.bewerbungsschreibenLocation = bewerbungsschreibenLocation;
     }
+
 
     @OneToMany(mappedBy = "bewerbungsunterlagenByUnterlagenId")
     public Collection<ImmatrikulationsverfahrenStatusEntity> getImmatrikulationsverfahrenStatusesByUnterlagenId() {
@@ -134,5 +141,26 @@ public class BewerbungsunterlagenEntity {
 
     public void setImmatrikulationsverfahrenStatusesByUnterlagenId(Collection<ImmatrikulationsverfahrenStatusEntity> immatrikulationsverfahrenStatusesByUnterlagenId) {
         this.immatrikulationsverfahrenStatusesByUnterlagenId = immatrikulationsverfahrenStatusesByUnterlagenId;
+    }
+
+    @Basic
+    @Column(name = "personalausweis")
+    public Boolean getPersonalausweis() {
+        return personalausweis;
+    }
+
+    public void setPersonalausweis(Boolean personalausweis) {
+        this.personalausweis = personalausweis;
+    }
+
+    @Basic
+    @Column(name = "personalausweisLocation", length = 300000)
+    @Lob
+    public byte[] getPersonalausweisLocation() {
+        return personalausweisLocation;
+    }
+
+    public void setPersonalausweisLocation(byte[] personalausweisLocation) {
+        this.personalausweisLocation = personalausweisLocation;
     }
 }

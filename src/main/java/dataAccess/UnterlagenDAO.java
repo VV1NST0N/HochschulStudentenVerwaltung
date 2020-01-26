@@ -1,7 +1,7 @@
 package dataAccess;
 
-import entities.BewerberEntity;
 import entities.BewerbungsunterlagenEntity;
+import entities.StudiengangEntity;
 import helper.IdGenerator;
 
 import javax.persistence.EntityManager;
@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import java.util.List;
 import java.util.Map;
 
-public class UnterlagenDAO {
+public class UnterlagenDAO extends Dao<BewerbungsunterlagenEntity>{
 
     public BewerbungsunterlagenEntity createInitialUnterlagen(){
         BewerbungsunterlagenEntity bewerbungsunterlagenEntity = new BewerbungsunterlagenEntity();
@@ -18,16 +18,8 @@ public class UnterlagenDAO {
         bewerbungsunterlagenEntity.setImmatrikulationsantrag(false);
         bewerbungsunterlagenEntity.setKrankenversicherung(false);
         bewerbungsunterlagenEntity.setUnterlagenId(IdGenerator.createUniqueIds());
+        bewerbungsunterlagenEntity.setPersonalausweis(false);
         return bewerbungsunterlagenEntity;
-    }
-
-    public void  insertUnterlagen(BewerbungsunterlagenEntity bewerbungsunterlagenEntity){
-        EntityManager entityManager = ConnectionFac.init();
-
-        entityManager.getTransaction().begin();
-        entityManager.persist(bewerbungsunterlagenEntity);
-        entityManager.getTransaction().commit();
-
     }
 
     public BewerbungsunterlagenEntity getUnterlagenById(Integer unterlagenId){
@@ -47,11 +39,31 @@ public class UnterlagenDAO {
         EntityManager entityManager = ConnectionFac.init();
         BewerbungsunterlagenEntity unterlagen = entityManager.find(BewerbungsunterlagenEntity.class, unterlagenId);
 
-        entityManager.getTransaction().begin();
         unterlagen.setKrankenversicherung(unterlagenBool.get("krankenversicherung"));
         unterlagen.setHochschulreife(unterlagenBool.get("hochschulzeugnis"));
         unterlagen.setImmatrikulationsantrag(unterlagenBool.get("immatrikulationsantrag"));
         unterlagen.setBewerbungsschreiben(unterlagenBool.get("bewerbungsschreiben"));
-        entityManager.getTransaction().commit();
+        unterlagen.setPersonalausweis(unterlagenBool.get("personalausweis"));
+
+        updateEntity(unterlagen);
+    }
+
+    public void updateUnterlagenLoc(Integer unterlagenId, Map<String, byte[]> unterlagenLocMap) {
+       EntityManager entityManager = ConnectionFac.init();
+        BewerbungsunterlagenEntity unterlagen = entityManager.find(BewerbungsunterlagenEntity.class, unterlagenId);
+        unterlagen.setKrankenversicherungLocation(unterlagenLocMap.get("krankenversicherung"));
+        unterlagen.setHochschulreifeLocation(unterlagenLocMap.get("hochschulzeugnis"));
+        unterlagen.setImmatrikulationsantragLocation(unterlagenLocMap.get("immatrikulationsantrag"));
+        unterlagen.setBewerbungsschreibenLocation(unterlagenLocMap.get("bewerbungsschreiben"));
+        unterlagen.setBewerbungsschreibenLocation(unterlagenLocMap.get("personalausweis"));
+        updateEntity(unterlagen);
+    }
+
+    @Override
+    public BewerbungsunterlagenEntity getEntryById(Integer id) {
+        EntityManager entityManager = ConnectionFac.init();
+        BewerbungsunterlagenEntity bewerbungsunterlagenEntity = entityManager.find(BewerbungsunterlagenEntity.class, id);
+
+        return bewerbungsunterlagenEntity;
     }
 }

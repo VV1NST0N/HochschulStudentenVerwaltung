@@ -6,8 +6,8 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "bewerber", schema = "informationssystem", catalog = "")
-public class BewerberEntity {
+@Table(name = "bewerber", schema = "informationssystem")
+public class BewerberEntity extends Person {
     private Integer bewerberId;
     private String nachname;
     private String vorname;
@@ -22,7 +22,7 @@ public class BewerberEntity {
     private StudiengangEntity studiengangByStudiengangId;
     private Collection<ImmatrikulationsverfahrenStatusEntity> immatrikulationsverfahrenStatusesByBewerberId;
     private String wohnort;
-    private Integer abiturnote;
+    private Double abiturnote;
 
     @Id
     @Column(name = "bewerber_id", nullable = false)
@@ -189,11 +189,11 @@ public class BewerberEntity {
 
     @Basic
     @Column(name = "abiturnote", nullable = false)
-    public Integer getAbiturnote() {
+    public Double getAbiturnote() {
         return abiturnote;
     }
 
-    public void setAbiturnote(Integer abiturnote) {
+    public void setAbiturnote(Double abiturnote) {
         this.abiturnote = abiturnote;
     }
 }

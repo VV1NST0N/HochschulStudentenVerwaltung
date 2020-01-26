@@ -7,12 +7,12 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "immatrikulationsverfahren_status", schema = "informationssystem")
-@IdClass(ImmatrikulationsverfahrenStatusEntityPK.class)
 public class ImmatrikulationsverfahrenStatusEntity {
     private Boolean unterlagenVollstaendig;
     private Boolean zahlungStatus;
     private String statusInformationen;
     private Boolean zulassungStatus;
+    private Integer immatId;
     private Integer bewerberId;
     private Integer unterlagenId;
     private BewerberEntity bewerberByBewerberId;
@@ -74,28 +74,7 @@ public class ImmatrikulationsverfahrenStatusEntity {
         this.zulassungStatus = zulassungStatus;
     }
 
-    @Id
-    @Column(name = "bewerber_id", nullable = false)
-    public Integer getBewerberId() {
-        return bewerberId;
-    }
-
-    public void setBewerberId(Integer bewerberId) {
-        this.bewerberId = bewerberId;
-    }
-
-    @Id
-    @Column(name = "unterlagen_id", nullable = false)
-    public Integer getUnterlagenId() {
-        return unterlagenId;
-    }
-
-    public void setUnterlagenId(Integer unterlagenId) {
-        this.unterlagenId = unterlagenId;
-    }
-
     @ManyToOne
-    @PrimaryKeyJoinColumn(name = "bewerber_id", referencedColumnName = "bewerber_id")
     @JoinColumn(name = "bewerber_id", referencedColumnName = "bewerber_id", nullable = false)
     public BewerberEntity getBewerberByBewerberId() {
         return bewerberByBewerberId;
@@ -106,7 +85,6 @@ public class ImmatrikulationsverfahrenStatusEntity {
     }
 
     @ManyToOne
-    @PrimaryKeyJoinColumn(name = "unterlagen_id", referencedColumnName = "unterlagen_id")
     @JoinColumn(name = "unterlagen_id", referencedColumnName = "unterlagen_id", nullable = false)
     public BewerbungsunterlagenEntity getBewerbungsunterlagenByUnterlagenId() {
         return bewerbungsunterlagenByUnterlagenId;
@@ -115,6 +93,16 @@ public class ImmatrikulationsverfahrenStatusEntity {
     public void setBewerbungsunterlagenByUnterlagenId(BewerbungsunterlagenEntity bewerbungsunterlagenByUnterlagenId) {
         this.bewerbungsunterlagenByUnterlagenId = bewerbungsunterlagenByUnterlagenId;
     }
+    @Id
+    @Column(name = "immatrikulation_id", nullable = false)
+    public Integer getImmatId() {
+        return immatId;
+    }
+
+    public void setImmatId(Integer immatId) {
+        this.immatId = immatId;
+    }
+
 
     @Basic
     @Column(name = "bewerbungseingang", nullable = false)

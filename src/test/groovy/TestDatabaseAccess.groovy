@@ -1,9 +1,10 @@
-import dataAccess.BewerberDAO
-
+import dataAccess.StudiengangDAO
 import entities.StudiengangEntity
 import dataAccess.ConnectionFac
-import immatrikulation.servicetaskdelegation.BewerberErfassung
+import immatrikulation.servicetaskdelegation.twitter.SendToTwitter
+import org.junit.Ignore
 import spock.lang.Specification
+import twitter4j.Twitter
 
 import javax.persistence.EntityManager
 import javax.persistence.Query
@@ -14,13 +15,15 @@ class TestDatabaseAccess extends Specification {
 
     def "test insert Studiengang for testing"(){
         given:
+        Class.forName("com.mysql.jdbc.Driver")
         EntityManager entityManager = ConnectionFac.init()
         when:
+
         StudiengangEntity studiengangEntity = new StudiengangEntity()
-        studiengangEntity.setStudiengangId(666)
-        studiengangEntity.setStudiengangName("Maschinenbau")
-        studiengangEntity.setNumerusClaususNote(2)
-        studiengangEntity.setStudiengangFreiePlaetze(85)
+        studiengangEntity.setStudiengangId(111)
+        studiengangEntity.setStudiengangName("Mathematik")
+        studiengangEntity.setNumerusClaususNote(0)
+        studiengangEntity.setStudiengangFreiePlaetze(120)
         studiengangEntity.setVorraussetzungTest(true)
         studiengangEntity.setZulassungszeitraum(new LocalDate(2020,8,5))
         studiengangEntity.setStudiengangPlatzzahl(350)
@@ -37,6 +40,15 @@ class TestDatabaseAccess extends Specification {
         Date date = new Date()
         when:
         Instant test =  date.toInstant()
+        then:
+        true
+    }
+
+    def "test dir"(){
+        given:
+        String path = System.getProperty("user.home")
+        when:
+        System.out.println(path)
         then:
         true
     }
@@ -57,14 +69,30 @@ class TestDatabaseAccess extends Specification {
     result != null
     }
 
-    def "test Database delete Student is working"(){
+    def "test Twitter is working"(){
         given:
-        BewerberErfassung bewerberErfassung = new BewerberErfassung();
+        SendToTwitter send = new SendToTwitter()
+        String content = "Die Bewerbungsfrist für das Sommersemster 2020 ist noch bis zum " + 123 + " offen. " +
+                "\n  Bitte denken Sie daran alle Unterlagen bis zum Ende der Frist einzureichen"
+        when:
+        send.doSendTwitter(content)
+        then:
+        true
+    }
+
+    def "test get Studiengänge"(){
+        given:
+        StudiengangDAO studiengangDAO = new StudiengangDAO()
+        StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang("Informatik")
 
         when:
-        boolean state = dao.delete(123)
+        Integer bewerberAnzahl = studiengangEntity.getBewerbersByStudiengangId().size()
+        Integer freiePlaetze = studiengangEntity.getStudiengangFreiePlaetze();
+        println("Bewerber: $bewerberAnzahl \n freie Plätze: $freiePlaetze")
         then:
-        state== true
+        bewerberAnzahl > 0
+        freiePlaetze > 0
+
     }
 
     /*def "test Database insert Student is working"(){

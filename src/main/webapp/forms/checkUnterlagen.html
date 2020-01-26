@@ -1,0 +1,180 @@
+<form class="form-horizontal">
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Studiengang: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="studiengangName"
+                   type="String"
+                   name="studiengangName"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Vorname: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="vorname"
+                   type="String"
+                   name="vorname"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Nachname: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="nachname"
+                   type="String"
+                   name="nachname"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">E-Mail: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="email"
+                   type="String"
+                   name="email"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Geburtsort: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="geburtsort"
+                   type="String"
+                   name="geburtsort"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Geburtsdatum: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="geburtsdatum"
+                   type="String"
+                   name="geburtsdatum"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Nationalität: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="nationalitaet"
+                   type="String"
+                   name="nationalitaet"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Straße und Hausnummer: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="adresse"
+                   type="String"
+                   name="adresse"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Wohnort: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="wohnort"
+                   type="String"
+                   name="wohnort"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Note Hochschulabschluss: </label>
+        <div class="col-md-10">
+            <input cam-variable-name="abiturnote"
+                   cam-variable-type="Double"
+                   type="text"
+                   name="wohnort"
+                   readonly="true"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <label for="korrektheit">
+       Korrektheit der Daten:
+    </label>
+    <input id="korrektheit" class="form-control" name="korrektheit" cam-variable-type="Boolean"
+           cam-variable-name="korrektheitDaten" type="checkbox">
+
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label for="hochschulzeugnis">
+                Nachweis der Hochschulreife
+            </label>
+            <input id="hochschulzeugnis" class="form-control" name="hochschulzeugnis" cam-variable-type="Boolean"
+                   cam-variable-name="hochschulzeugnis" type="checkbox">
+            <div class="form-control-static col-md-10">
+                <a cam-file-download="HOCHSCHULZEUGNIS_DOC"></a>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="krankenversicherung">
+                Krankenversicherungsnachweis
+            </label>
+            <input id="krankenversicherung" class="form-control" name="krankenversicherung" cam-variable-type="Boolean"
+                   cam-variable-name="krankenversicherung" type="checkbox">
+            <div class="form-control-static col-md-10">
+                <a cam-file-download="KRANKENVERSICHERUNG_DOC"></a>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="immatrikulationsantrag">
+                Immatrikulationsantrag
+            </label>
+            <input id="immatrikulationsantrag" class="form-control" name="immatrikulationsantrag" cam-variable-type="Boolean"
+                   cam-variable-name="immatrikulationsantrag" type="checkbox">
+            <div class="form-control-static col-md-10">
+                <a cam-file-download="IMMATRIKULATIONSANTRAG_DOC"></a>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bewerbungsschreiben">
+                Bewerbungsschreiben
+            </label>
+            <input id="bewerbungsschreiben" class="form-control" name="bewerbungsschreiben" cam-variable-type="Boolean"
+                   cam-variable-name="bewerbungsschreiben" type="checkbox">
+            <div class="form-control-static col-md-10">
+                <a cam-file-download="BEWERBUNGSSCHREIBEN_DOC"></a>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="personalausweis">
+                Personalausweis
+            </label>
+            <input id="personalausweis" class="form-control" name="personalausweis" cam-variable-type="Boolean"
+                   cam-variable-name="personalausweis" type="checkbox">
+            <div class="form-control-static col-md-10">
+                <a cam-file-download="PERSONALAUSWEIS_DOC"></a>
+            </div>
+        </div>
+    </div>
+    <script cam-script type="text/form-script">
+          // custom JavaScript goes here
+
+    </script>
+</form>
+      

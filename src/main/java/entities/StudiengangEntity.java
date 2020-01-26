@@ -11,7 +11,7 @@ import java.util.Objects;
 public class StudiengangEntity {
     private Integer studiengangId;
     private String studiengangName;
-    private Integer numerusClaususNote;
+    private Double numerusClaususNote;
     private Integer studiengangPlatzzahl;
     private Integer studiengangFreiePlaetze;
     private Boolean vorraussetzungTest;
@@ -19,11 +19,18 @@ public class StudiengangEntity {
     private Collection<BewerberEntity> bewerbersByStudiengangId;
     private Collection<StudentStudiengangEntity> studentStudiengangsByStudiengangId;
     private LocalDate zulassungszeitraum;
+    private Boolean ncNotwendig;
+    private LocalDate semesterbeginn;
+    private LocalDate zahlungszeitraum;
 
     @Id
     @Column(name = "studiengang_id", nullable = false)
     public Integer getStudiengangId() {
         return studiengangId;
+    }
+
+    public void setStudiengangId(int studiengangId) {
+        this.studiengangId = studiengangId;
     }
 
     public void setStudiengangId(Integer studiengangId) {
@@ -42,11 +49,11 @@ public class StudiengangEntity {
 
     @Basic
     @Column(name = "numerus_clausus_note", nullable = true)
-    public Integer getNumerusClaususNote() {
+    public Double getNumerusClaususNote() {
         return numerusClaususNote;
     }
 
-    public void setNumerusClaususNote(Integer numerusClaususNote) {
+    public void setNumerusClaususNote(Double numerusClaususNote) {
         this.numerusClaususNote = numerusClaususNote;
     }
 
@@ -117,7 +124,7 @@ public class StudiengangEntity {
         this.bewerbersByStudiengangId = bewerbersByStudiengangId;
     }
 
-    @OneToMany(mappedBy = "studiengangByStudiengangId")
+    @OneToMany(mappedBy = "studiengangEntities")
     public Collection<StudentStudiengangEntity> getStudentStudiengangsByStudiengangId() {
         return studentStudiengangsByStudiengangId;
     }
@@ -134,5 +141,35 @@ public class StudiengangEntity {
 
     public void setZulassungszeitraum(LocalDate zulassungszeitraum) {
         this.zulassungszeitraum = zulassungszeitraum;
+    }
+
+    @Basic
+    @Column(name = "nc_notwendig")
+    public Boolean getNcNotwendig() {
+        return ncNotwendig;
+    }
+
+    public void setNcNotwendig(Boolean ncNotwendig) {
+        this.ncNotwendig = ncNotwendig;
+    }
+
+    @Basic
+    @Column(name = "semesterbeginn")
+    public LocalDate getSemesterbeginn() {
+        return semesterbeginn;
+    }
+
+    public void setSemesterbeginn(LocalDate semesterbeginn) {
+        this.semesterbeginn = semesterbeginn;
+    }
+
+    @Basic
+    @Column(name = "zahlungszeitraum")
+    public LocalDate getZahlungszeitraum() {
+        return zahlungszeitraum;
+    }
+
+    public void setZahlungszeitraum(LocalDate zahlungszeitraum) {
+        this.zahlungszeitraum = zahlungszeitraum;
     }
 }
