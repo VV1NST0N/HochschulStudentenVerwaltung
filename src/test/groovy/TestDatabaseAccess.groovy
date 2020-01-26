@@ -1,15 +1,16 @@
 import dataAccess.StudiengangDAO
 import entities.StudiengangEntity
 import dataAccess.ConnectionFac
-import immatrikulation.servicetaskdelegation.BewerberErfassung.BewerberErfassung
+import immatrikulation.servicetaskdelegation.twitter.SendToTwitter
 import org.junit.Ignore
 import spock.lang.Specification
+import twitter4j.Twitter
 
 import javax.persistence.EntityManager
 import javax.persistence.Query
 import java.time.Instant
 import java.time.LocalDate
-@Ignore
+
 class TestDatabaseAccess extends Specification {
 
     def "test insert Studiengang for testing"(){
@@ -68,27 +69,29 @@ class TestDatabaseAccess extends Specification {
     result != null
     }
 
-    def "test Database delete Student is working"(){
+    def "test Twitter is working"(){
         given:
-        BewerberErfassung bewerberErfassung = new BewerberErfassung();
-
+        SendToTwitter send = new SendToTwitter()
+        String content = "Die Bewerbungsfrist für das Sommersemster 2020 ist noch bis zum " + 123 + " offen. " +
+                "\n  Bitte denken Sie daran alle Unterlagen bis zum Ende der Frist einzureichen"
         when:
-        boolean state = dao.delete(123)
+        send.doSendTwitter(content)
         then:
-        state== true
+        true
     }
 
     def "test get Studiengänge"(){
         given:
         StudiengangDAO studiengangDAO = new StudiengangDAO()
-        List<StudiengangEntity> entities = new LinkedList<StudiengangEntity>()
+        StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang("Informatik")
+
         when:
-        entities = studiengangDAO.getStudiengänge()
-        entities.each {
-            print("${it.getStudiengangName()} \n")
-        }
+        Integer bewerberAnzahl = studiengangEntity.getBewerbersByStudiengangId().size()
+        Integer freiePlaetze = studiengangEntity.getStudiengangFreiePlaetze();
+        println("Bewerber: $bewerberAnzahl \n freie Plätze: $freiePlaetze")
         then:
-        true
+        bewerberAnzahl > 0
+        freiePlaetze > 0
 
     }
 

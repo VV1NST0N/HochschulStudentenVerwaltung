@@ -8,7 +8,6 @@
     <class>entities.ImmatrikulationsverfahrenStatusEntity</class>
     <class>entities.StudentEntity</class>
     <class>entities.StudentStudiengangEntity</class>
-    <class>entities.StudentStudiengangEntityPK</class>
     <class>entities.StudiengangEntity</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>

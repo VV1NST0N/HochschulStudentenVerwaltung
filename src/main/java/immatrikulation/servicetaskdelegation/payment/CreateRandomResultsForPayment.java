@@ -4,9 +4,7 @@ import dataAccess.ImmatrikulationsAntragDao;
 import entities.ImmatrikulationsverfahrenStatusEntity;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-
 import java.util.List;
-import java.util.Random;
 
 public class CreateRandomResultsForPayment implements JavaDelegate {
     @Override
@@ -14,19 +12,28 @@ public class CreateRandomResultsForPayment implements JavaDelegate {
         ImmatrikulationsAntragDao immatrikulationsAntragDao = new ImmatrikulationsAntragDao();
         List<ImmatrikulationsverfahrenStatusEntity> immats = immatrikulationsAntragDao.getImmats();
         for (ImmatrikulationsverfahrenStatusEntity immat : immats) {
-
-
-            //Dieser Abschnitt dient als Ersatz für das eigentliche Zahlungssystem, dass zukünftig über eine API angesprochen werden soll
-            // Es werden zufällige Bestätigungen oder Ablehnungen geschickt
-            Random random = new Random();
-            Boolean randomBool = random.nextBoolean();
-            immat.setZahlungStatus(randomBool);
+            immat.setZahlungStatus(createRandomResult());
+            System.out.println(immat.getZahlungStatus());
             try {
                 immatrikulationsAntragDao.updateEntity(immat);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
 
+
+    // Dieser Abschnitt dient als Ersatz für das eigentliche Zahlungssystem, dass zukünftig über eine API oder einen Message Broker angesprochen werden könnte
+    // Es werden zufällige Bestätigungen oder Ablehnungen geschickt
+    private Boolean createRandomResult() {
+        Double randomDouble = Math.random();
+        if (randomDouble < 0.9) {
+            System.out.println("Random Double Val: " + randomDouble);
+            return true;
+        } else if (randomDouble >= 0.9) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }

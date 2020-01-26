@@ -18,6 +18,7 @@ public class UnterlagenDAO extends Dao<BewerbungsunterlagenEntity>{
         bewerbungsunterlagenEntity.setImmatrikulationsantrag(false);
         bewerbungsunterlagenEntity.setKrankenversicherung(false);
         bewerbungsunterlagenEntity.setUnterlagenId(IdGenerator.createUniqueIds());
+        bewerbungsunterlagenEntity.setPersonalausweis(false);
         return bewerbungsunterlagenEntity;
     }
 
@@ -38,24 +39,24 @@ public class UnterlagenDAO extends Dao<BewerbungsunterlagenEntity>{
         EntityManager entityManager = ConnectionFac.init();
         BewerbungsunterlagenEntity unterlagen = entityManager.find(BewerbungsunterlagenEntity.class, unterlagenId);
 
-        entityManager.getTransaction().begin();
         unterlagen.setKrankenversicherung(unterlagenBool.get("krankenversicherung"));
         unterlagen.setHochschulreife(unterlagenBool.get("hochschulzeugnis"));
         unterlagen.setImmatrikulationsantrag(unterlagenBool.get("immatrikulationsantrag"));
         unterlagen.setBewerbungsschreiben(unterlagenBool.get("bewerbungsschreiben"));
-        entityManager.getTransaction().commit();
+        unterlagen.setPersonalausweis(unterlagenBool.get("personalausweis"));
+
+        updateEntity(unterlagen);
     }
 
-    public void updateUnterlagenLoc(Integer unterlagenId, Map<String, String> unterlagenLocMap) {
-        EntityManager entityManager = ConnectionFac.init();
+    public void updateUnterlagenLoc(Integer unterlagenId, Map<String, byte[]> unterlagenLocMap) {
+       EntityManager entityManager = ConnectionFac.init();
         BewerbungsunterlagenEntity unterlagen = entityManager.find(BewerbungsunterlagenEntity.class, unterlagenId);
-
-        entityManager.getTransaction().begin();
         unterlagen.setKrankenversicherungLocation(unterlagenLocMap.get("krankenversicherung"));
         unterlagen.setHochschulreifeLocation(unterlagenLocMap.get("hochschulzeugnis"));
         unterlagen.setImmatrikulationsantragLocation(unterlagenLocMap.get("immatrikulationsantrag"));
         unterlagen.setBewerbungsschreibenLocation(unterlagenLocMap.get("bewerbungsschreiben"));
-        entityManager.getTransaction().commit();
+        unterlagen.setBewerbungsschreibenLocation(unterlagenLocMap.get("personalausweis"));
+        updateEntity(unterlagen);
     }
 
     @Override

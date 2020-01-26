@@ -5,7 +5,6 @@ import entities.StudentEntity;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 public class StudentDao extends Dao<StudentEntity> {

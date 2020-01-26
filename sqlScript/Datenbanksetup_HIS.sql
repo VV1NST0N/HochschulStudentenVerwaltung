@@ -31,10 +31,13 @@ CREATE TABLE IF NOT EXISTS `informationssystem`.`studiengang` (
   `beschreibung_voraussetzung` VARCHAR(120),
   `nc_notwendig` BOOLEAN NOT NULL,
   `zulassungszeitraum` DATE NOT NULL,
+  `semesterbeginn` DATE NOT NULL,
+  `zahlungszeitraum` DATE NOT NULL,
   PRIMARY KEY (`studiengang_id`),
   UNIQUE INDEX `studiengang_id_UNIQUE` (`studiengang_id` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
 
 
 -- -----------------------------------------------------
@@ -44,8 +47,8 @@ DROP TABLE IF EXISTS `informationssystem`.`bewerber` ;
 
 CREATE TABLE IF NOT EXISTS `informationssystem`.`bewerber` (
   `bewerber_id` INT(11) NOT NULL,
-  `nachname` VARCHAR(30) NOT NULL,
-  `vorname` VARCHAR(30) NOT NULL,
+  `nachname` VARCHAR(60) NOT NULL,
+  `vorname` VARCHAR(50) NOT NULL,
   `email` VARCHAR(50) NULL DEFAULT NULL,
   `geburtsort` VARCHAR(50) NOT NULL,
   `nationalitaet` VARCHAR(50) NOT NULL,
@@ -54,6 +57,7 @@ CREATE TABLE IF NOT EXISTS `informationssystem`.`bewerber` (
    `abiturnote` DOUBLE NOT NULL,
   `geburtsdatum` DATE NOT NULL,
   `studiengang_id` INT(11) NOT NULL,
+  `studentenausweis` BLOB,
   `mat_nr` INT(11) NULL DEFAULT NULL,
   `sonstige_informationen` VARCHAR(400) NULL DEFAULT NULL,
   PRIMARY KEY (`bewerber_id`),
@@ -77,11 +81,13 @@ CREATE TABLE IF NOT EXISTS `informationssystem`.`bewerbungsunterlagen` (
   `hochschulreife` TINYINT(1) NOT NULL,
   `krankenversicherung` TINYINT(1) NOT NULL,
   `immatrikulationsantrag` TINYINT(1) NOT NULL,
-  `bewerbungsschreiben` TINYINT(1) NULL DEFAULT NULL,
-  `hochschulreifeLocation` varchar(80),
-  `krankenversicherungLocation` varchar(80),
-  `immatrikulationsantragLocation` varchar(80),
-  `bewerbungsschreibenLocation` varchar(80),
+  `bewerbungsschreiben` TINYINT(1) NOT NULL,
+  `personalausweis` TINYINT(1) NOT NULL,
+  `hochschulreifeLocation` mediumblob,
+  `krankenversicherungLocation` mediumblob,
+  `immatrikulationsantragLocation` mediumblob,
+  `bewerbungsschreibenLocation` mediumblob,
+  `personalausweisLocation` mediumblob,
   PRIMARY KEY (`unterlagen_id`),
   UNIQUE INDEX `unterlagen_id_UNIQUE` (`unterlagen_id` ASC) VISIBLE)
 ENGINE = InnoDB
@@ -138,19 +144,6 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
--- -----------------------------------------------------
--- Table `informationssystem`.`student`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `informationssystem`.`zahlungsstatusFremdsystem` ;
-
-CREATE TABLE IF NOT EXISTS `informationssystem`.`zahlungsstatusFremdsystem` (
-  `bewerber_id` INT(11) NOT NULL,
-  `unterlagen_id` INT(20) NOT NULL,
-  `zahlungsstatus` BOOLEAN NOT NULL,
-  PRIMARY KEY (`bewerber_id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
 
 -- -----------------------------------------------------
 -- Table `informationssystem`.`student_studiengang`
@@ -162,11 +155,9 @@ CREATE TABLE IF NOT EXISTS `informationssystem`.`student_studiengang` (
   `mat_nr` INT(11) NOT NULL,
   `studiengang_id` INT(11) NOT NULL,
   `aktives_studium` TINYINT(1) NOT NULL,
-  `semeser` INT NOT NULL,
+  `semester` INT NOT NULL,
   PRIMARY KEY (`student_studiengang_id`),
   INDEX `studiengang_id` (`studiengang_id` ASC) VISIBLE,
-  UNIQUE INDEX `mat_nr_UNIQUE` (`mat_nr` ASC) VISIBLE,
-  UNIQUE INDEX `studiengang_id_UNIQUE` (`studiengang_id` ASC) VISIBLE,
   CONSTRAINT `student_studiengang_ibfk_1`
     FOREIGN KEY (`mat_nr`)
     REFERENCES `informationssystem`.`student` (`mat_nr`)

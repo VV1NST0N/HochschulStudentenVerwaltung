@@ -12,18 +12,12 @@ public class ForwardNcToImmatrikulation implements JavaDelegate {
     public void execute(DelegateExecution delegateExecution) throws Exception {
 
         Map<String, Object> variables = new HashMap<String, Object>();
-        Map<String, Double> map = (Map<String, Double>) delegateExecution.getVariable("ccsOfAllCourses");
-        if (map == null){
-            variables.put("studiengaengeNC", "noNcsSend");
-        }else{
-            variables.put("studiengaengeNc", map.keySet());
-        }
+        variables.put("studiengaengeNc", true);
 
         RuntimeService rtm = delegateExecution.getProcessEngineServices().getRuntimeService();
         
         rtm.createMessageCorrelation("studiengaengeNc")
                 .correlateAllWithResult();
-
 
         variables.clear();
     }

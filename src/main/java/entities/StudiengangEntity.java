@@ -20,8 +20,8 @@ public class StudiengangEntity {
     private Collection<StudentStudiengangEntity> studentStudiengangsByStudiengangId;
     private LocalDate zulassungszeitraum;
     private Boolean ncNotwendig;
-    private Date semesterbeginn;
-    private Date zahlungszeitraum;
+    private LocalDate semesterbeginn;
+    private LocalDate zahlungszeitraum;
 
     @Id
     @Column(name = "studiengang_id", nullable = false)
@@ -155,21 +155,21 @@ public class StudiengangEntity {
 
     @Basic
     @Column(name = "semesterbeginn")
-    public Date getSemesterbeginn() {
+    public LocalDate getSemesterbeginn() {
         return semesterbeginn;
     }
 
-    public void setSemesterbeginn(Date semesterbeginn) {
+    public void setSemesterbeginn(LocalDate semesterbeginn) {
         this.semesterbeginn = semesterbeginn;
     }
 
     @Basic
     @Column(name = "zahlungszeitraum")
-    public Date getZahlungszeitraum() {
+    public LocalDate getZahlungszeitraum() {
         return zahlungszeitraum;
     }
 
-    public void setZahlungszeitraum(Date zahlungszeitraum) {
+    public void setZahlungszeitraum(LocalDate zahlungszeitraum) {
         this.zahlungszeitraum = zahlungszeitraum;
     }
 }

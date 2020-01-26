@@ -1,9 +1,7 @@
 package dataAccess;
 
-import dataAccess.Exception.CustomBewerberException;
 import entities.BewerberEntity;
 import entities.StudentEntity;
-import entities.StudiengangEntity;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.time.LocalDate;
@@ -70,15 +68,19 @@ public class BewerberDAO extends Dao<BewerberEntity> {
         return bewerberIds;
     }
 
-    public BewerberEntity getApplicantIfAlreadyExistent(String vorname, String nachname, LocalDate geburtsdatum, String wohnort) throws CustomBewerberException {
+    public BewerberEntity getApplicantIfAlreadyExistent(String vorname, String nachname, LocalDate geburtsdatum, String wohnort) throws Exception {
         EntityManager em = ConnectionFac.init();
-        Query query = em.createQuery("SELECT c FROM BewerberEntity c");
+        Query query = em.createQuery("SELECT c FROM BewerberEntity c WHERE c.vorname = :vorname AND c.nachname = :nachname AND c.geburtsdatum = :geburtsdatum AND c.wohnort = :wohnort");
+        query.setParameter("vorname", vorname);
+        query.setParameter("nachname", nachname);
+        query.setParameter("geburtsdatum", geburtsdatum);
+        query.setParameter("wohnort", wohnort);
         List<BewerberEntity> resultList = query.getResultList();
 
         if (resultList.size() == 1) {
             return resultList.get(0);
         }else if(resultList.size() > 1){
-            throw new CustomBewerberException();
+            throw new Exception();
         }else {
             return null;
         }

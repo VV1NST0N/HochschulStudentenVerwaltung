@@ -16,7 +16,7 @@ public class SendDeclineMail implements JavaDelegate {
         ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity = immatrikulationsAntragDao.getImmatByBewerber(bewerberId, unterlagenId);
         String nachname = (String) delegateExecution.getVariable("nachname");
         String gender = (String) delegateExecution.getVariable("gender");
-        String mailBody = "Wir bedauern Ihnen mitteilen zu müssen, dass Ihre Bewerbung an unserer Hochschule abgelehnt wurde.\n" + getReason(immatrikulationsverfahrenStatusEntity) + "\n Bei Rückfragen können Sie sich and das Studiensekretariat wenden.";
+        String mailBody = "\nWir bedauern Ihnen mitteilen zu müssen, dass Ihre Bewerbung an unserer Hochschule abgelehnt wurde.\n" + getReason(immatrikulationsverfahrenStatusEntity) + "\n Bei Rückfragen können Sie sich and das Studiensekretariat wenden.";
         sendMailTemplateClass.doSendMail(gender, nachname, mailBody);
     }
 
@@ -26,7 +26,7 @@ public class SendDeclineMail implements JavaDelegate {
         } else if (!immat.getZulassungStatus()) {
             return "Leider wurden die Zulassungsbedingungen für den Studiengang nicht erreicht";
         } else if (!immat.getZahlungStatus()) {
-            return "Leider wurde die Zahlung der Studiengebühren nicht innerhalb der vorgeschriebenen Zeit an die Hochschule Riedtal.";
+            return "Leider wurde die Zahlung der Studiengebühren nicht innerhalb der vorgeschriebenen Zeit an die Hochschule Riedtal überwiesen.";
         } else {
             return "";
         }

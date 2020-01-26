@@ -17,12 +17,19 @@ public class CreateStudent implements JavaDelegate {
     public void execute(DelegateExecution delegateExecution) throws Exception {
         Integer bewerberId = (Integer) delegateExecution.getVariable("bewerberId");
         String studiengangName = (String) delegateExecution.getVariable("studiengangName");
-
+        Boolean studentExistiert = (Boolean) delegateExecution.getVariable("studentExistiert");
+        Integer matNr = (Integer) delegateExecution.getVariable("matNr");
         StudentDao studentDao = new StudentDao();
-        StudentEntity studentEntity = new StudentEntity();
-        BewerberDAO bewerberDAO = new BewerberDAO();
-        studentEntity = bewerberDAO.createStudentByBewerber(bewerberId, studentEntity);
-        studentDao.insertEntity(studentEntity);
+        StudentEntity studentEntity = null;
+        if (!studentExistiert) {
+            studentEntity = new StudentEntity();
+            BewerberDAO bewerberDAO = new BewerberDAO();
+            studentEntity = bewerberDAO.createStudentByBewerber(bewerberId, studentEntity);
+            studentDao.insertEntity(studentEntity);
+        } else {
+            studentEntity = studentDao.getEntryById(matNr);
+        }
+
 
         StudiengangDAO studiengangDAO = new StudiengangDAO();
         StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang(studiengangName);
@@ -31,7 +38,7 @@ public class CreateStudent implements JavaDelegate {
         StudentStudiengangDao studentStudiengangDao = new StudentStudiengangDao();
         StudentStudiengangEntity studentStudiengangEntity = new StudentStudiengangEntity();
         studentStudiengangEntity.setStudentStudiengangId(IdGenerator.createUniqueIds());
-        studentStudiengangEntity.setSemeser(1);
+        studentStudiengangEntity.setSemester(1);
         studentStudiengangEntity.setAktivesStudium(true);
         studentStudiengangEntity.setStudentEntities(studentEntity);
         studentStudiengangEntity.setStudiengangEntities(studiengangEntity);

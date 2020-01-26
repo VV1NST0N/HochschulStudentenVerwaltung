@@ -13,24 +13,21 @@ import java.util.*;
 public class NcCalculation implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
-        Integer freiePlätze = (Integer) delegateExecution.getVariable("freiePlaetze");
-        Map<String, Map<String,Integer>> coursesWithNC = (Map<String, Map<String, Integer>>) delegateExecution.getVariable("kurseMitNc");
-        Map<String, Double> coursesNcMap = new HashMap<>();
+        Map<String,Integer> coursesWithNC = (Map<String, Integer>) delegateExecution.getVariable("kurseMitNc");
         CourseNcCalc courseNcCalc = new CourseNcCalc();
         for ( String s : coursesWithNC.keySet()) {
             StudiengangDAO studiengangDAO = new StudiengangDAO();
             StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang(s);
+            Integer freiePlätze = studiengangEntity.getStudiengangFreiePlaetze();
             Collection<BewerberEntity> bewerber = studiengangEntity.getBewerbersByStudiengangId();
             LinkedList<Double> grades = new LinkedList<>();
             for (BewerberEntity bewerberEntity : bewerber) {
                 grades.add(bewerberEntity.getAbiturnote());
             }
             Double nc = courseNcCalc.calculateNc(grades,freiePlätze);
-            studiengangDAO.updateCourseNcNumber(studiengangEntity, nc);
-            coursesNcMap.put(s, nc);
+            grades.clear();
+            studiengangEntity.setNumerusClaususNote(nc);
+            studiengangDAO.updateEntity(studiengangEntity);
         }
-        // TODO set NC in database
-        TypedValue couresNcVal = Variables.objectValue(coursesNcMap).serializationDataFormat(Variables.SerializationDataFormats.JSON).create();
-        delegateExecution.setVariable("ccsOfAllCourses", couresNcVal);
     }
 }

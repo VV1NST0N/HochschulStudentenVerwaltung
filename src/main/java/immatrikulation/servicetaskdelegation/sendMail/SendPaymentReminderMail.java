@@ -16,7 +16,7 @@ public class SendPaymentReminderMail implements JavaDelegate {
         StudiengangDAO studiengangDAO = new StudiengangDAO();
         StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang(studiengang);
         LocalDate date = studiengangEntity.getZulassungszeitraum();
-        String mailBody = "\nBitte denken Sie daran bis zum " + studiengangEntity.getZahlungszeitraum() + " Ihre Studiengebühren zu überweisen.";
+        String mailBody = "\nBitte denken Sie daran bis zum " + date.toString() + " Ihre Studiengebühren zu überweisen.";
 
         SendMailTemplateClass sendMailTemplateClass = new SendMailTemplateClass();
         sendMailTemplateClass.doSendMail(gender, nachname,mailBody);

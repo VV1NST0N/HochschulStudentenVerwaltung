@@ -1,17 +1,15 @@
 package immatrikulation.servicetaskdelegation.applicantRegistration;
 
 import dataAccess.BewerberDAO;
-import dataAccess.Exception.CustomBewerberException;
 import dataAccess.ImmatrikulationsAntragDao;
 import dataAccess.UnterlagenDAO;
 import entities.BewerberEntity;
 import entities.BewerbungsunterlagenEntity;
-import entities.StudentEntity;
 import helper.IdGenerator;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.hibernate.DuplicateMappingException;
 
-import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
@@ -24,6 +22,7 @@ public class ApplicantRegistration implements JavaDelegate {
 
             BewerberEntity bewerberEntity = checkDatabaseIfExisting(delegateExecution);
             UnterlagenDAO unterlagenDAO = new UnterlagenDAO();
+            System.out.println("Bewerber: " + bewerberEntity.getVorname());
             BewerbungsunterlagenEntity unterlagen = unterlagenDAO.createInitialUnterlagen();
             unterlagenDAO.insertEntity(unterlagen);
 
@@ -36,13 +35,14 @@ public class ApplicantRegistration implements JavaDelegate {
             delegateExecution.setVariable("bewerberErfasst", true);
         } catch (Exception e){
             delegateExecution.setVariable("bewerberErfasst", false);
-            delegateExecution.setVariable("Reason", e.getCause());
+            delegateExecution.setVariable("Reason", "Bei der Anmeldung ist etwas schief gegangen versuchen Sie es bitte noch einmal.");
+            throw e;
         }
 
 
     }
 
-    private BewerberEntity checkDatabaseIfExisting(DelegateExecution delegateExecution){
+    private BewerberEntity checkDatabaseIfExisting(DelegateExecution delegateExecution) throws DuplicateMappingException {
         Integer bewerberId = IdGenerator.createUniqueIds();
         BewerberEntity bewerberEntity = new BewerberEntity();
         bewerberEntity.setAdresse((String) delegateExecution.getVariable("adresse"));
@@ -61,19 +61,21 @@ public class ApplicantRegistration implements JavaDelegate {
         BewerberEntity oldBewerber = null;
         try {
          oldBewerber =   bewerberDAO.getApplicantIfAlreadyExistent(bewerberEntity.getVorname(), bewerberEntity.getNachname(), bewerberEntity.getGeburtsdatum(), bewerberEntity.getGeburtsort());
-        } catch (CustomBewerberException e) {
-            delegateExecution.setVariable("bewerberErfasst", false);
-            delegateExecution.setVariable("Reason", e.getCause());
+        } catch (Exception e) {
         }
         if (oldBewerber != null){
+            Integer newCourse = bewerberEntity.getStudiengangId();
             bewerberEntity = oldBewerber;
             if (oldBewerber.getStudiengangByStudiengangId().getStudiengangName().equals(delegateExecution.getVariable("studiengangName"))) {
                 delegateExecution.setVariable("bewerberErfasst", false);
                 delegateExecution.setVariable("Reason", "Bewerber ist bereits im unter diesem Studiengang eingetragen!");
+                throw new DuplicateMappingException(DuplicateMappingException.Type.ENTITY, "Bewerber ist bereits im unter diesem Studiengang eingetragen!");
+            }else {
+                bewerberEntity.setStudiengangId(newCourse);
             }
+        }else {
+            bewerberDAO.insertBewerber(bewerberEntity, (String) delegateExecution.getVariable("studiengangName"));
         }
-
-        bewerberDAO.insertBewerber(bewerberEntity, (String) delegateExecution.getVariable("studiengangName"));
         return bewerberEntity;
     }
 

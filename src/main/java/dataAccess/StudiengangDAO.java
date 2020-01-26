@@ -1,13 +1,9 @@
 package dataAccess;
 
-import entities.BewerbungsunterlagenEntity;
 import entities.StudiengangEntity;
-
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 public class StudiengangDAO extends Dao<StudiengangEntity>{
 
@@ -32,22 +28,6 @@ public class StudiengangDAO extends Dao<StudiengangEntity>{
         return resultList;
     }
 
-
-    public void updateCourseNc(StudiengangEntity studiengangEntity, Boolean nc) {
-        EntityManager entityManager = ConnectionFac.init();
-
-        entityManager.getTransaction().begin();
-        studiengangEntity.setNcNotwendig(nc);
-        entityManager.getTransaction().commit();
-    }
-
-    public void updateCourseNcNumber(StudiengangEntity studiengangEntity, Double nc) {
-        EntityManager entityManager = ConnectionFac.init();
-
-        entityManager.getTransaction().begin();
-        studiengangEntity.setNumerusClaususNote(nc);
-        entityManager.getTransaction().commit();
-    }
 
     @Override
     public StudiengangEntity getEntryById(Integer id) {

@@ -11,9 +11,12 @@ public class ChangePaymentByApplicant implements JavaDelegate {
         Integer bewerberId = (Integer) delegateExecution.getVariable("bewerberId");
         Integer unterlagenId = (Integer) delegateExecution.getVariable("unterlagenId");
         Boolean status = (Boolean) delegateExecution.getVariable("zahlungsStatus");
-        ImmatrikulationsAntragDao immatrikulationsAntragDao = new ImmatrikulationsAntragDao();
-        ImmatrikulationsverfahrenStatusEntity immat = immatrikulationsAntragDao.getImmatByBewerber(bewerberId, unterlagenId);
-        immat.setZahlungStatus(status);
-        immatrikulationsAntragDao.updateEntity(immat);
+        if(bewerberId != null && unterlagenId != null){
+            ImmatrikulationsAntragDao immatrikulationsAntragDao = new ImmatrikulationsAntragDao();
+            ImmatrikulationsverfahrenStatusEntity immat = immatrikulationsAntragDao.getImmatByBewerber(bewerberId, unterlagenId);
+            immat.setZahlungStatus(status);
+            immatrikulationsAntragDao.updateEntity(immat);
+        }
+
     }
 }

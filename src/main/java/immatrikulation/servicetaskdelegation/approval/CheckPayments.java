@@ -13,6 +13,6 @@ public class CheckPayments implements JavaDelegate {
         ImmatrikulationsAntragDao immatrikulationsAntragDao = new ImmatrikulationsAntragDao();
         ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity = immatrikulationsAntragDao.getImmatByBewerber(bewerberId, unterlagenId);
 
-        delegateExecution.setVariable("payment", immatrikulationsverfahrenStatusEntity.getZahlungStatus());
+        delegateExecution.setVariable("zahlung", immatrikulationsverfahrenStatusEntity.getZahlungStatus());
     }
 }

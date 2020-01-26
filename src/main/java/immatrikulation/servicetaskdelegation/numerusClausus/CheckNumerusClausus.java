@@ -10,12 +10,13 @@ import java.util.Map;
 public class CheckNumerusClausus implements JavaDelegate {
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
-        String course = (String) delegateExecution.getVariable("ccsOfAllCourses");
-        Map<String, Double> grades = (Map<String, Double>) delegateExecution.getVariable("abiturnote");
+        String course = (String) delegateExecution.getVariable("studiengangName");
+
+        Double abiturNote = (Double) delegateExecution.getVariable("abiturnote");
         StudiengangDAO studiengangDAO = new StudiengangDAO();
         StudiengangEntity studiengangEntity = studiengangDAO.getStudiengang(course);
 
-        if (studiengangEntity.getNumerusClaususNote() < grades.get(course)){
+        if (abiturNote <= studiengangEntity.getNumerusClaususNote()){
             delegateExecution.setVariable("ncErfüllt", true);
         }else{
             delegateExecution.setVariable("ncErfüllt", false);

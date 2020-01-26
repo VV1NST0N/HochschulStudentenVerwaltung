@@ -11,7 +11,7 @@ public class StudentStudiengangEntity {
     private StudentEntity studentEntities;
     private StudiengangEntity studiengangEntities;
     private Boolean aktivesStudium;
-    private int semeser;
+    private int semester;
 
     @Id
     @Column(name = "student_studiengang_id")
@@ -35,13 +35,13 @@ public class StudentStudiengangEntity {
     }
 
     @Basic
-    @Column(name = "semeser")
-    public int getSemeser() {
-        return semeser;
+    @Column(name = "semester")
+    public int getSemester() {
+        return semester;
     }
 
-    public void setSemeser(int semeser) {
-        this.semeser = semeser;
+    public void setSemester(int semeser) {
+        this.semester = semeser;
     }
 
     @Override
@@ -51,12 +51,12 @@ public class StudentStudiengangEntity {
         StudentStudiengangEntity that = (StudentStudiengangEntity) o;
         return studentStudiengangId == that.studentStudiengangId &&
                 aktivesStudium == that.aktivesStudium &&
-                semeser == that.semeser;
+                semester == that.semester;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(studentStudiengangId, aktivesStudium, semeser);
+        return Objects.hash(studentStudiengangId, aktivesStudium, semester);
     }
 
 

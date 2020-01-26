@@ -23,7 +23,7 @@ public class CheckDocuments implements JavaDelegate {
     }
 
     private Boolean checkVollständigkeit(BewerbungsunterlagenEntity unterlagenEntity, ImmatrikulationsverfahrenStatusEntity immatrikulationsverfahrenStatusEntity) {
-        if (unterlagenEntity.getBewerbungsschreiben().equals(true) && unterlagenEntity.getHochschulreife().equals(true) && unterlagenEntity.getImmatrikulationsantrag().equals(true) && unterlagenEntity.getKrankenversicherung().equals(true)){
+        if (unterlagenEntity.getBewerbungsschreiben().equals(true) && unterlagenEntity.getHochschulreife().equals(true) && unterlagenEntity.getImmatrikulationsantrag().equals(true) && unterlagenEntity.getKrankenversicherung().equals(true) && unterlagenEntity.getPersonalausweis().equals(true)){
             ImmatrikulationsAntragDao immatrikulationsverfahrenDao = new ImmatrikulationsAntragDao();
             immatrikulationsverfahrenStatusEntity.setUnterlagenVollstaendig(true);
             immatrikulationsverfahrenDao.updateEntity(immatrikulationsverfahrenStatusEntity);

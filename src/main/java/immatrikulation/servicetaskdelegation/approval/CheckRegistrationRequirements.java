@@ -17,7 +17,6 @@ public class CheckRegistrationRequirements implements JavaDelegate {
         Boolean zulassung = (Boolean) studiengangEntity.getVorraussetzungTest();
         Boolean nc = (Boolean) studiengangEntity.getNcNotwendig();
 
-        System.out.println("Zahlung und NC Berechnung beendet");
         delegateExecution.setVariable("zulassungstest", zulassung);
         delegateExecution.setVariable("nc", nc);
     }
